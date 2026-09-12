@@ -1,1 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Vinay | Biography</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050816;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5,8,22,0.85);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #00d9ff;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #00d9ff;
+}
+
+/* SECTIONS */
+
+section {
+    min-height: 100vh;
+    padding: 110px 8%;
+}
+
+/* HERO */
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    background:
+        radial-gradient(circle at 20% 30%, #123c66, transparent 30%),
+        radial-gradient(circle at 80% 70%, #30145e, transparent 30%),
+        #050816;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 10vw, 90px);
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #00d9ff;
+    text-shadow: 0 0 30px #00d9ff;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #b8c7d9;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 30px;
+    background: #00d9ff;
+    color: #03101b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 0 30px #00d9ff;
+}
+
+/* 3D OBJECT */
+
+.cube {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 40px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 8s infinite linear;
+}
+
+.face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #00d9ff;
+    background: rgba(0,217,255,0.08);
+    box-shadow: 0 0 20px #00d9ff;
+}
+
+.front  { transform: translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+@keyframes rotateCube {
+    from {
+        transform: rotateX(0deg) rotateY(0deg);
+    }
+    to {
+        transform: rotateX(360deg) rotateY(360deg);
+    }
+}
+
+/* TITLES */
+
+.title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+.title span {
+    color: #00d9ff;
+}
+
+/* ABOUT */
+
+.about-box {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px;
+    border-radius: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,217,255,0.25);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    transform: perspective(1000px) rotateX(2deg);
+}
+
+.about-box p {
+    color: #c4d0df;
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* CARDS */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
+    gap: 25px;
+}
+
+.card {
+    padding: 30px;
+    border-radius: 20px;
+    background: linear-gradient(145deg,#101a35,#080d20);
+    border: 1px solid #1f3555;
+    transition: 0.4s;
+    transform-style: preserve-3d;
+}
+
+.card:hover {
+    transform: translateY(-12px) rotateX(5deg) rotateY(-5deg);
+    box-shadow: 0 20px 40px rgba(0,217,255,0.15);
+}
+
+.card h3 {
+    color: #00d9ff;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #aebed1;
+}
+
+/* SKILLS */
+
+.skill {
+    margin-bottom: 25px;
+}
+
+.skill-name {
+    margin-bottom: 8px;
+}
+
+.bar {
+    width: 100%;
+    height: 10px;
+    background: #18233b;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg,#00d9ff,#7c4dff);
+    border-radius: 20px;
+    animation: fill 2s forwards;
+}
+
+.html { width: 85%; }
+.css { width: 75%; }
+.java { width: 60%; }
+.python { width: 55%; }
+
+@keyframes fill {
+    from { width: 0; }
+}
+
+/* PROJECT */
+
+.project {
+    text-align: center;
+    padding: 35px;
+    border-radius: 25px;
+    background: linear-gradient(145deg,#101a35,#080d20);
+    border: 1px solid #1f3555;
+}
+
+.project h3 {
+    color: #00d9ff;
+    margin-bottom: 15px;
+}
+
+/* VIDEO AREA */
+
+.video-box {
+    max-width: 850px;
+    margin: auto;
+    min-height: 300px;
+    border-radius: 25px;
+    border: 2px dashed #00d9ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0,217,255,0.04);
+}
+
+.video-box h3 {
+    color: #00d9ff;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 35px;
+    background: #02040c;
+    color: #7f91a8;
+}
+
+/* MOBILE */
+
+@media(max-width:700px) {
+
+    nav {
+        padding: 15px 4%;
+    }
+
+    nav a {
+        margin-left: 6px;
+        font-size: 11px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    section {
+        padding: 100px 5%;
+    }
+
+    .title {
+        font-size: 32px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">VINAY</div>
+
+    <div>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+    </div>
+</nav>
+
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="cube">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
+        </div>
+
+        <h1>Hello, I'm <span>Vinay</span></h1>
+
+        <p>B.Tech Data Science Student • Technology Enthusiast</p>
+
+        <a href="#about" class="btn">Explore My Story</a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="title">About <span>Me</span></h2>
+
+    <div class="about-box">
+
+        <p>
+            Hello! I'm Vinay, a B.Tech Data Science student
+            passionate about technology, programming and
+            continuous learning.
+        </p>
+
+        <br>
+
+        <p>
+            My journey is focused on developing my technical
+            skills, creating useful projects and exploring
+            the world of software and data science.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- EDUCATION -->
+
+<section id="education">
+
+    <h2 class="title">My <span>Education</span></h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>🎓 B.Tech</h3>
+            <p>Data Science</p>
+            <p>Currently Pursuing</p>
+        </div>
+
+        <div class="card">
+            <h3>💻 Programming</h3>
+            <p>Learning Java, Python, HTML and CSS.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+    <h2 class="title">My <span>Skills</span></h2>
+
+    <div class="skill">
+        <div class="skill-name">HTML</div>
+        <div class="bar">
+            <div class="progress html"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name">CSS</div>
+        <div class="bar">
+            <div class="progress css"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name">Java</div>
+        <div class="bar">
+            <div class="progress java"></div>
+        </div>
+    </div>
+
+    <div class="skill">
+        <div class="skill-name">Python</div>
+        <div class="bar">
+            <div class="progress python"></div>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <h2 class="title">My <span>Projects</span></h2>
+
+    <div class="cards">
+
+        <div class="project">
+            <h3>🌐 Biography Website</h3>
+            <p>
+                A professional personal website created
+                using HTML and CSS.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>📊 Data Science Projects</h3>
+            <p>
+                Future projects will be added here as
+                I continue learning.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- 3D / VIDEO -->
+
+<section>
+
+    <h2 class="title">My <span>Media</span></h2>
+
+    <div class="video-box">
+
+        <div>
+            <h3>🎬 3D & Video Showcase</h3>
+
+            <p>
+                Your videos, animations and future
+                3D projects will appear here.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>© 2026 Vinay • Personal Biography Website</p>
+
+</footer>
+
+</body>
+  </html>
