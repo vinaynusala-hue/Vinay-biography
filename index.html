@@ -673,6 +673,45 @@ nav a:hover {
         opacity: 1;
         transform: translateY(0) scale(1);
     }
+}/* FUTURISTIC NAVBAR */
+
+nav {
+    background: rgba(5, 8, 22, 0.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(0, 217, 255, 0.25);
+    box-shadow: 0 5px 30px rgba(0, 217, 255, 0.08);
+}
+
+.logo {
+    text-shadow: 0 0 15px #00d9ff;
+}
+
+nav a {
+    position: relative;
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #00d9ff;
+    box-shadow: 0 0 10px #00d9ff;
+    transition: 0.3s;
+    transform: translateX(-50%);
+}
+
+nav a:hover {
+    color: #00d9ff;
+    text-shadow: 0 0 10px #00d9ff;
+}
+
+nav a:hover::after {
+    width: 80%;
 }
 </style>
 </head>
