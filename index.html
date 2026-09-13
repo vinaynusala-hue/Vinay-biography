@@ -236,1769 +236,187 @@ section {
 }
 
 
-/* =========================
-   RED 3D CUBE
-========================= */
+/* =====================================================
+   🔴 RED 3D NEON CUBE
+===================================================== */
 
 .cube {
 
-    width: 100px;
-    height: 100px;
+    width: 115px;
+    height: 115px;
 
     margin:
-        0 auto 40px;
+        0 auto 45px;
 
     position: relative;
 
     transform-style:
         preserve-3d;
 
-    perspective:
-        1000px;
-
     animation:
-        rotateCube 8s infinite linear;
+        cubeRotate 7s linear infinite;
 
     filter:
-        drop-shadow(
-            0 0 12px #ff0000
-        )
-        drop-shadow(
-            0 0 30px rgba(255, 0, 0, 0.7)
-        );
+        drop-shadow(0 0 8px #ff0000)
+        drop-shadow(0 0 20px #ff0000)
+        drop-shadow(0 0 40px rgba(255, 0, 0, 0.7));
+
+    perspective:
+        900px;
 }
+
+
+/* =========================
+   CUBE FACES
+========================= */
 
 .face {
 
     position: absolute;
 
-    width: 100px;
-    height: 100px;
+    width: 115px;
+    height: 115px;
 
     border:
-        2px solid #ff2020;
+        3px solid #ff1010;
 
     background:
-        rgba(255, 0, 0, 0.04);
+        rgba(255, 0, 0, 0.025);
 
     box-shadow:
-        inset 0 0 15px
-        rgba(255, 0, 0, 0.35),
 
-        0 0 12px
+        inset 0 0 12px
+        rgba(255, 0, 0, 0.5),
+
+        0 0 8px
+        #ff0000,
+
+        0 0 20px
         rgba(255, 0, 0, 0.8);
-
-    animation:
-        cubeLineGlow 1.5s
-        ease-in-out infinite alternate;
-}
-
-.front {
-    transform:
-        translateZ(50px);
-}
-
-.back {
-    transform:
-        rotateY(180deg)
-        translateZ(50px);
-}
-
-.right {
-    transform:
-        rotateY(90deg)
-        translateZ(50px);
-}
-
-.left {
-    transform:
-        rotateY(-90deg)
-        translateZ(50px);
-}
-
-.top {
-    transform:
-        rotateX(90deg)
-        translateZ(50px);
-}
-
-.bottom {
-    transform:
-        rotateX(-90deg)
-        translateZ(50px);
-}
-
-
-/* RED ANIMATED CUBE LINES */
-
-@keyframes cubeLineGlow {
-
-    0% {
-
-        border-color:
-            #ff0000;
-
-        box-shadow:
-            inset 0 0 10px
-            rgba(255, 0, 0, 0.2),
-
-            0 0 8px
-            rgba(255, 0, 0, 0.5);
-    }
-
-    50% {
-
-        border-color:
-            #ff4d4d;
-
-        box-shadow:
-            inset 0 0 20px
-            rgba(255, 0, 0, 0.5),
-
-            0 0 20px
-            rgba(255, 0, 0, 1);
-    }
-
-    100% {
-
-        border-color:
-            #ff0000;
-
-        box-shadow:
-            inset 0 0 10px
-            rgba(255, 0, 0, 0.25),
-
-            0 0 12px
-            rgba(255, 0, 0, 0.7);
-    }
-
-}
-
-
-/* 3D ROTATION */
-
-@keyframes rotateCube {
-
-    0% {
-
-        transform:
-            rotateX(0deg)
-            rotateY(0deg)
-            rotateZ(0deg);
-    }
-
-    25% {
-
-        transform:
-            rotateX(90deg)
-            rotateY(90deg)
-            rotateZ(20deg);
-    }
-
-    50% {
-
-        transform:
-            rotateX(180deg)
-            rotateY(180deg)
-            rotateZ(40deg);
-    }
-
-    75% {
-
-        transform:
-            rotateX(270deg)
-            rotateY(270deg)
-            rotateZ(20deg);
-    }
-
-    100% {
-
-        transform:
-            rotateX(360deg)
-            rotateY(360deg)
-            rotateZ(0deg);
-    }
-
-}
-
-
-/* =========================
-   PROFILE PHOTO
-========================= */
-
-.profile-wrapper {
-
-    width: 270px;
-    height: 270px;
-
-    margin:
-        20px auto 40px;
-
-    position: relative;
-
-    display: flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    animation:
-        profileFloat 4s
-        ease-in-out infinite;
-
-    transform-style:
-        preserve-3d;
-}
-
-.profile-photo {
-
-    width: 175px;
-    height: 175px;
-
-    border-radius: 50%;
-
-    padding: 5px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #00d9ff,
-            #7c4dff
-        );
-
-    box-shadow:
-        0 0 20px #00d9ff,
-        0 0 50px
-        rgba(0, 217, 255, 0.5);
-
-    position: relative;
-
-    z-index: 5;
-}
-
-.profile-photo img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    display: block;
-}
-
-
-/* =========================
-   ORBITS
-========================= */
-
-.orbit {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    border:
-        2px solid #00d9ff;
-
-    pointer-events: none;
-}
-
-.orbit-1 {
-
-    width: 205px;
-    height: 205px;
-
-    border-color:
-        #00d9ff;
-
-    box-shadow:
-        0 0 15px #00d9ff;
-
-    animation:
-        rotate1 5s linear infinite;
-}
-
-.orbit-2 {
-
-    width: 235px;
-    height: 235px;
-
-    border-color:
-        #7c4dff;
-
-    border-style:
-        dashed;
-
-    box-shadow:
-        0 0 15px #7c4dff;
-
-    animation:
-        rotate2 8s linear infinite reverse;
-}
-
-.orbit-3 {
-
-    width: 265px;
-    height: 265px;
-
-    border-color:
-        #00d9ff;
-
-    border-left-color:
-        transparent;
-
-    border-right-color:
-        transparent;
-
-    box-shadow:
-        0 0 20px #00d9ff;
-
-    animation:
-        rotate3 10s linear infinite;
-}
-
-
-/* =========================
-   ORBIT DOTS
-========================= */
-
-.orbit-dot {
-
-    position: absolute;
-
-    width: 12px;
-    height: 12px;
-
-    border-radius: 50%;
-
-    background:
-        #00d9ff;
-
-    box-shadow:
-        0 0 15px #00d9ff;
-
-    z-index: 6;
-}
-
-.dot-1 {
-
-    top: 5px;
-    left: 130px;
-
-    animation:
-        pulse 1.5s infinite alternate;
-}
-
-.dot-2 {
-
-    right: 5px;
-    top: 130px;
-
-    background:
-        #7c4dff;
-
-    box-shadow:
-        0 0 15px #7c4dff;
-
-    animation:
-        pulse 2s infinite alternate;
-}
-
-.dot-3 {
-
-    bottom: 8px;
-    left: 70px;
-
-    animation:
-        pulse 1.8s infinite alternate;
-}
-
-
-@keyframes rotate1 {
-
-    from {
-        transform:
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
-}
-
-@keyframes rotate2 {
-
-    from {
-        transform:
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
-}
-
-@keyframes rotate3 {
-
-    from {
-        transform:
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
-}
-
-@keyframes pulse {
-
-    from {
-        transform:
-            scale(0.7);
-
-        opacity:
-            0.5;
-    }
-
-    to {
-        transform:
-            scale(1.4);
-
-        opacity:
-            1;
-    }
-
-}
-
-@keyframes profileFloat {
-
-    0%, 100% {
-        transform:
-            translateY(0)
-            rotateY(0deg);
-    }
-
-    50% {
-        transform:
-            translateY(-10px)
-            rotateY(4deg);
-    }
-
-}
-
-
-/* =========================
-   PARTICLES
-========================= */
-
-.particles {
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events:
-        none;
-
-    z-index: 1;
-}
-
-.particles span {
-
-    position: absolute;
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background:
-        #00d9ff;
-
-    box-shadow:
-        0 0 15px #00d9ff;
-
-    animation:
-        floatParticle
-        6s infinite ease-in-out;
-}
-
-.particles span:nth-child(1) {
-    left: 10%;
-    top: 20%;
-}
-
-.particles span:nth-child(2) {
-    left: 20%;
-    top: 70%;
-    animation-delay: 1s;
-}
-
-.particles span:nth-child(3) {
-    left: 35%;
-    top: 30%;
-    animation-delay: 2s;
-}
-
-.particles span:nth-child(4) {
-    left: 50%;
-    top: 80%;
-    animation-delay: 3s;
-}
-
-.particles span:nth-child(5) {
-    left: 65%;
-    top: 25%;
-    animation-delay: 1.5s;
-}
-
-.particles span:nth-child(6) {
-    left: 75%;
-    top: 65%;
-    animation-delay: 2.5s;
-}
-
-.particles span:nth-child(7) {
-    left: 85%;
-    top: 35%;
-    animation-delay: 4s;
-}
-
-.particles span:nth-child(8) {
-    left: 90%;
-    top: 80%;
-    animation-delay: 3.5s;
-}
-
-.particles span:nth-child(9) {
-    left: 5%;
-    top: 50%;
-    animation-delay: 2s;
-}
-
-.particles span:nth-child(10) {
-    left: 45%;
-    top: 15%;
-    animation-delay: 4.5s;
-}
-
-@keyframes floatParticle {
-
-    0%, 100% {
-
-        transform:
-            translateY(0)
-            scale(1);
-
-        opacity:
-            0.3;
-    }
-
-    50% {
-
-        transform:
-            translateY(-35px)
-            scale(1.8);
-
-        opacity:
-            1;
-    }
-
-}
-
-
-/* =========================
-   TYPING TEXT
-========================= */
-
-.typing-text {
-
-    font-size: 20px;
-
-    color:
-        #b8c7d9;
-
-    margin-bottom:
-        30px;
-
-    min-height:
-        30px;
-}
-
-.typing {
-
-    color:
-        #00d9ff;
-
-    font-weight:
-        bold;
-
-    border-right:
-        3px solid #00d9ff;
-
-    padding-right:
-        5px;
-
-    animation:
-        blink 0.7s infinite;
-}
-
-@keyframes blink {
-
-    50% {
-        border-color:
-            transparent;
-    }
-
-}
-
-
-/* =========================
-   BUTTON
-========================= */
-
-.btn {
-
-    display:
-        inline-block;
-
-    padding:
-        15px 32px;
-
-    border-radius:
-        30px;
-
-    background:
-        transparent;
-
-    color:
-        #00d9ff;
-
-    text-decoration:
-        none;
-
-    font-weight:
-        bold;
-
-    border:
-        2px solid #00d9ff;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    transition:
-        0.4s;
-
-    box-shadow:
-        0 0 10px
-        rgba(0, 217, 255, 0.4);
-}
-
-.btn::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    top:
-        0;
-
-    left:
-        -100%;
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-    background:
-        #00d9ff;
-
-    transition:
-        0.4s;
-
-    z-index:
-        -1;
-}
-
-.btn:hover::before {
-    left: 0;
-}
-
-.btn:hover {
-
-    color:
-        #03101b;
-
-    transform:
-        translateY(-5px)
-        scale(1.05);
-
-    box-shadow:
-        0 0 15px #00d9ff,
-        0 0 40px #00d9ff;
-}
-
-
-/* =========================
-   SCROLL
-========================= */
-
-.scroll-down {
-
-    margin-top:
-        35px;
-
-    text-align:
-        center;
-
-    opacity:
-        0.8;
-
-    animation:
-        scrollFloat 2s infinite;
-}
-
-.scroll-down span {
-
-    display:
-        block;
-
-    font-size:
-        10px;
-
-    letter-spacing:
-        3px;
-
-    color:
-        #aaa;
-}
-
-.scroll-arrow {
-
-    font-size:
-        28px;
-
-    color:
-        #00ffff;
-
-    margin-top:
-        5px;
-
-    text-shadow:
-        0 0 15px #00ffff;
-}
-
-@keyframes scrollFloat {
-
-    0%, 100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(8px);
-    }
-
-}
-
-
-/* =========================
-   HERO BADGE
-========================= */
-
-.hero-badge {
-
-    display:
-        inline-block;
-
-    padding:
-        8px 18px;
-
-    margin-bottom:
-        18px;
-
-    border:
-        1px solid
-        rgba(0, 255, 255, 0.5);
-
-    border-radius:
-        30px;
-
-    color:
-        #00ffff;
-
-    font-size:
-        12px;
-
-    letter-spacing:
-        2px;
-
-    background:
-        rgba(0, 255, 255, 0.05);
-
-    box-shadow:
-        0 0 15px
-        rgba(0, 255, 255, 0.2);
-
-    animation:
-        badgeGlow 2s infinite alternate;
-}
-
-@keyframes badgeGlow {
-
-    from {
-        box-shadow:
-            0 0 10px
-            rgba(0, 255, 255, 0.2);
-    }
-
-    to {
-        box-shadow:
-            0 0 25px
-            rgba(0, 255, 255, 0.6);
-    }
-
-}
-
-
-/* =========================
-   TITLES
-========================= */
-
-.title {
-
-    text-align:
-        center;
-
-    font-size:
-        40px;
-
-    margin-bottom:
-        50px;
-}
-
-.title span {
-
-    color:
-        #00d9ff;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-box {
-
-    max-width:
-        900px;
-
-    margin:
-        auto;
-
-    padding:
-        35px;
-
-    border-radius:
-        20px;
-
-    background:
-        rgba(255, 255, 255, 0.05);
-
-    border:
-        1px solid
-        rgba(0, 217, 255, 0.25);
-
-    box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.4);
-
-    transform:
-        perspective(1000px)
-        rotateX(2deg);
-}
-
-.about-box p {
-
-    color:
-        #c4d0df;
-
-    font-size:
-        18px;
-
-    line-height:
-        1.8;
-}
-
-
-/* =========================
-   VIDEO
-========================= */
-
-.video-box {
-
-    max-width:
-        850px;
-
-    margin:
-        auto;
-
-    min-height:
-        300px;
-
-    border-radius:
-        25px;
-
-    border:
-        2px dashed #00d9ff;
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    text-align:
-        center;
-
-    background:
-        rgba(0, 217, 255, 0.04);
-}
-
-.video-box h3 {
-
-    color:
-        #00d9ff;
-
-    margin-bottom:
-        10px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-
-    padding:
-        60px 20px 30px;
-
-    text-align:
-        center;
-
-    background:
-        #02040c;
-
-    border-top:
-        1px solid
-        rgba(0, 217, 255, 0.2);
-
-    box-shadow:
-        0 -10px 40px
-        rgba(0, 217, 255, 0.05);
-}
-
-.footer-content h2 {
-
-    color:
-        #00d9ff;
-
-    font-size:
-        30px;
-
-    margin-bottom:
-        10px;
-
-    text-shadow:
-        0 0 20px #00d9ff;
-}
-
-.footer-content p {
-
-    color:
-        #8fa1b8;
-}
-
-.social-buttons {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    gap:
-        15px;
-
-    margin:
-        25px 0;
-}
-
-.social {
-
-    width:
-        45px;
-
-    height:
-        45px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border:
-        1px solid #00d9ff;
-
-    border-radius:
-        50%;
-
-    color:
-        #00d9ff;
-
-    text-decoration:
-        none;
-
-    font-weight:
-        bold;
-
-    transition:
-        0.4s;
-
-    box-shadow:
-        0 0 10px
-        rgba(0, 217, 255, 0.2);
-}
-
-.social:hover {
-
-    background:
-        #00d9ff;
-
-    color:
-        #02040c;
-
-    transform:
-        translateY(-7px)
-        rotate(10deg);
-
-    box-shadow:
-        0 0 15px #00d9ff,
-        0 0 35px #00d9ff;
-}
-
-.copyright {
-
-    margin-top:
-        20px;
-
-    font-size:
-        13px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-    nav {
-
-        padding:
-            12px 3%;
-
-        gap:
-            8px;
-    }
-
-    .logo {
-        font-size:
-            19px;
-    }
-
-    nav > div:last-child {
-
-        display:
-            flex;
-
-        flex-wrap:
-            wrap;
-
-        justify-content:
-            center;
-
-        gap:
-            3px;
-    }
-
-    nav a {
-
-        margin-left:
-            3px;
-
-        font-size:
-            10px;
-
-        padding:
-            5px;
-    }
-
-    section {
-
-        padding:
-            100px 5% 70px;
-    }
-
-    .hero h1 {
-
-        font-size:
-            clamp(
-                38px,
-                12vw,
-                60px
-            );
-    }
-
-    .typing-text {
-
-        font-size:
-            17px;
-    }
-
-    .cube {
-
-        width:
-            75px;
-
-        height:
-            75px;
-
-        margin-bottom:
-            25px;
-    }
-
-    .face {
-
-        width:
-            75px;
-
-        height:
-            75px;
-    }
-
-    .front {
-
-        transform:
-            translateZ(37.5px);
-    }
-
-    .back {
-
-        transform:
-            rotateY(180deg)
-            translateZ(37.5px);
-    }
-
-    .right {
-
-        transform:
-            rotateY(90deg)
-            translateZ(37.5px);
-    }
-
-    .left {
-
-        transform:
-            rotateY(-90deg)
-            translateZ(37.5px);
-    }
-
-    .top {
-
-        transform:
-            rotateX(90deg)
-            translateZ(37.5px);
-    }
-
-    .bottom {
-
-        transform:
-            rotateX(-90deg)
-            translateZ(37.5px);
-    }
-
-    .profile-wrapper {
-
-        width:
-            240px;
-
-        height:
-            240px;
-    }
-
-    .profile-photo {
-
-        width:
-            155px;
-
-        height:
-            155px;
-    }
-
-    .orbit-1 {
-
-        width:
-            185px;
-
-        height:
-            185px;
-    }
-
-    .orbit-2 {
-
-        width:
-            210px;
-
-        height:
-            210px;
-    }
-
-    .orbit-3 {
-
-        width:
-            235px;
-
-        height:
-            235px;
-    }
-
-    .title {
-
-        font-size:
-            32px;
-    }
-
-    .about-box {
-
-        padding:
-            25px;
-    }
-
-    .about-box p {
-
-        font-size:
-            16px;
-    }
-
-}
-
-
-/* =========================
-   BACKGROUND ANIMATION
-========================= */
-
-.hero::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        500px;
-
-    height:
-        500px;
-
-    border-radius:
-        50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(
-                0,
-                255,
-                255,
-                0.12
-            ),
-            transparent 70%
-        );
-
-    top:
-        10%;
-
-    left:
-        -15%;
-
-    animation:
-        backgroundMove
-        8s ease-in-out
-        infinite alternate;
-
-    pointer-events:
-        none;
-}
-
-@keyframes backgroundMove {
-
-    from {
-
-        transform:
-            translate(0, 0);
-    }
-
-    to {
-
-        transform:
-            translate(
-                120px,
-                80px
-            );
-    }
-
-}
-
-
-/* =========================
-   3D VIDEO
-========================= */
-
-.video-3d {
-
-    max-width: 850px;
-
-    margin: auto;
-
-    padding: 15px;
-
-    border-radius: 25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #101a35,
-            #080d20
-        );
-
-    border:
-        2px solid #00d9ff;
-
-    box-shadow:
-        0 0 20px rgba(0, 217, 255, 0.35),
-        0 20px 50px rgba(0, 0, 0, 0.5);
-
-    transform:
-        perspective(1000px)
-        rotateX(3deg)
-        rotateY(-2d<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>Vinay | Biography</title>
-
-<style>
-
-/* =========================
-   BASIC RESET
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #050816;
-    color: white;
-    overflow-x: hidden;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    padding: 15px 6%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 20px;
-
-    background: rgba(5, 8, 22, 0.75);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border-bottom:
-        1px solid rgba(0, 217, 255, 0.25);
-
-    box-shadow:
-        0 5px 30px rgba(0, 217, 255, 0.08);
-
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-
-    color: #00d9ff;
-
-    text-shadow:
-        0 0 15px #00d9ff;
-}
-
-nav a {
-    position: relative;
-
-    color: white;
-    text-decoration: none;
-
-    margin-left: 12px;
-
-    font-size: 14px;
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-nav a::after {
-    content: "";
-
-    position: absolute;
-
-    left: 50%;
-    bottom: -6px;
-
-    width: 0;
-    height: 2px;
-
-    background: #00d9ff;
-
-    box-shadow:
-        0 0 10px #00d9ff;
-
-    transform:
-        translateX(-50%);
-
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #00d9ff;
-
-    text-shadow:
-        0 0 10px #00d9ff;
-}
-
-nav a:hover::after {
-    width: 80%;
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-    min-height: 100vh;
-    padding: 110px 8%;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    position: relative;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
 
     overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 20% 30%,
-            #123c66,
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 80% 70%,
-            #30145e,
-            transparent 30%
-        ),
-
-        #050816;
-}
-
-.hero-content {
-    position: relative;
-
-    z-index: 3;
-
-    width: 100%;
-    max-width: 1100px;
-}
-
-.hero h1 {
-    font-size:
-        clamp(45px, 10vw, 90px);
-
-    margin-bottom: 15px;
-}
-
-.hero h1 span {
-    color: #00d9ff;
-
-    text-shadow:
-        0 0 30px #00d9ff;
 }
 
 
 /* =========================
-   FUTURISTIC GRID
+   ANIMATED RED LIGHT LINE
 ========================= */
 
-.hero::after {
+.face::before {
+
     content: "";
 
     position: absolute;
 
-    inset: 0;
+    width: 160%;
+    height: 3px;
 
-    background-image:
+    left: -180%;
+    top: 50%;
 
-        linear-gradient(
-            rgba(0, 217, 255, 0.06) 1px,
-            transparent 1px
-        ),
-
+    background:
         linear-gradient(
             90deg,
-            rgba(0, 217, 255, 0.06) 1px,
-            transparent 1px
+            transparent,
+            #ff0000,
+            #ffffff,
+            #ff0000,
+            transparent
         );
 
-    background-size:
-        45px 45px;
+    box-shadow:
+        0 0 8px #ff0000,
+        0 0 20px #ff0000;
 
     animation:
-        gridMove 12s linear infinite;
-
-    pointer-events: none;
-
-    z-index: 0;
+        redLine 2.2s linear infinite;
 }
 
-@keyframes gridMove {
 
-    from {
-        transform:
-            translate(0, 0);
-    }
+/* Second animated line */
 
-    to {
-        transform:
-            translate(45px, 45px);
-    }
+.face::after {
 
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 160%;
+
+    left: 50%;
+    top: -180%;
+
+    background:
+        linear-gradient(
+            180deg,
+            transparent,
+            #ff0000,
+            #ffffff,
+            #ff0000,
+            transparent
+        );
+
+    box-shadow:
+        0 0 8px #ff0000,
+        0 0 20px #ff0000;
+
+    animation:
+        redVerticalLine 2.7s linear infinite;
 }
 
 
 /* =========================
-   RED 3D CUBE
+   CUBE SIDES
 ========================= */
 
-.cube {
-
-    width: 100px;
-    height: 100px;
-
-    margin:
-        0 auto 40px;
-
-    position: relative;
-
-    transform-style:
-        preserve-3d;
-
-    perspective:
-        1000px;
-
-    animation:
-        rotateCube 8s infinite linear;
-
-    filter:
-        drop-shadow(
-            0 0 12px #ff0000
-        )
-        drop-shadow(
-            0 0 30px rgba(255, 0, 0, 0.7)
-        );
-}
-
-.face {
-
-    position: absolute;
-
-    width: 100px;
-    height: 100px;
-
-    border:
-        2px solid #ff2020;
-
-    background:
-        rgba(255, 0, 0, 0.04);
-
-    box-shadow:
-        inset 0 0 15px
-        rgba(255, 0, 0, 0.35),
-
-        0 0 12px
-        rgba(255, 0, 0, 0.8);
-
-    animation:
-        cubeLineGlow 1.5s
-        ease-in-out infinite alternate;
-}
-
 .front {
+
     transform:
-        translateZ(50px);
+        translateZ(57.5px);
 }
 
 .back {
+
     transform:
         rotateY(180deg)
-        translateZ(50px);
+        translateZ(57.5px);
 }
 
 .right {
+
     transform:
         rotateY(90deg)
-        translateZ(50px);
+        translateZ(57.5px);
 }
 
 .left {
+
     transform:
         rotateY(-90deg)
-        translateZ(50px);
+        translateZ(57.5px);
 }
 
 .top {
+
     transform:
         rotateX(90deg)
-        translateZ(50px);
+        translateZ(57.5px);
 }
 
 .bottom {
+
     transform:
         rotateX(-90deg)
-        translateZ(50px);
+        translateZ(57.5px);
 }
 
 
-/* RED ANIMATED CUBE LINES */
+/* =========================
+   CUBE ROTATION
+========================= */
 
-@keyframes cubeLineGlow {
-
-    0% {
-
-        border-color:
-            #ff0000;
-
-        box-shadow:
-            inset 0 0 10px
-            rgba(255, 0, 0, 0.2),
-
-            0 0 8px
-            rgba(255, 0, 0, 0.5);
-    }
-
-    50% {
-
-        border-color:
-            #ff4d4d;
-
-        box-shadow:
-            inset 0 0 20px
-            rgba(255, 0, 0, 0.5),
-
-            0 0 20px
-            rgba(255, 0, 0, 1);
-    }
-
-    100% {
-
-        border-color:
-            #ff0000;
-
-        box-shadow:
-            inset 0 0 10px
-            rgba(255, 0, 0, 0.25),
-
-            0 0 12px
-            rgba(255, 0, 0, 0.7);
-    }
-
-}
-
-
-/* 3D ROTATION */
-
-@keyframes rotateCube {
+@keyframes cubeRotate {
 
     0% {
 
@@ -2038,6 +456,75 @@ section {
             rotateX(360deg)
             rotateY(360deg)
             rotateZ(0deg);
+    }
+
+}
+
+
+/* =========================
+   RED LIGHT LINE ANIMATION
+========================= */
+
+@keyframes redLine {
+
+    0% {
+        left: -180%;
+    }
+
+    50% {
+        left: 40%;
+    }
+
+    100% {
+        left: 180%;
+    }
+
+}
+
+@keyframes redVerticalLine {
+
+    0% {
+        top: -180%;
+    }
+
+    50% {
+        top: 40%;
+    }
+
+    100% {
+        top: 180%;
+    }
+
+}
+
+
+/* =========================
+   CUBE PULSE
+========================= */
+
+.cube {
+
+    animation:
+        cubeRotate 7s linear infinite,
+        cubeGlow 1.8s ease-in-out infinite alternate;
+}
+
+@keyframes cubeGlow {
+
+    from {
+
+        filter:
+            drop-shadow(0 0 5px #ff0000)
+            drop-shadow(0 0 15px #ff0000)
+            drop-shadow(0 0 25px rgba(255, 0, 0, 0.5));
+    }
+
+    to {
+
+        filter:
+            drop-shadow(0 0 12px #ff0000)
+            drop-shadow(0 0 30px #ff0000)
+            drop-shadow(0 0 60px rgba(255, 0, 0, 0.9));
     }
 
 }
@@ -2304,12 +791,14 @@ section {
 @keyframes profileFloat {
 
     0%, 100% {
+
         transform:
             translateY(0)
             rotateY(0deg);
     }
 
     50% {
+
         transform:
             translateY(-10px)
             rotateY(4deg);
@@ -2818,410 +1307,22 @@ section {
 
 
 /* =========================
-   FOOTER
-========================= */
-
-footer {
-
-    padding:
-        60px 20px 30px;
-
-    text-align:
-        center;
-
-    background:
-        #02040c;
-
-    border-top:
-        1px solid
-        rgba(0, 217, 255, 0.2);
-
-    box-shadow:
-        0 -10px 40px
-        rgba(0, 217, 255, 0.05);
-}
-
-.footer-content h2 {
-
-    color:
-        #00d9ff;
-
-    font-size:
-        30px;
-
-    margin-bottom:
-        10px;
-
-    text-shadow:
-        0 0 20px #00d9ff;
-}
-
-.footer-content p {
-
-    color:
-        #8fa1b8;
-}
-
-.social-buttons {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    gap:
-        15px;
-
-    margin:
-        25px 0;
-}
-
-.social {
-
-    width:
-        45px;
-
-    height:
-        45px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    border:
-        1px solid #00d9ff;
-
-    border-radius:
-        50%;
-
-    color:
-        #00d9ff;
-
-    text-decoration:
-        none;
-
-    font-weight:
-        bold;
-
-    transition:
-        0.4s;
-
-    box-shadow:
-        0 0 10px
-        rgba(0, 217, 255, 0.2);
-}
-
-.social:hover {
-
-    background:
-        #00d9ff;
-
-    color:
-        #02040c;
-
-    transform:
-        translateY(-7px)
-        rotate(10deg);
-
-    box-shadow:
-        0 0 15px #00d9ff,
-        0 0 35px #00d9ff;
-}
-
-.copyright {
-
-    margin-top:
-        20px;
-
-    font-size:
-        13px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 700px) {
-
-    nav {
-
-        padding:
-            12px 3%;
-
-        gap:
-            8px;
-    }
-
-    .logo {
-        font-size:
-            19px;
-    }
-
-    nav > div:last-child {
-
-        display:
-            flex;
-
-        flex-wrap:
-            wrap;
-
-        justify-content:
-            center;
-
-        gap:
-            3px;
-    }
-
-    nav a {
-
-        margin-left:
-            3px;
-
-        font-size:
-            10px;
-
-        padding:
-            5px;
-    }
-
-    section {
-
-        padding:
-            100px 5% 70px;
-    }
-
-    .hero h1 {
-
-        font-size:
-            clamp(
-                38px,
-                12vw,
-                60px
-            );
-    }
-
-    .typing-text {
-
-        font-size:
-            17px;
-    }
-
-    .cube {
-
-        width:
-            75px;
-
-        height:
-            75px;
-
-        margin-bottom:
-            25px;
-    }
-
-    .face {
-
-        width:
-            75px;
-
-        height:
-            75px;
-    }
-
-    .front {
-
-        transform:
-            translateZ(37.5px);
-    }
-
-    .back {
-
-        transform:
-            rotateY(180deg)
-            translateZ(37.5px);
-    }
-
-    .right {
-
-        transform:
-            rotateY(90deg)
-            translateZ(37.5px);
-    }
-
-    .left {
-
-        transform:
-            rotateY(-90deg)
-            translateZ(37.5px);
-    }
-
-    .top {
-
-        transform:
-            rotateX(90deg)
-            translateZ(37.5px);
-    }
-
-    .bottom {
-
-        transform:
-            rotateX(-90deg)
-            translateZ(37.5px);
-    }
-
-    .profile-wrapper {
-
-        width:
-            240px;
-
-        height:
-            240px;
-    }
-
-    .profile-photo {
-
-        width:
-            155px;
-
-        height:
-            155px;
-    }
-
-    .orbit-1 {
-
-        width:
-            185px;
-
-        height:
-            185px;
-    }
-
-    .orbit-2 {
-
-        width:
-            210px;
-
-        height:
-            210px;
-    }
-
-    .orbit-3 {
-
-        width:
-            235px;
-
-        height:
-            235px;
-    }
-
-    .title {
-
-        font-size:
-            32px;
-    }
-
-    .about-box {
-
-        padding:
-            25px;
-    }
-
-    .about-box p {
-
-        font-size:
-            16px;
-    }
-
-}
-
-
-/* =========================
-   BACKGROUND ANIMATION
-========================= */
-
-.hero::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    width:
-        500px;
-
-    height:
-        500px;
-
-    border-radius:
-        50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(
-                0,
-                255,
-                255,
-                0.12
-            ),
-            transparent 70%
-        );
-
-    top:
-        10%;
-
-    left:
-        -15%;
-
-    animation:
-        backgroundMove
-        8s ease-in-out
-        infinite alternate;
-
-    pointer-events:
-        none;
-}
-
-@keyframes backgroundMove {
-
-    from {
-
-        transform:
-            translate(0, 0);
-    }
-
-    to {
-
-        transform:
-            translate(
-                120px,
-                80px
-            );
-    }
-
-}
-
-
-/* =========================
    3D VIDEO
 ========================= */
 
 .video-3d {
 
-    max-width: 850px;
+    max-width:
+        850px;
 
-    margin: auto;
+    margin:
+        auto;
 
-    padding: 15px;
+    padding:
+        15px;
 
-    border-radius: 25px;
+    border-radius:
+        25px;
 
     background:
         linear-gradient(
@@ -3245,7 +1346,8 @@ footer {
     transition:
         0.5s;
 
-    overflow: hidden;
+    overflow:
+        hidden;
 }
 
 .video-3d:hover {
@@ -3263,13 +1365,416 @@ footer {
 
 .video-3d video {
 
-    width: 100%;
+    width:
+        100%;
 
-    display: block;
+    display:
+        block;
 
-    border-radius: 15px;
+    border-radius:
+        15px;
 
-    background: #000;
+    background:
+        #000;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    padding:
+        60px 20px 30px;
+
+    text-align:
+        center;
+
+    background:
+        #02040c;
+
+    border-top:
+        1px solid
+        rgba(0, 217, 255, 0.2);
+
+    box-shadow:
+        0 -10px 40px
+        rgba(0, 217, 255, 0.05);
+}
+
+.footer-content h2 {
+
+    color:
+        #00d9ff;
+
+    font-size:
+        30px;
+
+    margin-bottom:
+        10px;
+
+    text-shadow:
+        0 0 20px #00d9ff;
+}
+
+.footer-content p {
+
+    color:
+        #8fa1b8;
+}
+
+.social-buttons {
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    gap:
+        15px;
+
+    margin:
+        25px 0;
+}
+
+.social {
+
+    width:
+        45px;
+
+    height:
+        45px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid #00d9ff;
+
+    border-radius:
+        50%;
+
+    color:
+        #00d9ff;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        bold;
+
+    transition:
+        0.4s;
+
+    box-shadow:
+        0 0 10px
+        rgba(0, 217, 255, 0.2);
+}
+
+.social:hover {
+
+    background:
+        #00d9ff;
+
+    color:
+        #02040c;
+
+    transform:
+        translateY(-7px)
+        rotate(10deg);
+
+    box-shadow:
+        0 0 15px #00d9ff,
+        0 0 35px #00d9ff;
+}
+
+.copyright {
+
+    margin-top:
+        20px;
+
+    font-size:
+        13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    nav {
+
+        padding:
+            12px 3%;
+
+        gap:
+            8px;
+    }
+
+    .logo {
+
+        font-size:
+            19px;
+    }
+
+    nav > div:last-child {
+
+        display:
+            flex;
+
+        flex-wrap:
+            wrap;
+
+        justify-content:
+            center;
+
+        gap:
+            3px;
+    }
+
+    nav a {
+
+        margin-left:
+            3px;
+
+        font-size:
+            10px;
+
+        padding:
+            5px;
+    }
+
+    section {
+
+        padding:
+            100px 5% 70px;
+    }
+
+    .hero h1 {
+
+        font-size:
+            clamp(
+                38px,
+                12vw,
+                60px
+            );
+    }
+
+    .typing-text {
+
+        font-size:
+            17px;
+    }
+
+
+    /* =========================
+       MOBILE RED CUBE
+    ========================= */
+
+    .cube {
+
+        width:
+            80px;
+
+        height:
+            80px;
+
+        margin-bottom:
+            35px;
+    }
+
+    .face {
+
+        width:
+            80px;
+
+        height:
+            80px;
+    }
+
+    .front {
+
+        transform:
+            translateZ(40px);
+    }
+
+    .back {
+
+        transform:
+            rotateY(180deg)
+            translateZ(40px);
+    }
+
+    .right {
+
+        transform:
+            rotateY(90deg)
+            translateZ(40px);
+    }
+
+    .left {
+
+        transform:
+            rotateY(-90deg)
+            translateZ(40px);
+    }
+
+    .top {
+
+        transform:
+            rotateX(90deg)
+            translateZ(40px);
+    }
+
+    .bottom {
+
+        transform:
+            rotateX(-90deg)
+            translateZ(40px);
+    }
+
+
+    .profile-wrapper {
+
+        width:
+            240px;
+
+        height:
+            240px;
+    }
+
+    .profile-photo {
+
+        width:
+            155px;
+
+        height:
+            155px;
+    }
+
+    .orbit-1 {
+
+        width:
+            185px;
+
+        height:
+            185px;
+    }
+
+    .orbit-2 {
+
+        width:
+            210px;
+
+        height:
+            210px;
+    }
+
+    .orbit-3 {
+
+        width:
+            235px;
+
+        height:
+            235px;
+    }
+
+    .title {
+
+        font-size:
+            32px;
+    }
+
+    .about-box {
+
+        padding:
+            25px;
+    }
+
+    .about-box p {
+
+        font-size:
+            16px;
+    }
+
+}
+
+
+/* =========================
+   BACKGROUND ANIMATION
+========================= */
+
+.hero::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    width:
+        500px;
+
+    height:
+        500px;
+
+    border-radius:
+        50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(
+                0,
+                255,
+                255,
+                0.12
+            ),
+            transparent 70%
+        );
+
+    top:
+        10%;
+
+    left:
+        -15%;
+
+    animation:
+        backgroundMove
+        8s ease-in-out
+        infinite alternate;
+
+    pointer-events:
+        none;
+}
+
+@keyframes backgroundMove {
+
+    from {
+
+        transform:
+            translate(0, 0);
+    }
+
+    to {
+
+        transform:
+            translate(
+                120px,
+                80px
+            );
+    }
+
 }
 
 </style>
@@ -3346,15 +1851,20 @@ footer {
     <div class="hero-content">
 
 
-        <!-- RED 3D CUBE -->
+        <!-- 🔴 RED 3D CUBE -->
 
         <div class="cube">
 
             <div class="face front"></div>
+
             <div class="face back"></div>
+
             <div class="face right"></div>
+
             <div class="face left"></div>
+
             <div class="face top"></div>
+
             <div class="face bottom"></div>
 
         </div>
@@ -3498,15 +2008,28 @@ footer {
 <section>
 
     <h2 class="title">
+
         My
         <span>Media</span>
+
     </h2>
+
 
     <div class="video-3d">
 
-        <video controls autoplay muted loop playsinline>
-            <source src="84705-586995495.mp4" type="video/mp4">
+        <video
+            controls
+            autoplay
+            muted
+            loop
+            playsinline>
+
+            <source
+                src="84705-586995495.mp4"
+                type="video/mp4">
+
             Your browser does not support video.
+
         </video>
 
     </div>
