@@ -1,1 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Vinay | Learning Journey</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+    <style>
+
+        /* =========================
+           LEARN PAGE
+        ========================= */
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .learn-page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .learn-hero {
+            text-align: center;
+            margin-bottom: 70px;
+
+            animation: heroEnter 1s ease forwards;
+        }
+
+        @keyframes heroEnter {
+
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        .learn-icon {
+
+            width: 100px;
+            height: 100px;
+
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 50px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            border:
+                1px solid rgba(255,255,255,0.15);
+
+            box-shadow:
+                0 0 35px rgba(0,217,255,0.25);
+
+            animation:
+                floating 3s ease-in-out infinite;
+        }
+
+
+        @keyframes floating {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+
+        }
+
+
+        .learn-hero h1 {
+
+            font-size: 50px;
+
+            margin:
+                25px 0 10px;
+        }
+
+
+        .learn-hero h1 span {
+            color: #00d9ff;
+        }
+
+
+        .learn-hero p {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #b8c1d1;
+
+            line-height: 1.7;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .section-title p {
+
+            color: #9fa8b8;
+        }
+
+
+        /* =========================
+           LEARNING CARDS
+        ========================= */
+
+        .learning-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            margin-bottom: 80px;
+        }
+
+
+        .learning-card {
+
+            position: relative;
+
+            padding: 30px 25px;
+
+            min-height: 240px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.11),
+                    rgba(255,255,255,0.035)
+                );
+
+            border:
+                1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter:
+                blur(12px);
+
+            overflow: hidden;
+
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+
+            animation:
+                cardEnter 0.8s ease both;
+        }
+
+
+        .learning-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .learning-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .learning-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+
+        @keyframes cardEnter {
+
+            from {
+                opacity: 0;
+                transform:
+                    translateY(40px)
+                    scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+
+        .learning-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+            height: 130px;
+
+            border-radius: 50%;
+
+            background: #00d9ff;
+
+            filter: blur(75px);
+
+            opacity: 0;
+
+            right: -50px;
+            top: -50px;
+
+            transition:
+                opacity 0.4s ease;
+        }
+
+
+        .learning-card:hover {
+
+            transform:
+                translateY(-12px)
+                rotateX(3deg)
+                rotateY(-3deg);
+
+            border-color:
+                rgba(0,217,255,0.45);
+
+            box-shadow:
+                0 25px 55px rgba(0,0,0,0.35),
+                0 0 25px rgba(0,217,255,0.12);
+        }
+
+
+        .learning-card:hover::before {
+            opacity: 0.18;
+        }
+
+
+        .learning-icon {
+
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 18px;
+
+            font-size: 32px;
+
+            background:
+                rgba(255,255,255,0.08);
+
+            margin-bottom: 20px;
+
+            transition:
+                transform 0.4s ease;
+        }
+
+
+        .learning-card:hover
+        .learning-icon {
+
+            transform:
+                scale(1.15)
+                rotate(-6deg);
+        }
+
+
+        .learning-card h3 {
+
+            font-size: 23px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .learning-card p {
+
+            color: #b8c1d1;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           JOURNEY TIMELINE
+        ========================= */
+
+        .journey {
+
+            position: relative;
+
+            max-width: 850px;
+
+            margin:
+                0 auto 70px;
+        }
+
+
+        .journey::before {
+
+            content: "";
+
+            position: absolute;
+
+            left: 25px;
+
+            top: 0;
+            bottom: 0;
+
+            width: 2px;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    transparent,
+                    #00d9ff,
+                    transparent
+                );
+        }
+
+
+        .journey-item {
+
+            position: relative;
+
+            padding-left: 75px;
+
+            margin-bottom: 45px;
+
+            animation:
+                journeyAppear 1s ease both;
+        }
+
+
+        .journey-item:nth-child(1) {
+            animation-delay: 0.3s;
+        }
+
+        .journey-item:nth-child(2) {
+            animation-delay: 0.6s;
+        }
+
+        .journey-item:nth-child(3) {
+            animation-delay: 0.9s;
+        }
+
+
+        @keyframes journeyAppear {
+
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+        }
+
+
+        .journey-dot {
+
+            position: absolute;
+
+            left: 10px;
+
+            top: 5px;
+
+            width: 32px;
+            height: 32px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #07101f;
+
+            border:
+                2px solid #00d9ff;
+
+            box-shadow:
+                0 0 18px
+                rgba(0,217,255,0.45);
+
+            font-size: 14px;
+        }
+
+
+        .journey-item h3 {
+
+            color: #00d9ff;
+
+            margin-bottom: 8px;
+        }
+
+
+        .journey-item p {
+
+            color: #b8c1d1;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           GOAL BOX
+        ========================= */
+
+        .learning-goal {
+
+            text-align: center;
+
+            padding: 45px 25px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,217,255,0.12),
+                    rgba(255,255,255,0.04)
+                );
+
+            border:
+                1px solid rgba(0,217,255,0.2);
+
+            box-shadow:
+                0 20px 50px
+                rgba(0,0,0,0.25);
+
+            animation:
+                pulseBox 4s ease-in-out infinite;
+        }
+
+
+        @keyframes pulseBox {
+
+            0%,100% {
+                box-shadow:
+                    0 20px 50px
+                    rgba(0,0,0,0.25);
+            }
+
+            50% {
+                box-shadow:
+                    0 20px 55px
+                    rgba(0,217,255,0.12);
+            }
+
+        }
+
+
+        .learning-goal h2 {
+
+            font-size: 30px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .learning-goal p {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #b8c1d1;
+
+            line-height: 1.8;
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-button {
+
+            display: block;
+
+            width: fit-content;
+
+            margin:
+                45px auto 0;
+
+            padding:
+                12px 25px;
+
+            border-radius: 30px;
+
+            text-decoration: none;
+
+            color: white;
+
+            border:
+                1px solid rgba(255,255,255,0.15);
+
+            background:
+                rgba(255,255,255,0.06);
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .back-button:hover {
+
+            transform:
+                translateY(-4px);
+
+            background:
+                rgba(0,217,255,0.12);
+
+            border-color:
+                #00d9ff;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            .learn-page {
+                padding: 55px 18px;
+            }
+
+            .learn-hero h1 {
+                font-size: 38px;
+            }
+
+            .learning-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .journey::before {
+                left: 18px;
+            }
+
+            .journey-item {
+                padding-left: 55px;
+            }
+
+            .journey-dot {
+                left: 3px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="about.html">About</a>
+
+    <a href="education.html">Education</a>
+
+    <a href="skills.html">Skills</a>
+
+    <a href="projects.html">Projects</a>
+
+    <a href="achievements.html">Achievements</a>
+
+    <a href="resume.html">Resume</a>
+
+    <a href="contact.html">Contact</a>
+
+</nav>
+
+
+
+<main class="learn-page">
+
+
+    <!-- HERO -->
+
+    <section class="learn-hero">
+
+        <div class="learn-icon">
+            💡
+        </div>
+
+        <h1>
+            My <span>Learning Journey</span>
+        </h1>
+
+        <p>
+            Explore my learning journey, technologies,
+            programming concepts and the skills I'm
+            developing step by step.
+        </p>
+
+    </section>
+
+
+
+    <!-- TECHNOLOGIES -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                What I'm Learning
+            </h2>
+
+            <p>
+                Building my technical foundation one step at a time.
+            </p>
+
+        </div>
+
+
+        <div class="learning-grid">
+
+
+            <div class="learning-card">
+
+                <div class="learning-icon">
+                    ☕
+                </div>
+
+                <h3>
+                    Java
+                </h3>
+
+                <p>
+                    Learning Java programming from the fundamentals,
+                    including syntax, variables, operators,
+                    conditions, loops and object-oriented concepts.
+                </p>
+
+            </div>
+
+
+
+            <div class="learning-card">
+
+                <div class="learning-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Web Development
+                </h3>
+
+                <p>
+                    Exploring HTML, CSS and JavaScript while
+                    developing modern, responsive and interactive
+                    websites.
+                </p>
+
+            </div>
+
+
+
+            <div class="learning-card">
+
+                <div class="learning-icon">
+                    📊
+                </div>
+
+                <h3>
+                    Data Science
+                </h3>
+
+                <p>
+                    Building a foundation in programming, data,
+                    analytical thinking and technologies related
+                    to Data Science.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- JOURNEY -->
+
+    <section>
+
+        <div class="section-title">
+
+            <h2>
+                My Journey
+            </h2>
+
+            <p>
+                Learning. Practicing. Improving.
+            </p>
+
+        </div>
+
+
+        <div class="journey">
+
+
+            <div class="journey-item">
+
+                <div class="journey-dot">
+                    01
+                </div>
+
+                <h3>
+                    Start With Fundamentals
+                </h3>
+
+                <p>
+                    Understanding programming basics, logic,
+                    variables, operators, conditions and loops
+                    to build a strong foundation.
+                </p>
+
+            </div>
+
+
+
+            <div class="journey-item">
+
+                <div class="journey-dot">
+                    02
+                </div>
+
+                <h3>
+                    Practice Through Projects
+                </h3>
+
+                <p>
+                    Applying what I learn by creating websites,
+                    programming exercises and practical projects.
+                </p>
+
+            </div>
+
+
+
+            <div class="journey-item">
+
+                <div class="journey-dot">
+                    03
+                </div>
+
+                <h3>
+                    Keep Improving
+                </h3>
+
+                <p>
+                    Exploring new technologies, improving my
+                    problem-solving skills and continuously
+                    expanding my technical knowledge.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- GOAL -->
+
+    <section class="learning-goal">
+
+        <h2>
+            🎯 My Learning Goal
+        </h2>
+
+        <p>
+            My goal is to become a skilled technology professional
+            by continuously learning, practicing and building
+            meaningful projects. I believe every new concept
+            I learn is another step toward my future.
+        </p>
+
+    </section>
+
+
+
+    <!-- BACK -->
+
+    <a href="about.html"
+       class="back-button">
+
+        ← Back to About
+
+    </a>
+
+
+</main>
+
+
+</body>
+
+</html>
