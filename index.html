@@ -1501,6 +1501,68 @@ footer {
     }
 
 }
+      /* =========================
+   3D VIDEO
+========================= */
+
+.video-3d {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 15px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #101a35,
+            #080d20
+        );
+
+    border:
+        2px solid #00d9ff;
+
+    box-shadow:
+        0 0 20px rgba(0, 217, 255, 0.35),
+        0 20px 50px rgba(0, 0, 0, 0.5);
+
+    transform:
+        perspective(1000px)
+        rotateX(3deg)
+        rotateY(-2deg);
+
+    transition:
+        0.5s;
+
+    overflow: hidden;
+}
+
+.video-3d:hover {
+
+    transform:
+        perspective(1000px)
+        rotateX(0deg)
+        rotateY(0deg)
+        scale(1.02);
+
+    box-shadow:
+        0 0 25px #00d9ff,
+        0 0 60px rgba(0, 217, 255, 0.3);
+}
+
+.video-3d video {
+
+    width: 100%;
+
+    display: block;
+
+    border-radius: 15px;
+
+    background: #000;
+}
 
 </style>
 
@@ -1728,29 +1790,16 @@ footer {
 <section>
 
     <h2 class="title">
-
         My
         <span>Media</span>
-
     </h2>
 
+    <div class="video-3d">
 
-    <div class="video-box">
-
-        <div>
-
-            <h3>
-                🎬 3D & Video Showcase
-            </h3>
-
-            <p>
-
-                Your videos, animations and future
-                3D projects will appear here.
-
-            </p>
-
-        </div>
+        <video controls autoplay muted loop playsinline>
+            <source src="84705-586995495.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
 
     </div>
 
