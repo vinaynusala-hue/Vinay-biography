@@ -3,851 +3,927 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<title>Vinay | Create & Build</title>
+    <title>Vinay | Create</title>
 
-<link rel="stylesheet" href="style.css">
+    <style>
 
-<style>
+        /* =========================
+           BASIC RESET
+        ========================= */
 
-/* =========================
-   BASIC
-========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-body {
-    margin: 0 !important;
-    padding: 0 !important;
+        body {
+            font-family: Arial, sans-serif;
+            background: #000000 !important;
+            color: white !important;
+            overflow-x: hidden;
+        }
 
-    background: #000 !important;
-    color: #fff !important;
+        /* Hide normal navigation if style.css affects it */
+        nav {
+            display: none !important;
+        }
 
-    overflow-x: hidden;
-}
 
+        /* =========================
+           ANIMATED BACKGROUND
+        ========================= */
 
-/* =========================
-   MAIN
-========================= */
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
 
-.create-page {
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(0, 217, 255, 0.20),
+                    transparent 70%
+                );
 
-    max-width: 1050px;
+            top: -180px;
+            left: -150px;
 
-    margin: auto;
+            animation: moveGlow 8s infinite alternate;
 
-    padding: 55px 20px 60px;
+            pointer-events: none;
+            z-index: -2;
+        }
 
-}
+        body::after {
+            content: "";
+            position: fixed;
+            width: 450px;
+            height: 450px;
 
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(120, 0, 255, 0.18),
+                    transparent 70%
+                );
 
-/* =========================
-   HERO
-========================= */
+            right: -150px;
+            bottom: -150px;
 
-.create-hero {
+            animation: moveGlow2 10s infinite alternate;
 
-    text-align: center;
+            pointer-events: none;
+            z-index: -2;
+        }
 
-    padding: 20px 0 80px;
+        @keyframes moveGlow {
 
-    animation: fadeUp 1s ease forwards;
-}
+            from {
+                transform: translate(0, 0);
+            }
 
+            to {
+                transform: translate(180px, 150px);
+            }
 
-.create-icon {
+        }
 
-    width: 110px;
-    height: 110px;
+        @keyframes moveGlow2 {
 
-    margin: 0 auto 30px;
+            from {
+                transform: translate(0, 0);
+            }
 
-    display: flex;
+            to {
+                transform: translate(-150px, -130px);
+            }
 
-    align-items: center;
-    justify-content: center;
+        }
 
-    font-size: 55px;
 
-    border-radius: 50%;
+        /* =========================
+           BACK BUTTON
+        ========================= */
 
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,217,255,0.15),
-            rgba(0,217,255,0.02)
-        );
+        .back-button {
 
-    border: 1px solid
-        rgba(0,217,255,0.5);
+            position: fixed;
 
-    box-shadow:
-        0 0 20px rgba(0,217,255,0.15),
-        0 0 60px rgba(0,217,255,0.08);
+            top: 20px;
+            left: 20px;
 
-    animation: floating 3s ease-in-out infinite;
-}
+            z-index: 99999;
 
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-@keyframes floating {
+            padding: 13px 22px;
 
-    0%,100% {
-        transform: translateY(0);
-    }
+            border-radius: 50px;
 
-    50% {
-        transform: translateY(-14px);
-    }
+            text-decoration: none !important;
 
-}
+            color: white !important;
 
+            background:
+                rgba(0, 217, 255, 0.12);
 
-.create-hero h1 {
+            border: 1px solid #00d9ff;
 
-    margin: 0 0 20px;
+            font-size: 15px;
+            font-weight: bold;
 
-    font-size:
-        clamp(40px, 8vw, 62px);
+            box-shadow:
+                0 0 15px rgba(0, 217, 255, 0.25);
 
-    line-height: 1.2;
+            backdrop-filter: blur(10px);
 
-}
+            transition:
+                0.3s ease;
+        }
 
+        .back-button:hover {
 
-.create-hero h1 span {
+            transform: translateY(-3px);
 
-    color: #00d9ff;
+            background:
+                rgba(0, 217, 255, 0.25);
 
-    text-shadow:
-        0 0 25px
-        rgba(0,217,255,0.45);
-}
+            box-shadow:
+                0 0 30px rgba(0, 217, 255, 0.60);
+        }
 
 
-.create-hero p {
+        /* =========================
+           MAIN PAGE
+        ========================= */
 
-    max-width: 780px;
+        .create-page {
 
-    margin: auto;
+            max-width: 1100px;
 
-    color: #aeb8c8;
+            margin: auto;
 
-    font-size: 17px;
+            padding:
+                110px 20px 80px;
+        }
 
-    line-height: 1.9;
-}
 
+        /* =========================
+           HERO
+        ========================= */
 
-/* =========================
-   ANIMATION
-========================= */
+        .hero {
 
-@keyframes fadeUp {
+            text-align: center;
 
-    from {
-        opacity: 0;
-        transform: translateY(35px);
-    }
+            padding:
+                40px 20px 70px;
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+            animation:
+                fadeDown 1s ease;
+        }
 
-}
+        .hero-icon {
 
+            font-size: 70px;
 
-/* =========================
-   SECTIONS
-========================= */
+            margin-bottom: 20px;
 
-.create-section {
+            animation:
+                floatIcon 3s infinite ease-in-out;
 
-    margin-bottom: 85px;
+            filter:
+                drop-shadow(
+                    0 0 20px
+                    rgba(0,217,255,0.7)
+                );
+        }
 
-    animation:
-        fadeUp 0.9s ease both;
-}
+        .hero h1 {
 
+            font-size: clamp(42px, 8vw, 75px);
 
-.section-title {
+            margin-bottom: 15px;
 
-    margin-bottom: 30px;
-}
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #00d9ff,
+                    #9d4edd,
+                    #ffffff
+                );
 
+            background-size: 300%;
 
-.section-title h2 {
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
 
-    margin: 0 0 10px;
+            animation:
+                gradientMove 5s infinite linear;
+        }
 
-    font-size: 31px;
-}
+        .hero h1 span {
+            color: #00d9ff;
+        }
 
+        .hero p {
 
-.section-title h2 span {
+            max-width: 750px;
 
-    color: #00d9ff;
-}
+            margin: auto;
 
+            line-height: 1.8;
 
-.section-title p {
+            color: #bfc7d5;
 
-    margin: 0;
+            font-size: 18px;
+        }
 
-    color: #8994a6;
+        @keyframes fadeDown {
 
-    line-height: 1.7;
-}
+            from {
+                opacity: 0;
+                transform: translateY(-40px);
+            }
 
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-/* =========================
-   TEXT CARD
-========================= */
+        }
 
-.text-card {
+        @keyframes floatIcon {
 
-    padding: 32px;
+            0%,100% {
+                transform: translateY(0);
+            }
 
-    border-radius: 22px;
+            50% {
+                transform: translateY(-15px);
+            }
 
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.07),
-            rgba(255,255,255,0.025)
-        );
+        }
 
-    border:
-        1px solid
-        rgba(255,255,255,0.12);
+        @keyframes gradientMove {
 
-    box-shadow:
-        0 20px 50px
-        rgba(0,0,0,0.4);
+            0% {
+                background-position: 0%;
+            }
 
-    transition: 0.4s ease;
-}
+            100% {
+                background-position: 300%;
+            }
 
+        }
 
-.text-card:hover {
 
-    transform: translateY(-6px);
+        /* =========================
+           SECTION
+        ========================= */
 
-    border-color:
-        rgba(0,217,255,0.45);
+        .create-section {
 
-    box-shadow:
-        0 25px 60px
-        rgba(0,217,255,0.08);
-}
+            margin-bottom: 65px;
 
+            height: auto !important;
+            min-height: 0 !important;
+        }
 
-.text-card p {
+        .section-title {
 
-    margin: 0 0 20px;
+            text-align: center;
 
-    color: #b8c1d1;
+            margin-bottom: 30px;
+        }
 
-    line-height: 1.9;
+        .section-title h2 {
 
-    font-size: 16px;
-}
+            font-size: 32px;
 
+            margin-bottom: 10px;
+        }
 
-.text-card p:last-child {
+        .section-title h2 span {
 
-    margin-bottom: 0;
-}
+            color: #00d9ff;
+        }
 
+        .section-title p {
 
-/* =========================
-   WHAT WE NEED
-========================= */
+            color: #929aaa;
 
-.needs-grid {
+            line-height: 1.6;
+        }
 
-    display: grid;
 
-    grid-template-columns:
-        repeat(2,1fr);
+        /* =========================
+           INFORMATION CARD
+        ========================= */
 
-    gap: 22px;
-}
+        .info-box {
 
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.02)
+                );
 
-.need-card {
+            border:
+                1px solid rgba(0,217,255,0.25);
 
-    padding: 28px;
+            border-radius: 22px;
 
-    border-radius: 20px;
+            padding: 35px;
 
-    background:
-        rgba(255,255,255,0.045);
+            backdrop-filter: blur(15px);
 
-    border:
-        1px solid
-        rgba(255,255,255,0.1);
+            box-shadow:
+                0 10px 40px
+                rgba(0,0,0,0.5);
 
-    transition:
-        transform 0.4s ease,
-        border-color 0.4s ease,
-        box-shadow 0.4s ease;
-}
+            transition:
+                0.4s ease;
 
+            animation:
+                cardAppear 1s ease;
+        }
 
-.need-card:hover {
+        .info-box:hover {
 
-    transform:
-        translateY(-9px);
+            transform: translateY(-7px);
 
-    border-color:
-        rgba(0,217,255,0.45);
+            border-color: #00d9ff;
 
-    box-shadow:
-        0 20px 45px
-        rgba(0,0,0,0.4);
-}
+            box-shadow:
+                0 15px 50px
+                rgba(0,217,255,0.15);
+        }
 
+        .info-box h3 {
 
-.need-icon {
+            color: #00d9ff;
 
-    font-size: 38px;
+            margin-bottom: 15px;
 
-    margin-bottom: 15px;
-}
+            font-size: 24px;
+        }
 
+        .info-box p {
 
-.need-card h3 {
+            color: #c5ccd7;
 
-    margin: 0 0 10px;
+            line-height: 1.8;
 
-    font-size: 21px;
-}
+            margin-bottom: 15px;
+        }
 
 
-.need-card p {
+        /* =========================
+           REQUIREMENTS GRID
+        ========================= */
 
-    margin: 0;
+        .cards {
 
-    color: #aeb8c8;
+            display: grid;
 
-    line-height: 1.7;
-}
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
 
+            gap: 20px;
+        }
 
-/* =========================
-   DEVELOPMENT WAYS
-========================= */
+        .card {
 
-.way-card {
+            padding: 28px;
 
-    display: flex;
+            border-radius: 20px;
 
-    gap: 22px;
+            background:
+                rgba(255,255,255,0.05);
 
-    margin-bottom: 20px;
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
 
-    padding: 28px;
+            backdrop-filter: blur(12px);
 
-    border-radius: 20px;
+            transition:
+                0.4s ease;
 
-    background:
-        linear-gradient(
-            120deg,
-            rgba(255,255,255,0.065),
-            rgba(255,255,255,0.02)
-        );
+            position: relative;
 
-    border:
-        1px solid
-        rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
 
-    transition: 0.4s ease;
-}
+        .card::before {
 
+            content: "";
 
-.way-card:hover {
+            position: absolute;
 
-    transform:
-        translateX(8px);
+            width: 100px;
+            height: 100px;
 
-    border-color:
-        rgba(0,217,255,0.45);
+            background:
+                rgba(0,217,255,0.15);
 
-    box-shadow:
-        0 20px 45px
-        rgba(0,0,0,0.4);
-}
+            border-radius: 50%;
 
+            top: -50px;
+            right: -50px;
 
-.way-number {
+            transition:
+                0.4s ease;
+        }
 
-    flex-shrink: 0;
+        .card:hover {
 
-    width: 48px;
-    height: 48px;
+            transform:
+                translateY(-10px)
+                scale(1.02);
 
-    display: flex;
+            border-color:
+                #00d9ff;
 
-    align-items: center;
-    justify-content: center;
+            box-shadow:
+                0 15px 40px
+                rgba(0,217,255,0.15);
+        }
 
-    border-radius: 50%;
+        .card:hover::before {
 
-    color: #00d9ff;
+            transform:
+                scale(2.5);
+        }
 
-    border:
-        2px solid #00d9ff;
+        .card-icon {
 
-    box-shadow:
-        0 0 18px
-        rgba(0,217,255,0.15);
+            font-size: 42px;
 
-    font-weight: bold;
-}
+            margin-bottom: 18px;
+        }
 
+        .card h3 {
 
-.way-card h3 {
+            margin-bottom: 12px;
 
-    margin: 0 0 10px;
+            font-size: 21px;
+        }
 
-    font-size: 21px;
-}
+        .card p {
 
+            color: #aeb6c3;
 
-.way-card p {
+            line-height: 1.6;
 
-    margin: 0;
+            font-size: 15px;
+        }
 
-    color: #aeb8c8;
 
-    line-height: 1.7;
-}
+        /* =========================
+           NUMBER STEPS
+        ========================= */
 
+        .steps {
 
-/* =========================
-   TECHNOLOGIES
-========================= */
+            display: grid;
 
-.tech-list {
+            grid-template-columns:
+                repeat(auto-fit, minmax(180px, 1fr));
 
-    display: grid;
+            gap: 20px;
+        }
 
-    grid-template-columns:
-        repeat(3,1fr);
+        .step {
 
-    gap: 20px;
-}
+            text-align: center;
 
+            padding: 30px 20px;
 
-.tech-card {
+            border-radius: 20px;
 
-    text-align: center;
+            background:
+                rgba(0,217,255,0.04);
 
-    padding: 30px 20px;
+            border:
+                1px solid
+                rgba(0,217,255,0.15);
 
-    border-radius: 20px;
+            transition:
+                0.4s ease;
+        }
 
-    background:
-        rgba(255,255,255,0.045);
+        .step:hover {
 
-    border:
-        1px solid
-        rgba(255,255,255,0.1);
+            transform:
+                translateY(-8px);
 
-    transition: 0.4s ease;
-}
+            background:
+                rgba(0,217,255,0.09);
 
+            box-shadow:
+                0 0 25px
+                rgba(0,217,255,0.12);
+        }
 
-.tech-card:hover {
+        .step-number {
 
-    transform:
-        translateY(-10px)
-        scale(1.02);
+            width: 55px;
+            height: 55px;
 
-    border-color:
-        #00d9ff;
+            margin:
+                0 auto 18px;
 
-    box-shadow:
-        0 0 30px
-        rgba(0,217,255,0.12);
-}
+            display: flex;
 
+            align-items: center;
+            justify-content: center;
 
-.tech-card .icon {
+            border-radius: 50%;
 
-    font-size: 43px;
+            background:
+                #00d9ff;
 
-    margin-bottom: 15px;
-}
+            color: #000;
 
+            font-size: 20px;
 
-.tech-card h3 {
+            font-weight: bold;
 
-    margin: 0 0 10px;
-}
+            box-shadow:
+                0 0 20px
+                rgba(0,217,255,0.5);
+        }
 
+        .step h3 {
 
-.tech-card p {
+            margin-bottom: 10px;
+        }
 
-    margin: 0;
+        .step p {
 
-    color: #aeb8c8;
+            color: #aeb6c3;
 
-    line-height: 1.6;
-}
+            line-height: 1.5;
 
+            font-size: 14px;
+        }
 
-/* =========================
-   WEBSITE PROCESS
-========================= */
 
-.process {
+        /* =========================
+           TECHNOLOGY BOX
+        ========================= */
 
-    padding: 30px;
+        .technology {
 
-    border-radius: 22px;
+            display: grid;
 
-    background:
-        rgba(255,255,255,0.035);
+            grid-template-columns:
+                repeat(3, 1fr);
 
-    border:
-        1px solid
-        rgba(255,255,255,0.1);
-}
+            gap: 20px;
+        }
 
+        .tech {
 
-.process-step {
+            padding: 35px 20px;
 
-    display: flex;
+            text-align: center;
 
-    align-items: flex-start;
+            border-radius: 20px;
 
-    gap: 18px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(0,217,255,0.10),
+                    rgba(255,255,255,0.03)
+                );
 
-    padding: 20px 0;
+            border:
+                1px solid
+                rgba(0,217,255,0.2);
 
-    border-bottom:
-        1px solid
-        rgba(255,255,255,0.08);
-}
+            transition:
+                0.4s ease;
+        }
 
+        .tech:hover {
 
-.process-step:last-child {
+            transform:
+                rotateX(8deg)
+                translateY(-8px);
 
-    border-bottom: none;
-}
+            box-shadow:
+                0 15px 40px
+                rgba(0,217,255,0.18);
+        }
 
+        .tech-icon {
 
-.process-dot {
+            font-size: 50px;
 
-    flex-shrink: 0;
+            margin-bottom: 15px;
+        }
 
-    width: 38px;
-    height: 38px;
+        .tech h3 {
 
-    display: flex;
+            margin-bottom: 10px;
+        }
 
-    align-items: center;
-    justify-content: center;
+        .tech p {
 
-    border-radius: 50%;
+            color: #aeb6c3;
 
-    background:
-        rgba(0,217,255,0.1);
+            line-height: 1.6;
+        }
 
-    border:
-        1px solid #00d9ff;
 
-    color: #00d9ff;
+        /* =========================
+           WAYS
+        ========================= */
 
-    font-weight: bold;
-}
+        .ways {
 
+            display: grid;
 
-.process-step h3 {
+            grid-template-columns:
+                repeat(2, 1fr);
 
-    margin: 0 0 7px;
-}
+            gap: 20px;
+        }
 
+        .way {
 
-.process-step p {
+            padding: 28px;
 
-    margin: 0;
+            border-left:
+                4px solid #00d9ff;
 
-    color: #aeb8c8;
+            background:
+                rgba(255,255,255,0.04);
 
-    line-height: 1.7;
-}
+            border-radius:
+                0 18px 18px 0;
 
+            transition:
+                0.35s ease;
+        }
 
-/* =========================
-   MOBILE DEVELOPMENT
-========================= */
+        .way:hover {
 
-.mobile-box {
+            transform:
+                translateX(10px);
 
-    padding: 35px;
+            background:
+                rgba(0,217,255,0.07);
+        }
 
-    border-radius: 23px;
+        .way h3 {
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,217,255,0.09),
-            rgba(255,255,255,0.025)
-        );
+            margin-bottom: 10px;
 
-    border:
-        1px solid
-        rgba(0,217,255,0.2);
+            color: #ffffff;
+        }
 
-    box-shadow:
-        0 20px 50px
-        rgba(0,0,0,0.3);
-}
+        .way p {
 
+            color: #aeb6c3;
 
-.mobile-box h3 {
+            line-height: 1.7;
+        }
 
-    margin: 0 0 15px;
 
-    color: #00d9ff;
+        /* =========================
+           MOBILE DEVELOPMENT
+        ========================= */
 
-    font-size: 24px;
-}
+        .mobile-box {
 
+            text-align: center;
 
-.mobile-box p {
+            padding: 40px 25px;
 
-    margin: 0;
+            border-radius: 25px;
 
-    color: #b8c1d1;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,217,255,0.08),
+                    rgba(120,0,255,0.08)
+                );
 
-    line-height: 1.8;
-}
+            border:
+                1px solid
+                rgba(0,217,255,0.2);
 
+            position: relative;
 
-/* =========================
-   FINAL MESSAGE
-========================= */
+            overflow: hidden;
+        }
 
-.final-box {
+        .mobile-box::after {
 
-    text-align: center;
+            content: "";
 
-    padding: 45px 25px;
+            position: absolute;
 
-    margin-bottom: 50px;
+            width: 200px;
+            height: 200px;
 
-    border-radius: 25px;
+            border:
+                2px solid
+                rgba(0,217,255,0.2);
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,217,255,0.08),
-            rgba(100,50,255,0.07)
-        );
+            border-radius: 50%;
 
-    border:
-        1px solid
-        rgba(0,217,255,0.2);
+            right: -70px;
+            top: -70px;
 
-    box-shadow:
-        0 20px 55px
-        rgba(0,0,0,0.35);
-}
+            animation:
+                pulseCircle 3s infinite;
+        }
 
+        .mobile-box h3 {
 
-.final-box h2 {
+            font-size: 30px;
 
-    margin: 0 0 15px;
+            color: #00d9ff;
 
-    font-size: 31px;
-}
+            margin-bottom: 15px;
+        }
 
+        .mobile-box p {
 
-.final-box h2 span {
+            max-width: 800px;
 
-    color: #00d9ff;
-}
+            margin: auto;
 
+            color: #b9c1cc;
 
-.final-box p {
+            line-height: 1.8;
+        }
 
-    max-width: 720px;
+        @keyframes pulseCircle {
 
-    margin: auto;
+            0% {
+                transform: scale(0.8);
+                opacity: 0.3;
+            }
 
-    color: #aeb8c8;
+            50% {
+                transform: scale(1.2);
+                opacity: 0.7;
+            }
 
-    line-height: 1.8;
-}
+            100% {
+                transform: scale(0.8);
+                opacity: 0.3;
+            }
 
+        }
 
-/* =========================
-   BACK BUTTON
-========================= */
 
-.back-button {
+        /* =========================
+           FINAL MESSAGE
+        ========================= */
 
-    display: flex;
+        .final-box {
 
-    align-items: center;
-    justify-content: center;
+            text-align: center;
 
-    width: fit-content;
+            padding: 55px 25px;
 
-    margin: 20px auto 10px;
+            border-radius: 25px;
 
-    padding: 15px 32px;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,217,255,0.12),
+                    rgba(157,78,221,0.10)
+                );
 
-    border-radius: 50px;
+            border:
+                1px solid
+                rgba(0,217,255,0.3);
 
-    text-decoration: none !important;
+            margin-top: 30px;
+        }
 
-    color: #ffffff !important;
+        .final-box h2 {
 
-    background:
-        linear-gradient(
-            135deg,
-            rgba(0,217,255,0.14),
-            rgba(0,217,255,0.04)
-        ) !important;
+            font-size: 34px;
 
-    border:
-        1px solid #00d9ff;
+            margin-bottom: 15px;
+        }
 
-    font-size: 16px;
+        .final-box h2 span {
 
-    font-weight: bold;
+            color: #00d9ff;
+        }
 
-    box-shadow:
-        0 0 18px
-        rgba(0,217,255,0.12);
+        .final-box p {
 
-    transition:
-        transform 0.35s ease,
-        background 0.35s ease,
-        box-shadow 0.35s ease;
-}
+            color: #b8c0cc;
 
+            line-height: 1.7;
 
-.back-button:hover {
+            max-width: 700px;
 
-    transform:
-        translateY(-6px);
+            margin: auto;
+        }
 
-    background:
-        rgba(0,217,255,0.18) !important;
 
-    box-shadow:
-        0 0 30px
-        rgba(0,217,255,0.3);
-}
+        /* =========================
+           ANIMATION
+        ========================= */
 
+        @keyframes cardAppear {
 
-/* =========================
-   MOBILE
-========================= */
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
 
-@media (max-width:700px) {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
 
-    .create-page {
+        }
 
-        padding:
-            45px 17px 55px;
-    }
 
+        /* =========================
+           RESPONSIVE
+        ========================= */
 
-    .create-hero {
+        @media (max-width: 700px) {
 
-        padding-bottom: 60px;
-    }
+            .create-page {
+                padding-top: 100px;
+            }
 
+            .back-button {
 
-    .create-icon {
+                top: 12px;
+                left: 12px;
 
-        width: 90px;
-        height: 90px;
+                padding:
+                    11px 17px;
 
-        font-size: 45px;
-    }
+                font-size: 13px;
+            }
 
+            .hero {
+                padding-top: 25px;
+            }
 
-    .create-hero h1 {
+            .hero-icon {
+                font-size: 55px;
+            }
 
-        font-size: 40px;
-    }
+            .hero h1 {
+                font-size: 45px;
+            }
 
+            .hero p {
+                font-size: 15px;
+            }
 
-    .create-hero p {
+            .info-box {
+                padding: 25px;
+            }
 
-        font-size: 16px;
+            .technology {
+                grid-template-columns: 1fr;
+            }
 
-        line-height: 1.8;
-    }
+            .ways {
+                grid-template-columns: 1fr;
+            }
 
+            .section-title h2 {
+                font-size: 26px;
+            }
 
-    .section-title h2 {
+        }
 
-        font-size: 27px;
-    }
-
-
-    .needs-grid {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    .tech-list {
-
-        grid-template-columns: 1fr;
-    }
-
-
-    .way-card {
-
-        padding: 23px;
-
-        gap: 15px;
-    }
-
-
-    .text-card {
-
-        padding: 24px;
-    }
-
-
-    .process {
-
-        padding: 20px;
-    }
-
-
-    .mobile-box {
-
-        padding: 28px 22px;
-    }
-
-
-    .final-box {
-
-        padding: 35px 20px;
-    }
-
-}
-
-</style>
+    </style>
 
 </head>
 
@@ -855,544 +931,159 @@ body {
 <body>
 
 
-<main class="create-page">
+    <!-- =========================
+         BACK TO ABOUT
+    ========================= -->
 
+    <a href="about.html"
+       class="back-button">
 
-<!-- =========================
-     HERO
-========================= -->
+        ← Back to About
 
-<section class="create-hero">
+    </a>
 
-    <div class="create-icon">
-        🚀
-    </div>
 
-    <h1>
-        Let's <span>Create</span>
-    </h1>
+    <!-- =========================
+         MAIN CONTENT
+    ========================= -->
 
-    <p>
-        Explore how ideas become real websites and
-        digital experiences. Learn what we need,
-        how websites are developed and the different
-        ways we can create them.
-    </p>
+    <main class="create-page">
 
-</section>
 
+        <!-- HERO -->
 
-<!-- =========================
-     HOW TO DEVELOP
-========================= -->
+        <header class="hero">
 
-<section class="create-section">
-
-    <div class="section-title">
-
-        <h2>
-            🌐 How To Develop A
-            <span>Website</span>
-        </h2>
-
-        <p>
-            Creating a website is a step-by-step process.
-        </p>
-
-    </div>
-
-
-    <div class="text-card">
-
-        <p>
-            Developing a website begins with an idea.
-            First, we decide the purpose of the website,
-            who will use it and what information or
-            features it should provide.
-        </p>
-
-        <p>
-            After planning, HTML is used to create the
-            structure of the website. It allows us to add
-            headings, paragraphs, images, links, buttons,
-            sections and other content.
-        </p>
-
-        <p>
-            CSS is then used to design the website.
-            It controls colors, fonts, spacing, layouts,
-            backgrounds, borders, animations and responsive
-            design.
-        </p>
-
-        <p>
-            JavaScript can be added to make the website
-            interactive. It can control buttons, menus,
-            forms, dynamic content and other actions.
-        </p>
-
-        <p>
-            Finally, we test the website on different
-            screen sizes and browsers. After everything
-            works correctly, we can publish the website
-            online.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     WHAT WE NEED
-========================= -->
-
-<section class="create-section">
-
-    <div class="section-title">
-
-        <h2>
-            🧰 What Do We <span>Need?</span>
-        </h2>
-
-        <p>
-            The basic things required to start creating websites.
-        </p>
-
-    </div>
-
-
-    <div class="needs-grid">
-
-
-        <div class="need-card">
-
-            <div class="need-icon">💡</div>
-
-            <h3>Idea</h3>
-
-            <p>
-                Every website starts with an idea or purpose.
-                It can be a portfolio, biography, blog,
-                business website or personal project.
-            </p>
-
-        </div>
-
-
-        <div class="need-card">
-
-            <div class="need-icon">📱</div>
-
-            <h3>Device</h3>
-
-            <p>
-                A computer, laptop, tablet or smartphone
-                can be used to learn and develop websites.
-            </p>
-
-        </div>
-
-
-        <div class="need-card">
-
-            <div class="need-icon">⌨️</div>
-
-            <h3>Code Editor</h3>
-
-            <p>
-                A code editor is used to write HTML, CSS
-                and JavaScript files.
-            </p>
-
-        </div>
-
-
-        <div class="need-card">
-
-            <div class="need-icon">🌐</div>
-
-            <h3>Web Browser</h3>
-
-            <p>
-                A browser allows us to preview, test and
-                debug our website.
-            </p>
-
-        </div>
-
-
-        <div class="need-card">
-
-            <div class="need-icon">🧠</div>
-
-            <h3>Knowledge</h3>
-
-            <p>
-                Learning HTML, CSS and JavaScript gives
-                us a strong foundation for web development.
-            </p>
-
-        </div>
-
-
-        <div class="need-card">
-
-            <div class="need-icon">☁️</div>
-
-            <h3>Hosting</h3>
-
-            <p>
-                Hosting allows our website files to be
-                stored online so other people can access
-                the website.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     WAYS TO DEVELOP
-========================= -->
-
-<section class="create-section">
-
-    <div class="section-title">
-
-        <h2>
-            🛠️ Ways To Develop A
-            <span>Website</span>
-        </h2>
-
-        <p>
-            There are several ways to create a website.
-        </p>
-
-    </div>
-
-
-    <div>
-
-
-        <div class="way-card">
-
-            <div class="way-number">
-                01
+            <div class="hero-icon">
+                🌐
             </div>
 
-            <div>
+            <h1>
+                Let's <span>Create</span>
+            </h1>
+
+            <p>
+                Learn how websites are planned, designed,
+                developed, tested and published on the internet.
+                A website can start with a simple idea and grow
+                into a complete digital experience.
+            </p>
+
+        </header>
+
+
+        <!-- HOW TO DEVELOP -->
+
+        <section class="create-section">
+
+            <div class="section-title">
+
+                <h2>
+                    🌐 How To
+                    <span>Develop A Website</span>
+                </h2>
+
+                <p>
+                    Website development is the process of
+                    converting an idea into a working website.
+                </p>
+
+            </div>
+
+
+            <div class="info-box">
 
                 <h3>
-                    Coding From Scratch
+                    💡 What is Website Development?
                 </h3>
 
                 <p>
-                    Write your own HTML, CSS and JavaScript.
-                    This gives you greater control and helps
-                    you understand how websites work.
+                    Website development means creating and
+                    maintaining websites that people can access
+                    through a web browser.
                 </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="way-card">
-
-            <div class="way-number">
-                02
-            </div>
-
-            <div>
-
-                <h3>
-                    Website Builders
-                </h3>
 
                 <p>
-                    Website builders provide ready-made
-                    components and visual tools that can
-                    help beginners create websites faster.
+                    A developer normally starts with an idea,
+                    plans the website structure, creates the
+                    design, writes the code, tests everything
+                    and finally publishes the website online.
                 </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="way-card">
-
-            <div class="way-number">
-                03
-            </div>
-
-            <div>
-
-                <h3>
-                    Content Management Systems
-                </h3>
 
                 <p>
-                    Content management systems help users
-                    create and manage website content using
-                    themes, plugins and other features.
+                    Websites can be simple personal pages,
+                    portfolios, business websites, blogs,
+                    educational platforms or large web
+                    applications.
                 </p>
 
             </div>
 
-        </div>
+        </section>
 
 
-        <div class="way-card">
+        <!-- WHAT WE NEED -->
 
-            <div class="way-number">
-                04
-            </div>
+        <section class="create-section">
 
-            <div>
+            <div class="section-title">
 
-                <h3>
-                    Mobile Website Development
-                </h3>
-
-                <p>
-                    Websites can also be developed using
-                    a smartphone with a code editor, browser
-                    and online hosting services.
-                </p>
+                <h2>
+                    🧩 What Do We
+                    <span>Need?</span>
+                </h2>
 
             </div>
 
-        </div>
 
+            <div class="cards">
 
-    </div>
 
-</section>
+                <div class="card">
 
+                    <div class="card-icon">
+                        💡
+                    </div>
 
-<!-- =========================
-     TECHNOLOGIES
-========================= -->
+                    <h3>
+                        An Idea
+                    </h3>
 
-<section class="create-section">
+                    <p>
+                        First decide what your website is
+                        going to do and who will use it.
+                    </p>
 
-    <div class="section-title">
+                </div>
 
-        <h2>
-            💻 Technologies Behind A
-            <span>Website</span>
-        </h2>
 
-        <p>
-            Three important technologies for front-end development.
-        </p>
+                <div class="card">
 
-    </div>
+                    <div class="card-icon">
+                        📱
+                    </div>
 
+                    <h3>
+                        Device
+                    </h3>
 
-    <div class="tech-list">
+                    <p>
+                        A computer, laptop or even a smartphone
+                        can be used to learn and create websites.
+                    </p>
 
+                </div>
 
-        <div class="tech-card">
 
-            <div class="icon">
-                🧱
-            </div>
+                <div class="card">
 
-            <h3>HTML</h3>
+                    <div class="card-icon">
+                        📝
+                    </div>
 
-            <p>
-                Creates the structure and content
-                of a webpage.
-            </p>
+                    <h3>
+                        Code Editor
+                    </h3>
 
-        </div>
-
-
-        <div class="tech-card">
-
-            <div class="icon">
-                🎨
-            </div>
-
-            <h3>CSS</h3>
-
-            <p>
-                Controls design, layout, colors,
-                fonts and animations.
-            </p>
-
-        </div>
-
-
-        <div class="tech-card">
-
-            <div class="icon">
-                ⚡
-            </div>
-
-            <h3>JavaScript</h3>
-
-            <p>
-                Adds interaction and dynamic
-                behaviour to websites.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     PROCESS
-========================= -->
-
-<section class="create-section">
-
-    <div class="section-title">
-
-        <h2>
-            🔄 Website Development
-            <span>Process</span>
-        </h2>
-
-        <p>
-            A simple workflow for creating a website.
-        </p>
-
-    </div>
-
-
-    <div class="process">
-
-
-        <div class="process-step">
-
-            <div class="process-dot">1</div>
-
-            <div>
-
-                <h3>Plan</h3>
-
-                <p>
-                    Decide the purpose, pages, content
-                    and features of the website.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="process-step">
-
-            <div class="process-dot">2</div>
-
-            <div>
-
-                <h3>Design</h3>
-
-                <p>
-                    Decide how the website should look
-                    and how visitors will navigate it.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="process-step">
-
-            <div class="process-dot">3</div>
-
-            <div>
-
-                <h3>Code</h3>
-
-                <p>
-                    Build the structure with HTML,
-                    style it with CSS and add JavaScript
-                    when required.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="process-step">
-
-            <div class="process-dot">4</div>
-
-            <div>
-
-                <h3>Test</h3>
-
-                <p>
-                    Check links, buttons, content,
-                    layout and mobile responsiveness.
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <div class="process-step">
-
-            <div class="process-dot">5</div>
-
-            <div>
-
-                <h3>Publish</h3>
-
-                <p>
-                    Upload the website to a hosting
-                    service and make it available online.
-                </p>
-
-            </div>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     MOBILE CREATION
-========================= -->
-
-<section class="create-section">
-
-    <div class="section-title">
-
-        <h2>
-            📱 Can I Create A Website
-            <span>Using Mobile?</span>
-        </h2>
-
-    </div>
-
-
-    <div class="mobile-box">
-
-        <h3>
-            Yes! 🚀
-        </h3>
-
-        <p>
-            A smartphone can be enough to start learning
-            web development. You can write HTM
+                    <p>
+                        A code editor is used t
