@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+      content="width=device-width, initial-scale=1.0">
 
 <title>Vinay | Create & Build</title>
 
@@ -14,9 +14,9 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
-/* ==============================
-   CREATE PAGE
-============================== */
+/* =========================
+   BASIC
+========================= */
 
 html {
     scroll-behavior: smooth;
@@ -27,15 +27,15 @@ body {
     padding: 0 !important;
 
     background: #000 !important;
-    color: #ffffff !important;
+    color: #fff !important;
 
     overflow-x: hidden;
 }
 
 
-/* ==============================
-   MAIN CONTAINER
-============================== */
+/* =========================
+   MAIN
+========================= */
 
 .create-page {
 
@@ -43,30 +43,29 @@ body {
 
     margin: auto;
 
-    padding: 60px 20px 50px;
+    padding: 55px 20px 60px;
 
-    box-sizing: border-box;
 }
 
 
-/* ==============================
+/* =========================
    HERO
-============================== */
+========================= */
 
 .create-hero {
 
     text-align: center;
 
-    padding: 20px 0 70px;
+    padding: 20px 0 80px;
 
-    animation: fadeUp 1s ease;
+    animation: fadeUp 1s ease forwards;
 }
 
 
 .create-icon {
 
-    width: 105px;
-    height: 105px;
+    width: 110px;
+    height: 110px;
 
     margin: 0 auto 30px;
 
@@ -75,34 +74,38 @@ body {
     align-items: center;
     justify-content: center;
 
-    font-size: 52px;
+    font-size: 55px;
 
     border-radius: 50%;
 
     background:
-        rgba(0,217,255,0.07);
+        radial-gradient(
+            circle,
+            rgba(0,217,255,0.15),
+            rgba(0,217,255,0.02)
+        );
 
-    border:
-        1px solid
-        rgba(0,217,255,0.45);
+    border: 1px solid
+        rgba(0,217,255,0.5);
 
     box-shadow:
-        0 0 30px
-        rgba(0,217,255,0.2);
+        0 0 20px rgba(0,217,255,0.15),
+        0 0 60px rgba(0,217,255,0.08);
 
-    animation: floatIcon 3s ease-in-out infinite;
+    animation: floating 3s ease-in-out infinite;
 }
 
 
-@keyframes floatIcon {
+@keyframes floating {
 
     0%,100% {
         transform: translateY(0);
     }
 
     50% {
-        transform: translateY(-12px);
+        transform: translateY(-14px);
     }
+
 }
 
 
@@ -111,9 +114,10 @@ body {
     margin: 0 0 20px;
 
     font-size:
-        clamp(38px, 7vw, 58px);
+        clamp(40px, 8vw, 62px);
 
     line-height: 1.2;
+
 }
 
 
@@ -122,14 +126,14 @@ body {
     color: #00d9ff;
 
     text-shadow:
-        0 0 20px
-        rgba(0,217,255,0.35);
+        0 0 25px
+        rgba(0,217,255,0.45);
 }
 
 
 .create-hero p {
 
-    max-width: 760px;
+    max-width: 780px;
 
     margin: auto;
 
@@ -137,39 +141,41 @@ body {
 
     font-size: 17px;
 
-    line-height: 1.8;
+    line-height: 1.9;
 }
 
 
-/* ==============================
-   SECTION
-============================== */
-
-.create-section {
-
-    margin-bottom: 75px;
-
-    animation: fadeUp 0.9s ease;
-}
-
+/* =========================
+   ANIMATION
+========================= */
 
 @keyframes fadeUp {
 
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(35px);
     }
 
     to {
         opacity: 1;
         transform: translateY(0);
     }
+
 }
 
 
-/* ==============================
-   SECTION TITLE
-============================== */
+/* =========================
+   SECTIONS
+========================= */
+
+.create-section {
+
+    margin-bottom: 85px;
+
+    animation:
+        fadeUp 0.9s ease both;
+}
+
 
 .section-title {
 
@@ -182,8 +188,6 @@ body {
     margin: 0 0 10px;
 
     font-size: 31px;
-
-    color: #ffffff;
 }
 
 
@@ -197,21 +201,21 @@ body {
 
     margin: 0;
 
-    color: #8f9aaa;
+    color: #8994a6;
 
     line-height: 1.7;
 }
 
 
-/* ==============================
+/* =========================
    TEXT CARD
-============================== */
+========================= */
 
 .text-card {
 
-    padding: 30px;
+    padding: 32px;
 
-    border-radius: 20px;
+    border-radius: 22px;
 
     background:
         linear-gradient(
@@ -225,8 +229,8 @@ body {
         rgba(255,255,255,0.12);
 
     box-shadow:
-        0 15px 40px
-        rgba(0,0,0,0.35);
+        0 20px 50px
+        rgba(0,0,0,0.4);
 
     transition: 0.4s ease;
 }
@@ -234,26 +238,26 @@ body {
 
 .text-card:hover {
 
-    transform: translateY(-5px);
+    transform: translateY(-6px);
 
     border-color:
-        rgba(0,217,255,0.4);
+        rgba(0,217,255,0.45);
 
     box-shadow:
-        0 20px 50px
+        0 25px 60px
         rgba(0,217,255,0.08);
 }
 
 
 .text-card p {
 
-    margin: 0 0 18px;
+    margin: 0 0 20px;
 
     color: #b8c1d1;
 
-    font-size: 16px;
+    line-height: 1.9;
 
-    line-height: 1.8;
+    font-size: 16px;
 }
 
 
@@ -263,26 +267,26 @@ body {
 }
 
 
-/* ==============================
+/* =========================
    WHAT WE NEED
-============================== */
+========================= */
 
 .needs-grid {
 
     display: grid;
 
     grid-template-columns:
-        repeat(2, 1fr);
+        repeat(2,1fr);
 
-    gap: 20px;
+    gap: 22px;
 }
 
 
 .need-card {
 
-    padding: 25px;
+    padding: 28px;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
     background:
         rgba(255,255,255,0.045);
@@ -291,26 +295,30 @@ body {
         1px solid
         rgba(255,255,255,0.1);
 
-    transition: 0.35s ease;
+    transition:
+        transform 0.4s ease,
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 
 .need-card:hover {
 
     transform:
-        translateY(-7px);
+        translateY(-9px);
 
     border-color:
-        rgba(0,217,255,0.4);
+        rgba(0,217,255,0.45);
 
-    background:
-        rgba(0,217,255,0.05);
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,0.4);
 }
 
 
 .need-icon {
 
-    font-size: 35px;
+    font-size: 38px;
 
     margin-bottom: 15px;
 }
@@ -334,15 +342,9 @@ body {
 }
 
 
-/* ==============================
+/* =========================
    DEVELOPMENT WAYS
-============================== */
-
-.ways {
-
-    display: block;
-}
-
+========================= */
 
 .way-card {
 
@@ -352,7 +354,7 @@ body {
 
     margin-bottom: 20px;
 
-    padding: 27px;
+    padding: 28px;
 
     border-radius: 20px;
 
@@ -360,7 +362,7 @@ body {
         linear-gradient(
             120deg,
             rgba(255,255,255,0.065),
-            rgba(255,255,255,0.025)
+            rgba(255,255,255,0.02)
         );
 
     border:
@@ -377,10 +379,10 @@ body {
         translateX(8px);
 
     border-color:
-        rgba(0,217,255,0.4);
+        rgba(0,217,255,0.45);
 
     box-shadow:
-        0 15px 35px
+        0 20px 45px
         rgba(0,0,0,0.4);
 }
 
@@ -405,7 +407,7 @@ body {
         2px solid #00d9ff;
 
     box-shadow:
-        0 0 15px
+        0 0 18px
         rgba(0,217,255,0.15);
 
     font-weight: bold;
@@ -430,16 +432,16 @@ body {
 }
 
 
-/* ==============================
-   WEB TECHNOLOGIES
-============================== */
+/* =========================
+   TECHNOLOGIES
+========================= */
 
 .tech-list {
 
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(3,1fr);
 
     gap: 20px;
 }
@@ -474,14 +476,14 @@ body {
         #00d9ff;
 
     box-shadow:
-        0 0 25px
-        rgba(0,217,255,0.1);
+        0 0 30px
+        rgba(0,217,255,0.12);
 }
 
 
 .tech-card .icon {
 
-    font-size: 42px;
+    font-size: 43px;
 
     margin-bottom: 15px;
 }
@@ -503,9 +505,9 @@ body {
 }
 
 
-/* ==============================
+/* =========================
    WEBSITE PROCESS
-============================== */
+========================= */
 
 .process {
 
@@ -562,11 +564,11 @@ body {
         rgba(0,217,255,0.1);
 
     border:
-        1px solid
-        #00d9ff;
+        1px solid #00d9ff;
 
-    color:
-        #00d9ff;
+    color: #00d9ff;
+
+    font-weight: bold;
 }
 
 
@@ -586,9 +588,9 @@ body {
 }
 
 
-/* ==============================
+/* =========================
    MOBILE DEVELOPMENT
-============================== */
+========================= */
 
 .mobile-box {
 
@@ -606,6 +608,10 @@ body {
     border:
         1px solid
         rgba(0,217,255,0.2);
+
+    box-shadow:
+        0 20px 50px
+        rgba(0,0,0,0.3);
 }
 
 
@@ -629,19 +635,19 @@ body {
 }
 
 
-/* ==============================
-   FINAL
-============================== */
+/* =========================
+   FINAL MESSAGE
+========================= */
 
 .final-box {
 
     text-align: center;
 
-    padding: 40px 25px;
+    padding: 45px 25px;
 
-    margin-bottom: 45px;
+    margin-bottom: 50px;
 
-    border-radius: 24px;
+    border-radius: 25px;
 
     background:
         linear-gradient(
@@ -653,6 +659,10 @@ body {
     border:
         1px solid
         rgba(0,217,255,0.2);
+
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,0.35);
 }
 
 
@@ -660,7 +670,7 @@ body {
 
     margin: 0 0 15px;
 
-    font-size: 30px;
+    font-size: 31px;
 }
 
 
@@ -672,7 +682,7 @@ body {
 
 .final-box p {
 
-    max-width: 700px;
+    max-width: 720px;
 
     margin: auto;
 
@@ -682,69 +692,84 @@ body {
 }
 
 
-/* ==============================
+/* =========================
    BACK BUTTON
-============================== */
+========================= */
 
 .back-button {
 
-    display: block;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
 
     width: fit-content;
 
-    margin: 0 auto;
+    margin: 20px auto 10px;
 
-    padding:
-        14px 30px;
+    padding: 15px 32px;
 
     border-radius: 50px;
 
     text-decoration: none !important;
 
-    color: white !important;
+    color: #ffffff !important;
 
     background:
-        rgba(0,217,255,0.07) !important;
+        linear-gradient(
+            135deg,
+            rgba(0,217,255,0.14),
+            rgba(0,217,255,0.04)
+        ) !important;
 
     border:
         1px solid #00d9ff;
 
+    font-size: 16px;
+
     font-weight: bold;
 
-    transition: 0.35s ease;
+    box-shadow:
+        0 0 18px
+        rgba(0,217,255,0.12);
+
+    transition:
+        transform 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 
 .back-button:hover {
 
     transform:
-        translateY(-5px);
+        translateY(-6px);
 
     background:
-        rgba(0,217,255,0.16) !important;
+        rgba(0,217,255,0.18) !important;
 
     box-shadow:
-        0 0 25px
-        rgba(0,217,255,0.2);
+        0 0 30px
+        rgba(0,217,255,0.3);
 }
 
 
-/* ==============================
+/* =========================
    MOBILE
-============================== */
+========================= */
 
-@media (max-width: 700px) {
+@media (max-width:700px) {
 
     .create-page {
 
         padding:
-            45px 17px 50px;
+            45px 17px 55px;
     }
 
 
     .create-hero {
 
-        padding-bottom: 55px;
+        padding-bottom: 60px;
     }
 
 
@@ -759,13 +784,15 @@ body {
 
     .create-hero h1 {
 
-        font-size: 39px;
+        font-size: 40px;
     }
 
 
     .create-hero p {
 
         font-size: 16px;
+
+        line-height: 1.8;
     }
 
 
@@ -789,7 +816,7 @@ body {
 
     .way-card {
 
-        padding: 22px;
+        padding: 23px;
 
         gap: 15px;
     }
@@ -797,13 +824,25 @@ body {
 
     .text-card {
 
-        padding: 23px;
+        padding: 24px;
+    }
+
+
+    .process {
+
+        padding: 20px;
     }
 
 
     .mobile-box {
 
-        padding: 27px 22px;
+        padding: 28px 22px;
+    }
+
+
+    .final-box {
+
+        padding: 35px 20px;
     }
 
 }
@@ -819,9 +858,9 @@ body {
 <main class="create-page">
 
 
-<!-- =========================================
+<!-- =========================
      HERO
-========================================= -->
+========================= -->
 
 <section class="create-hero">
 
@@ -834,19 +873,18 @@ body {
     </h1>
 
     <p>
-        Explore how a simple idea can become a complete
-        website. Learn what we need, how websites are
-        developed, the different development methods,
-        and the basic technologies behind the web.
+        Explore how ideas become real websites and
+        digital experiences. Learn what we need,
+        how websites are developed and the different
+        ways we can create them.
     </p>
 
 </section>
 
 
-
-<!-- =========================================
+<!-- =========================
      HOW TO DEVELOP
-========================================= -->
+========================= -->
 
 <section class="create-section">
 
@@ -858,7 +896,7 @@ body {
         </h2>
 
         <p>
-            Website development is a step-by-step process.
+            Creating a website is a step-by-step process.
         </p>
 
     </div>
@@ -867,36 +905,37 @@ body {
     <div class="text-card">
 
         <p>
-            Developing a website starts with an idea or a
-            purpose. First, we decide what the website is
-            going to do, who will use it and what information
-            it should contain.
+            Developing a website begins with an idea.
+            First, we decide the purpose of the website,
+            who will use it and what information or
+            features it should provide.
         </p>
 
         <p>
-            After planning, we create the structure of the
-            website using HTML. HTML defines elements such
-            as headings, paragraphs, images, buttons, links,
+            After planning, HTML is used to create the
+            structure of the website. It allows us to add
+            headings, paragraphs, images, links, buttons,
             sections and other content.
         </p>
 
         <p>
-            Next, CSS is used to make the website attractive.
-            CSS controls colors, fonts, spacing, layouts,
-            animations, borders and responsive design.
+            CSS is then used to design the website.
+            It controls colors, fonts, spacing, layouts,
+            backgrounds, borders, animations and responsive
+            design.
         </p>
 
         <p>
-            JavaScript can then be added when we need
-            interactive features. For example, JavaScript
-            can make buttons perform actions, update content,
-            create menus and respond to user input.
+            JavaScript can be added to make the website
+            interactive. It can control buttons, menus,
+            forms, dynamic content and other actions.
         </p>
 
         <p>
-            Finally, the website should be tested on different
-            screen sizes and browsers. Once everything works
-            correctly, the website can be published online.
+            Finally, we test the website on different
+            screen sizes and browsers. After everything
+            works correctly, we can publish the website
+            online.
         </p>
 
     </div>
@@ -904,10 +943,9 @@ body {
 </section>
 
 
-
-<!-- =========================================
+<!-- =========================
      WHAT WE NEED
-========================================= -->
+========================= -->
 
 <section class="create-section">
 
@@ -918,7 +956,7 @@ body {
         </h2>
 
         <p>
-            The basic tools and knowledge needed to start.
+            The basic things required to start creating websites.
         </p>
 
     </div>
@@ -929,76 +967,85 @@ body {
 
         <div class="need-card">
 
-            <div class="need-icon">
-                💡
-            </div>
+            <div class="need-icon">💡</div>
 
-            <h3>
-                An Idea
-            </h3>
+            <h3>Idea</h3>
 
             <p>
-                First, we need an idea or purpose for the
-                website. It could be a portfolio, biography,
-                blog, business website or another project.
+                Every website starts with an idea or purpose.
+                It can be a portfolio, biography, blog,
+                business website or personal project.
             </p>
 
         </div>
 
 
-
         <div class="need-card">
 
-            <div class="need-icon">
-                💻
-            </div>
+            <div class="need-icon">📱</div>
 
-            <h3>
-                Code Editor
-            </h3>
+            <h3>Device</h3>
 
             <p>
-                We need an editor where we can write HTML,
-                CSS and JavaScript code. A computer or mobile
-                device can be used for learning and development.
+                A computer, laptop, tablet or smartphone
+                can be used to learn and develop websites.
             </p>
 
         </div>
 
 
-
         <div class="need-card">
 
-            <div class="need-icon">
-                🌐
-            </div>
+            <div class="need-icon">⌨️</div>
 
-            <h3>
-                Web Browser
-            </h3>
+            <h3>Code Editor</h3>
 
             <p>
-                A browser is needed to open, test and preview
-                the website while developing it.
+                A code editor is used to write HTML, CSS
+                and JavaScript files.
             </p>
 
         </div>
 
 
+        <div class="need-card">
+
+            <div class="need-icon">🌐</div>
+
+            <h3>Web Browser</h3>
+
+            <p>
+                A browser allows us to preview, test and
+                debug our website.
+            </p>
+
+        </div>
+
 
         <div class="need-card">
 
-            <div class="need-icon">
-                🧠
-            </div>
+            <div class="need-icon">🧠</div>
 
-            <h3>
-                Basic Knowledge
-            </h3>
+            <h3>Knowledge</h3>
 
             <p>
-                Learning HTML, CSS and JavaScript provides
-                a strong foundation for creating websites.
+                Learning HTML, CSS and JavaScript gives
+                us a strong foundation for web development.
+            </p>
+
+        </div>
+
+
+        <div class="need-card">
+
+            <div class="need-icon">☁️</div>
+
+            <h3>Hosting</h3>
+
+            <p>
+                Hosting allows our website files to be
+                stored online so other people can access
+                the website.
             </p>
 
         </div>
@@ -1009,10 +1056,9 @@ body {
 </section>
 
 
-
-<!-- =========================================
+<!-- =========================
      WAYS TO DEVELOP
-========================================= -->
+========================= -->
 
 <section class="create-section">
 
@@ -1024,14 +1070,13 @@ body {
         </h2>
 
         <p>
-            Different approaches can be used depending
-            on your goal and experience.
+            There are several ways to create a website.
         </p>
 
     </div>
 
 
-    <div class="ways">
+    <div>
 
 
         <div class="way-card">
@@ -1047,16 +1092,14 @@ body {
                 </h3>
 
                 <p>
-                    You can build a website by writing your
-                    own HTML, CSS and JavaScript code. This
-                    approach gives you more control and helps
+                    Write your own HTML, CSS and JavaScript.
+                    This gives you greater control and helps
                     you understand how websites work.
                 </p>
 
             </div>
 
         </div>
-
 
 
         <div class="way-card">
@@ -1072,16 +1115,14 @@ body {
                 </h3>
 
                 <p>
-                    Website builders provide visual tools and
-                    ready-made components. They can make it
-                    easier for beginners to create a website
-                    without writing every part of the code.
+                    Website builders provide ready-made
+                    components and visual tools that can
+                    help beginners create websites faster.
                 </p>
 
             </div>
 
         </div>
-
 
 
         <div class="way-card">
@@ -1097,7 +1138,7 @@ body {
                 </h3>
 
                 <p>
-                    A content management system can help users
+                    Content management systems help users
                     create and manage website content using
                     themes, plugins and other features.
                 </p>
@@ -1105,7 +1146,6 @@ body {
             </div>
 
         </div>
-
 
 
         <div class="way-card">
@@ -1121,10 +1161,9 @@ body {
                 </h3>
 
                 <p>
-                    Websites can also be developed using a
-                    smartphone. A mobile code editor, browser
-                    and online services can be used to write,
-                    test and publish website files.
+                    Websites can also be developed using
+                    a smartphone with a code editor, browser
+                    and online hosting services.
                 </p>
 
             </div>
@@ -1137,10 +1176,9 @@ body {
 </section>
 
 
-
-<!-- =========================================
+<!-- =========================
      TECHNOLOGIES
-========================================= -->
+========================= -->
 
 <section class="create-section">
 
@@ -1152,8 +1190,7 @@ body {
         </h2>
 
         <p>
-            These technologies form an important foundation
-            for front-end web development.
+            Three important technologies for front-end development.
         </p>
 
     </div>
@@ -1168,17 +1205,14 @@ body {
                 🧱
             </div>
 
-            <h3>
-                HTML
-            </h3>
+            <h3>HTML</h3>
 
             <p>
-                HTML creates the structure and content
+                Creates the structure and content
                 of a webpage.
             </p>
 
         </div>
-
 
 
         <div class="tech-card">
@@ -1187,17 +1221,14 @@ body {
                 🎨
             </div>
 
-            <h3>
-                CSS
-            </h3>
+            <h3>CSS</h3>
 
             <p>
-                CSS controls the appearance, layout,
-                colors and visual design.
+                Controls design, layout, colors,
+                fonts and animations.
             </p>
 
         </div>
-
 
 
         <div class="tech-card">
@@ -1206,13 +1237,11 @@ body {
                 ⚡
             </div>
 
-            <h3>
-                JavaScript
-            </h3>
+            <h3>JavaScript</h3>
 
             <p>
-                JavaScript can add interaction and
-                dynamic behaviour to websites.
+                Adds interaction and dynamic
+                behaviour to websites.
             </p>
 
         </div>
@@ -1223,10 +1252,9 @@ body {
 </section>
 
 
-
-<!-- =========================================
-     DEVELOPMENT PROCESS
-========================================= -->
+<!-- =========================
+     PROCESS
+========================= -->
 
 <section class="create-section">
 
@@ -1238,7 +1266,7 @@ body {
         </h2>
 
         <p>
-            A simple workflow you can follow for your projects.
+            A simple workflow for creating a website.
         </p>
 
     </div>
@@ -1249,19 +1277,15 @@ body {
 
         <div class="process-step">
 
-            <div class="process-dot">
-                1
-            </div>
+            <div class="process-dot">1</div>
 
             <div>
 
-                <h3>
-                    Plan
-                </h3>
+                <h3>Plan</h3>
 
                 <p>
-                    Decide the purpose, pages, content and
-                    features of your website.
+                    Decide the purpose, pages, content
+                    and features of the website.
                 </p>
 
             </div>
@@ -1269,22 +1293,17 @@ body {
         </div>
 
 
-
         <div class="process-step">
 
-            <div class="process-dot">
-                2
-            </div>
+            <div class="process-dot">2</div>
 
             <div>
 
-                <h3>
-                    Design
-                </h3>
+                <h3>Design</h3>
 
                 <p>
-                    Decide how the website should look and
-                    how users should navigate through it.
+                    Decide how the website should look
+                    and how visitors will navigate it.
                 </p>
 
             </div>
@@ -1292,22 +1311,18 @@ body {
         </div>
 
 
-
         <div class="process-step">
 
-            <div class="process-dot">
-                3
-            </div>
+            <div class="process-dot">3</div>
 
             <div>
 
-                <h3>
-                    Code
-                </h3>
+                <h3>Code</h3>
 
                 <p>
-                    Build the structure with HTML and style
-                    it using CSS. Add JavaScript when needed.
+                    Build the structure with HTML,
+                    style it with CSS and add JavaScript
+                    when required.
                 </p>
 
             </div>
@@ -1315,22 +1330,17 @@ body {
         </div>
 
 
-
         <div class="process-step">
 
-            <div class="process-dot">
-                4
-            </div>
+            <div class="process-dot">4</div>
 
             <div>
 
-                <h3>
-                    Test
-                </h3>
+                <h3>Test</h3>
 
                 <p>
-                    Check links, buttons, layout, content and
-                    responsiveness on different devices.
+                    Check links, buttons, content,
+                    layout and mobile responsiveness.
                 </p>
 
             </div>
@@ -1338,22 +1348,17 @@ body {
         </div>
 
 
-
         <div class="process-step">
 
-            <div class="process-dot">
-                5
-            </div>
+            <div class="process-dot">5</div>
 
             <div>
 
-                <h3>
-                    Publish
-                </h3>
+                <h3>Publish</h3>
 
                 <p>
-                    Put your website online using a hosting
-                    service and share it with others.
+                    Upload the website to a hosting
+                    service and make it available online.
                 </p>
 
             </div>
@@ -1366,13 +1371,28 @@ body {
 </section>
 
 
-
-<!-- =========================================
-     MOBILE
-========================================= -->
+<!-- =========================
+     MOBILE CREATION
+========================= -->
 
 <section class="create-section">
 
     <div class="section-title">
 
-  
+        <h2>
+            📱 Can I Create A Website
+            <span>Using Mobile?</span>
+        </h2>
+
+    </div>
+
+
+    <div class="mobile-box">
+
+        <h3>
+            Yes! 🚀
+        </h3>
+
+        <p>
+            A smartphone can be enough to start learning
+            web development. You can write HTM
