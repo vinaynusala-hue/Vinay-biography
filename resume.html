@@ -2,12 +2,85 @@
 <html>
 <head>
     <title>Vinay | Resume</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .resume-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            margin-top: 25px;
+        }
+
+        .resume-section {
+            margin-bottom: 25px;
+        }
+
+        .resume-section h2 {
+            margin-bottom: 8px;
+        }
+
+        .download-btn {
+            display: inline-block;
+            padding: 12px 20px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .download-btn:hover {
+            background: #1d4ed8;
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Resume</h1>
-    <p>This page is under development.</p>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="education.html">Education</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html">Projects</a>
+    <a href="achievements.html">Achievements</a>
+    <a href="resume.html">Resume</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<main>
+
+    <h1>My Resume</h1>
+
+    <div class="resume-box">
+
+        <div class="resume-section">
+            <h2>Education</h2>
+            <p>B.Tech — Computer Science and Data Science</p>
+        </div>
+
+        <div class="resume-section">
+            <h2>Skills</h2>
+            <p>C • Java • Python • HTML • CSS • JavaScript</p>
+        </div>
+
+        <div class="resume-section">
+            <h2>Career Goal</h2>
+            <p>
+                To build a successful career in technology and
+                continuously improve my programming and data science skills.
+            </p>
+        </div>
+
+        <a class="download-btn" href="Vinay_Babu_Resume.pdf" target="_blank">
+            View Resume PDF
+        </a>
+
+    </div>
+
+</main>
 
 </body>
 </html>
