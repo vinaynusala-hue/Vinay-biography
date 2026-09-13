@@ -1267,6 +1267,193 @@ section {
 }
 
 
+/* =====================================================
+   3D GREEN PHOTOS BUTTON
+===================================================== */
+
+.photos-btn {
+
+    display:
+        inline-block;
+
+    margin-top:
+        18px;
+
+    padding:
+        14px 34px;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #063d20,
+            #021b0d
+        );
+
+    color:
+        #00ff66;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1px;
+
+    border:
+        2px solid #00ff66;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    transform:
+        perspective(600px)
+        translateZ(0);
+
+    box-shadow:
+        0 5px 0 #006b2c,
+        0 0 12px #00ff66,
+        0 0 30px rgba(0,255,100,0.45);
+
+    transition:
+        0.3s;
+
+    animation:
+        photosGlow 2s
+        ease-in-out infinite;
+}
+
+.photos-btn::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        -50%;
+
+    left:
+        -80%;
+
+    width:
+        50%;
+
+    height:
+        200%;
+
+    background:
+        rgba(255,255,255,0.35);
+
+    transform:
+        rotate(25deg);
+
+    animation:
+        photosShine 2.8s
+        linear infinite;
+
+    pointer-events:
+        none;
+}
+
+.photos-btn::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        inset 0 0 15px
+        rgba(0,255,100,0.25);
+
+    pointer-events:
+        none;
+}
+
+.photos-btn:hover {
+
+    color:
+        #001b0b;
+
+    background:
+        #00ff66;
+
+    transform:
+        perspective(600px)
+        translateY(-6px)
+        rotateX(8deg)
+        scale(1.05);
+
+    box-shadow:
+        0 8px 0 #006b2c,
+        0 0 20px #00ff66,
+        0 0 50px #00ff66,
+        0 0 80px rgba(0,255,100,0.6);
+}
+
+.photos-btn:active {
+
+    transform:
+        perspective(600px)
+        translateY(2px)
+        scale(0.98);
+
+    box-shadow:
+        0 2px 0 #006b2c,
+        0 0 15px #00ff66;
+}
+
+@keyframes photosGlow {
+
+    0%, 100% {
+
+        box-shadow:
+            0 5px 0 #006b2c,
+            0 0 12px #00ff66,
+            0 0 30px rgba(0,255,100,0.45);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 5px 0 #006b2c,
+            0 0 20px #00ff66,
+            0 0 45px rgba(0,255,100,0.75);
+
+    }
+
+}
+
+@keyframes photosShine {
+
+    0% {
+        left: -80%;
+    }
+
+    45%,100% {
+        left: 150%;
+    }
+
+}
+
+
 /* =========================
    SCROLL
 ========================= */
@@ -1431,210 +1618,7 @@ section {
     border-radius:
         20px;
 
-    background:
-        rgba(255, 255, 255, 0.05);
-
-    border:
-        1px solid
-        rgba(0, 217, 255, 0.25);
-
-    box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.4);
-
-    transform:
-        perspective(1000px)
-        rotateX(2deg);
-}
-
-.about-box p {
-
-    color:
-        #c4d0df;
-
-    font-size:
-        18px;
-
-    line-height:
-        1.8;
-}
-
-
-/* =========================
-   VIDEO
-========================= */
-
-.video-box {
-
-    max-width:
-        850px;
-
-    margin:
-        auto;
-
-    min-height:
-        300px;
-
-    border-radius:
-        25px;
-
-    border:
-        2px dashed #00d9ff;
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    text-align:
-        center;
-
-    background:
-        rgba(0, 217, 255, 0.04);
-}
-
-.video-box h3 {
-
-    color:
-        #00d9ff;
-
-    margin-bottom:
-        10px;
-}
-
-
-/* =========================
-   3D VIDEO
-========================= */
-
-.video-3d {
-
-    max-width:
-        850px;
-
-    margin:
-        auto;
-
-    padding:
-        15px;
-
-    border-radius:
-        25px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #101a35,
-            #080d20
-        );
-
-    border:
-        2px solid #00d9ff;
-
-    box-shadow:
-        0 0 20px
-        rgba(0, 217, 255, 0.35),
-
-        0 20px 50px
-        rgba(0, 0, 0, 0.5);
-
-    transform:
-        perspective(1000px)
-        rotateX(3deg)
-        rotateY(-2deg);
-
-    transition:
-        0.5s;
-
-    overflow:
-        hidden;
-}
-
-.video-3d:hover {
-
-    transform:
-        perspective(1000px)
-        rotateX(0deg)
-        rotateY(0deg)
-        scale(1.02);
-
-    box-shadow:
-        0 0 25px #00d9ff,
-        0 0 60px
-        rgba(0, 217, 255, 0.3);
-}
-
-.video-3d video {
-
-    width: 100%;
-
-    display: block;
-
-    border-radius: 15px;
-
-    background: #000;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-
-    padding:
-        60px 20px 30px;
-
-    text-align:
-        center;
-
-    background:
-        #02040c;
-
-    border-top:
-        1px solid
-        rgba(0, 217, 255, 0.2);
-
-    box-shadow:
-        0 -10px 40px
-        rgba(0, 217, 255, 0.05);
-}
-
-.footer-content h2 {
-
-    color:
-        #00d9ff;
-
-    font-size:
-        30px;
-
-    margin-bottom:
-        10px;
-
-    text-shadow:
-        0 0 20px #00d9ff;
-}
-
-.footer-content p {
-
-    color:
-        #8fa1b8;
-}
-
-.social-buttons {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    gap:
-        15px;<!DOCTYPE html>
+    background<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -2903,6 +2887,193 @@ section {
 }
 
 
+/* =====================================================
+   3D GREEN PHOTOS BUTTON
+===================================================== */
+
+.photos-btn {
+
+    display:
+        inline-block;
+
+    margin-top:
+        18px;
+
+    padding:
+        14px 34px;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #063d20,
+            #021b0d
+        );
+
+    color:
+        #00ff66;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1px;
+
+    border:
+        2px solid #00ff66;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    transform:
+        perspective(600px)
+        translateZ(0);
+
+    box-shadow:
+        0 5px 0 #006b2c,
+        0 0 12px #00ff66,
+        0 0 30px rgba(0,255,100,0.45);
+
+    transition:
+        0.3s;
+
+    animation:
+        photosGlow 2s
+        ease-in-out infinite;
+}
+
+.photos-btn::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        -50%;
+
+    left:
+        -80%;
+
+    width:
+        50%;
+
+    height:
+        200%;
+
+    background:
+        rgba(255,255,255,0.35);
+
+    transform:
+        rotate(25deg);
+
+    animation:
+        photosShine 2.8s
+        linear infinite;
+
+    pointer-events:
+        none;
+}
+
+.photos-btn::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        inset 0 0 15px
+        rgba(0,255,100,0.25);
+
+    pointer-events:
+        none;
+}
+
+.photos-btn:hover {
+
+    color:
+        #001b0b;
+
+    background:
+        #00ff66;
+
+    transform:
+        perspective(600px)
+        translateY(-6px)
+        rotateX(8deg)
+        scale(1.05);
+
+    box-shadow:
+        0 8px 0 #006b2c,
+        0 0 20px #00ff66,
+        0 0 50px #00ff66,
+        0 0 80px rgba(0,255,100,0.6);
+}
+
+.photos-btn:active {
+
+    transform:
+        perspective(600px)
+        translateY(2px)
+        scale(0.98);
+
+    box-shadow:
+        0 2px 0 #006b2c,
+        0 0 15px #00ff66;
+}
+
+@keyframes photosGlow {
+
+    0%, 100% {
+
+        box-shadow:
+            0 5px 0 #006b2c,
+            0 0 12px #00ff66,
+            0 0 30px rgba(0,255,100,0.45);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 5px 0 #006b2c,
+            0 0 20px #00ff66,
+            0 0 45px rgba(0,255,100,0.75);
+
+    }
+
+}
+
+@keyframes photosShine {
+
+    0% {
+        left: -80%;
+    }
+
+    45%,100% {
+        left: 150%;
+    }
+
+}
+
+
 /* =========================
    SCROLL
 ========================= */
@@ -3651,6 +3822,15 @@ footer {
             16px;
     }
 
+    .photos-btn {
+
+        padding:
+            13px 30px;
+
+        font-size:
+            14px;
+    }
+
 }
 
 </style>
@@ -3681,9 +3861,7 @@ footer {
             About
         </a>
 
-        <a href="photos.html">
-            Photos
-        </a>
+        <!-- Photos removed from top navigation -->
 
         <a href="achievements.html">
             Achievements
@@ -3845,6 +4023,21 @@ footer {
             class="btn">
 
             Explore My Story →
+
+        </a>
+
+
+        <!-- =================================
+             NEW PHOTOS BUTTON
+        ================================= -->
+
+        <br>
+
+        <a
+            href="photos.html"
+            class="photos-btn">
+
+            ✦ Photos ✦
 
         </a>
 
