@@ -3,1202 +3,794 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-    <title>Vinay | Create & Build</title>
+<title>Vinay | Create & Build</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="style.css">
 
-    <style>
+<style>
 
-        /* =========================
-           CREATE PAGE
-        ========================= */
+/* ==================================================
+   CREATE PAGE - COMPLETE INDEPENDENT DESIGN
+================================================== */
 
-        html {
-            background: #000000;
-        }
+html,
+body {
 
-        body {
+    margin: 0 !important;
+    padding: 0 !important;
 
-            margin: 0;
+    width: 100%;
 
-            padding: 0;
+    background: #000 !important;
 
-            overflow-x: hidden;
+    color: white !important;
 
-            background:
-                radial-gradient(
-                    circle at 50% 5%,
-                    rgba(0,217,255,0.10),
-                    transparent 35%
-                ),
-                #000000 !important;
+    overflow-x: hidden !important;
+}
 
-            color: white !important;
-        }
 
+/* IMPORTANT:
+   Prevent style.css from making sections
+   full-screen or hiding content.
+*/
 
-        .create-page {
+.create-page,
+.create-page section {
 
-            width: 100%;
+    height: auto !important;
 
-            max-width: 1100px;
+    min-height: 0 !important;
 
-            margin: auto;
+    max-height: none !important;
+}
 
-            padding:
-                70px 20px 50px;
 
-            box-sizing: border-box;
-        }
+/* ==================================================
+   PAGE
+================================================== */
 
+.create-page {
 
-        /* =========================
-           HERO
-        ========================= */
+    width: 100%;
 
-        .create-hero {
+    max-width: 1100px;
 
-            text-align: center;
+    margin: 0 auto !important;
 
-            margin-bottom: 75px;
+    padding:
+        55px 20px 60px !important;
 
-            animation:
-                heroEnter 1s ease forwards;
-        }
+    box-sizing: border-box;
 
+    background: #000 !important;
+}
 
-        @keyframes heroEnter {
 
-            from {
+/* ==================================================
+   HERO
+================================================== */
 
-                opacity: 0;
+.create-hero {
 
-                transform:
-                    translateY(40px);
-            }
+    display: block !important;
 
-            to {
+    text-align: center;
 
-                opacity: 1;
+    padding:
+        25px 0 70px !important;
 
-                transform:
-                    translateY(0);
-            }
-        }
+    margin: 0 0 30px !important;
 
+    animation:
+        heroIn 1s ease forwards;
+}
 
-        .create-icon {
 
-            width: 105px;
+@keyframes heroIn {
 
-            height: 105px;
+    from {
 
-            margin: auto;
+        opacity: 0;
 
-            display: flex;
+        transform:
+            translateY(35px);
+    }
 
-            align-items: center;
+    to {
 
-            justify-content: center;
+        opacity: 1;
 
-            font-size: 52px;
+        transform:
+            translateY(0);
+    }
+}
 
-            border-radius: 50%;
 
-            background:
-                rgba(255,255,255,0.06);
+.create-main-icon {
 
-            border:
-                1px solid
-                rgba(0,217,255,0.25);
+    width: 110px;
 
-            box-shadow:
+    height: 110px;
 
-                0 0 25px
-                rgba(0,217,255,0.25),
+    margin: 0 auto 30px;
 
-                0 0 70px
-                rgba(0,217,255,0.08);
+    display: flex;
 
-            animation:
-                floating 3s ease-in-out infinite;
-        }
+    align-items: center;
 
+    justify-content: center;
 
-        @keyframes floating {
+    border-radius: 50%;
 
-            0%,100% {
+    font-size: 55px;
 
-                transform:
-                    translateY(0)
-                    rotate(0deg);
-            }
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,217,255,0.14),
+            rgba(255,255,255,0.03)
+        );
 
-            50% {
+    border:
+        1px solid
+        rgba(0,217,255,0.4);
 
-                transform:
-                    translateY(-12px)
-                    rotate(4deg);
-            }
-        }
+    box-shadow:
 
+        0 0 25px
+        rgba(0,217,255,0.25),
 
-        .create-hero h1 {
+        0 0 70px
+        rgba(0,217,255,0.08);
 
-            color:
-                #ffffff !important;
+    animation:
+        rocketFloat 3s ease-in-out infinite;
+}
 
-            font-size: 50px;
 
-            margin:
-                25px 0 15px;
+@keyframes rocketFloat {
 
-            line-height: 1.2;
-        }
+    0%,
+    100% {
 
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
 
-        .create-hero h1 span {
+    50% {
 
-            color:
-                #00d9ff !important;
+        transform:
+            translateY(-12px)
+            rotate(5deg);
+    }
+}
 
-            text-shadow:
-                0 0 20px
-                rgba(0,217,255,0.4);
-        }
 
+.create-hero h1 {
 
-        .create-hero p {
+    margin:
+        0 0 20px !important;
 
-            max-width: 720px;
+    padding: 0 !important;
 
-            margin: auto;
+    color:
+        white !important;
 
-            color:
-                #aeb8c8 !important;
+    font-size:
+        clamp(38px, 7vw, 58px) !important;
 
-            line-height: 1.8;
+    line-height:
+        1.15 !important;
+}
 
-            font-size: 17px;
-        }
 
+.create-hero h1 span {
 
-        /* =========================
-           SECTION TITLE
-        ========================= */
+    color:
+        #00d9ff !important;
 
-        .section-title {
+    text-shadow:
+        0 0 25px
+        rgba(0,217,255,0.4);
+}
 
-            text-align: center;
 
-            margin-bottom: 35px;
-        }
+.create-hero p {
 
+    max-width:
+        750px;
 
-        .section-title h2 {
+    margin:
+        0 auto !important;
 
-            color:
-                #ffffff !important;
+    color:
+        #aeb8c8 !important;
 
-            font-size: 32px;
+    font-size:
+        17px;
 
-            margin:
-                0 0 10px;
-        }
+    line-height:
+        1.8;
+}
 
 
-        .section-title p {
+/* ==================================================
+   COMMON SECTION
+================================================== */
 
-            color:
-                #8e9aaa !important;
+.create-section {
 
-            line-height: 1.6;
-        }
+    display: block !important;
 
+    width: 100%;
 
-        /* =========================
-           WEBSITE CREATION CARDS
-        ========================= */
+    height: auto !important;
 
-        .create-grid {
+    min-height: 0 !important;
 
-            display: grid;
+    margin:
+        0 0 90px !important;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    padding: 0 !important;
 
-            gap: 25px;
+    box-sizing: border-box;
+}
 
-            margin-bottom: 85px;
-        }
 
+/* ==================================================
+   TITLES
+================================================== */
 
-        .create-card {
+.create-title {
 
-            position: relative;
+    text-align:
+        center;
 
-            padding:
-                30px 25px;
+    margin:
+        0 0 40px !important;
+}
 
-            min-height:
-                250px;
 
-            border-radius:
-                22px;
+.create-title h2 {
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.08),
-                    rgba(255,255,255,0.025)
-                ) !important;
+    margin:
+        0 0 12px !important;
 
-            border:
-                1px solid
-                rgba(255,255,255,0.12);
+    color:
+        white !important;
 
-            box-shadow:
-                0 15px 40px
-                rgba(0,0,0,0.5);
+    font-size:
+        32px !important;
+}
 
-            backdrop-filter:
-                blur(12px);
 
-            overflow:
-                hidden;
+.create-title h2 span {
 
-            transition:
-                0.4s ease;
+    color:
+        #00d9ff !important;
+}
 
-            animation:
-                cardEnter 0.8s ease both;
-        }
 
+.create-title p {
 
-        .create-card:nth-child(1) {
-            animation-delay:
-                0.2s;
-        }
+    margin: 0 !important;
 
-        .create-card:nth-child(2) {
-            animation-delay:
-                0.4s;
-        }
+    color:
+        #8f9aaa !important;
 
-        .create-card:nth-child(3) {
-            animation-delay:
-                0.6s;
-        }
+    line-height:
+        1.7;
+}
 
 
-        @keyframes cardEnter {
+/* ==================================================
+   HOW TO CREATE WEBSITE
+================================================== */
 
-            from {
+.website-steps {
 
-                opacity: 0;
+    display:
+        grid;
 
-                transform:
-                    translateY(40px)
-                    scale(0.95);
-            }
+    grid-template-columns:
+        repeat(4, 1fr);
 
-            to {
+    gap:
+        20px;
+}
 
-                opacity: 1;
 
-                transform:
-                    translateY(0)
-                    scale(1);
-            }
-        }
+.website-step {
 
+    position:
+        relative;
 
-        .create-card:hover {
+    padding:
+        28px 22px;
 
-            transform:
-                translateY(-12px);
+    min-height:
+        230px;
 
-            border-color:
-                rgba(0,217,255,0.5);
+    box-sizing:
+        border-box;
 
-            box-shadow:
+    border-radius:
+        22px;
 
-                0 25px 60px
-                rgba(0,0,0,0.65),
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.025)
+        ) !important;
 
-                0 0 30px
-                rgba(0,217,255,0.12);
-        }
+    border:
+        1px solid
+        rgba(255,255,255,0.12);
 
+    transition:
+        0.4s ease;
 
-        .create-card-icon {
+    overflow:
+        hidden;
 
-            width: 65px;
+    animation:
+        cardUp 0.8s ease both;
+}
 
-            height: 65px;
 
-            display: flex;
+.website-step:nth-child(1) {
+    animation-delay: .1s;
+}
 
-            align-items: center;
+.website-step:nth-child(2) {
+    animation-delay: .25s;
+}
 
-            justify-content: center;
+.website-step:nth-child(3) {
+    animation-delay: .4s;
+}
 
-            font-size: 32px;
+.website-step:nth-child(4) {
+    animation-delay: .55s;
+}
 
-            border-radius: 18px;
 
-            background:
-                rgba(255,255,255,0.06);
+@keyframes cardUp {
 
-            margin-bottom:
-                20px;
+    from {
 
-            transition:
-                0.4s ease;
-        }
+        opacity: 0;
 
+        transform:
+            translateY(35px);
+    }
 
-        .create-card:hover
-        .create-card-icon {
+    to {
 
-            transform:
-                scale(1.15)
-                rotate(-6deg);
+        opacity: 1;
 
-            box-shadow:
-                0 0 25px
-                rgba(0,217,255,0.18);
-        }
+        transform:
+            translateY(0);
+    }
+}
 
 
-        .create-card h3 {
+.website-step:hover {
 
-            color:
-                #ffffff !important;
+    transform:
+        translateY(-10px);
 
-            font-size:
-                23px;
+    border-color:
+        rgba(0,217,255,0.5);
 
-            margin:
-                0 0 12px;
-        }
+    box-shadow:
+        0 20px 45px
+        rgba(0,217,255,0.08);
+}
 
 
-        .create-card p {
+.step-number {
 
-            color:
-                #aeb8c8 !important;
+    display:
+        inline-flex;
 
-            line-height:
-                1.7;
+    width:
+        45px;
 
-            margin:
-                0;
-        }
+    height:
+        45px;
 
+    align-items:
+        center;
 
-        /* =========================
-           HOW TO CREATE WEBSITE
-        ========================= */
+    justify-content:
+        center;
 
-        .steps {
+    margin-bottom:
+        20px;
 
-            max-width:
-                850px;
+    border-radius:
+        50%;
 
-            margin:
-                0 auto 85px;
-        }
+    color:
+        #00d9ff;
 
+    border:
+        2px solid
+        #00d9ff;
 
-        .step {
+    box-shadow:
+        0 0 18px
+        rgba(0,217,255,0.2);
+}
 
-            display:
-                flex;
 
-            align-items:
-                flex-start;
+.website-step h3 {
 
-            gap:
-                25px;
+    margin:
+        0 0 12px;
 
-            padding:
-                25px;
+    color:
+        white !important;
 
-            margin-bottom:
-                20px;
+    font-size:
+        21px;
+}
 
-            border-radius:
-                20px;
 
-            background:
-                rgba(255,255,255,0.04);
+.website-step p {
 
-            border:
-                1px solid
-                rgba(255,255,255,0.09);
+    margin: 0;
 
-            transition:
-                0.4s ease;
+    color:
+        #aeb8c8 !important;
 
-            animation:
-                stepEnter 0.8s ease both;
-        }
+    line-height:
+        1.65;
+}
 
 
-        .step:nth-child(1) {
-            animation-delay:
-                0.2s;
-        }
+/* ==================================================
+   TECHNOLOGY FLOW
+================================================== */
 
-        .step:nth-child(2) {
-            animation-delay:
-                0.4s;
-        }
+.tech-flow {
 
-        .step:nth-child(3) {
-            animation-delay:
-                0.6s;
-        }
+    display:
+        flex;
 
-        .step:nth-child(4) {
-            animation-delay:
-                0.8s;
-        }
+    align-items:
+        center;
 
+    justify-content:
+        center;
 
-        @keyframes stepEnter {
+    gap:
+        15px;
 
-            from {
+    flex-wrap:
+        wrap;
 
-                opacity: 0;
+    padding:
+        35px 20px;
 
-                transform:
-                    translateX(-30px);
-            }
+    border-radius:
+        25px;
 
-            to {
+    background:
+        rgba(255,255,255,0.035);
 
-                opacity: 1;
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+}
 
-                transform:
-                    translateX(0);
-            }
-        }
 
+.tech-box {
 
-        .step:hover {
+    min-width:
+        130px;
 
-            transform:
-                translateX(8px);
+    padding:
+        22px 15px;
 
-            border-color:
-                rgba(0,217,255,0.35);
+    text-align:
+        center;
 
-            background:
-                rgba(0,217,255,0.05);
-        }
+    border-radius:
+        18px;
 
+    background:
+        rgba(255,255,255,0.06);
 
-        .step-number {
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
 
-            min-width:
-                50px;
+    transition:
+        .35s ease;
+}
 
-            height:
-                50px;
 
-            display:
-                flex;
+.tech-box:hover {
 
-            align-items:
-                center;
+    transform:
+        translateY(-8px)
+        scale(1.04);
 
-            justify-content:
-                center;
+    border-color:
+        #00d9ff;
 
-            border-radius:
-                50%;
+    box-shadow:
+        0 0 25px
+        rgba(0,217,255,0.15);
+}
 
-            border:
-                2px solid
-                #00d9ff;
 
-            color:
-                #00d9ff;
+.tech-box .tech-icon {
 
-            font-weight:
-                bold;
+    display:
+        block;
 
-            box-shadow:
-                0 0 18px
-                rgba(0,217,255,0.25);
-        }
+    font-size:
+        38px;
 
+    margin-bottom:
+        10px;
+}
 
-        .step h3 {
 
-            color:
-                #00d9ff !important;
+.tech-box strong {
 
-            margin:
-                0 0 8px;
-        }
+    color:
+        white;
+}
 
 
-        .step p {
+.tech-arrow {
 
-            color:
-                #aeb8c8 !important;
+    color:
+        #00d9ff;
 
-            line-height:
-                1.7;
+    font-size:
+        28px;
 
-            margin:
-                0;
-        }
+    animation:
+        arrowPulse 1.5s ease-in-out infinite;
+}
 
 
-        /* =========================
-           DEVELOPMENT METHODS
-        ========================= */
+@keyframes arrowPulse {
 
-        .methods {
+    0%,
+    100% {
 
-            display:
-                grid;
+        transform:
+            translateX(0);
+    }
 
-            grid-template-columns:
-                repeat(2,1fr);
+    50% {
 
-            gap:
-                25px;
+        transform:
+            translateX(6px);
+    }
+}
 
-            margin-bottom:
-                90px;
-        }
 
+/* ==================================================
+   WAYS TO DEVELOP
+================================================== */
 
-        .method {
+.development-grid {
 
-            padding:
-                30px;
+    display:
+        grid;
 
-            border-radius:
-                22px;
+    grid-template-columns:
+        repeat(2, 1fr);
 
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(255,255,255,0.07),
-                    rgba(255,255,255,0.02)
-                );
+    gap:
+        22px;
+}
 
-            border:
-                1px solid
-                rgba(255,255,255,0.10);
 
-            transition:
-                0.4s ease;
-        }
+.development-card {
 
+    padding:
+        28px;
 
-        .method:hover {
+    border-radius:
+        22px;
 
-            transform:
-                translateY(-8px);
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.07),
+            rgba(255,255,255,0.02)
+        );
 
-            border-color:
-                rgba(0,217,255,0.4);
-        }
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
 
+    transition:
+        .4s ease;
+}
 
-        .method h3 {
 
-            color:
-                #ffffff;
+.development-card:hover {
 
-            margin:
-                0 0 12px;
-        }
+    transform:
+        translateY(-8px);
 
+    border-color:
+        rgba(0,217,255,0.4);
 
-        .method h3 span {
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,.5);
+}
 
-            color:
-                #00d9ff;
-        }
 
+.development-card h3 {
 
-        .method p {
+    margin:
+        0 0 12px;
 
-            color:
-                #aeb8c8;
+    color:
+        white;
+}
 
-            line-height:
-                1.7;
 
-            margin:
-                0;
-        }
+.development-card h3 span {
 
+    color:
+        #00d9ff;
+}
 
-        /* =========================
-           NFT ART SECTION
-        ========================= */
 
-        .nft-grid {
+.development-card p {
 
-            display:
-                grid;
+    margin: 0;
 
-            grid-template-columns:
-                repeat(3,1fr);
+    color:
+        #aeb8c8;
 
-            gap:
-                25px;
+    line-height:
+        1.7;
+}
 
-            margin-bottom:
-                80px;
-        }
 
+/* ==================================================
+   MOBILE DEVELOPMENT
+================================================== */
 
-        .nft-card {
+.mobile-create-box {
 
-            position:
-                relative;
+    position:
+        relative;
 
-            height:
-                330px;
+    padding:
+        40px 30px;
 
-            border-radius:
-                25px;
+    border-radius:
+        25px;
 
-            overflow:
-                hidden;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,217,255,.10),
+            rgba(123,44,255,.08),
+            rgba(255,255,255,.02)
+        );
 
-            background:
-                #080808;
+    border:
+        1px solid
+        rgba(0,217,255,.2);
 
-            border:
-                1px solid
-                rgba(255,255,255,0.12);
+    overflow:
+        hidden;
+}
 
-            transition:
-                0.5s ease;
 
-            animation:
-                nftAppear 1s ease both;
-        }
+.mobile-create-box::before {
 
+    content: "";
 
-        .nft-card:nth-child(1) {
-            animation-delay:
-                0.2s;
-        }
+    position:
+        absolute;
 
-        .nft-card:nth-child(2) {
-            animation-delay:
-                0.4s;
-        }
+    width:
+        180px;
 
-        .nft-card:nth-child(3) {
-            animation-delay:
-                0.6s;
-        }
+    height:
+        180px;
 
+    right:
+        -80px;
 
-        @keyframes nftAppear {
+    top:
+        -80px;
 
-            from {
+    border-radius:
+        50%;
 
-                opacity:
-                    0;
+    background:
+        #00d9ff;
 
-                transform:
-                    scale(0.85)
-                    rotateY(15deg);
-            }
+    filter:
+        blur(80px);
 
-            to {
+    opacity:
+        .12;
 
-                opacity:
-                    1;
+    animation:
+        glowMove 4s ease-in-out infinite alternate;
+}
 
-                transform:
-                    scale(1)
-                    rotateY(0);
-            }
-        }
 
+@keyframes glowMove {
 
-        .nft-card:hover {
+    from {
 
-            transform:
-                translateY(-12px)
-                rotateY(-5deg);
+        transform:
+            translate(0,0);
+    }
 
-            box-shadow:
-                0 25px 60px
-                rgba(0,0,0,0.7);
+    to {
 
-            border-color:
-                rgba(0,217,255,0.45);
-        }
+        transform:
+            translate(-50px,50px);
+    }
+}
 
 
-        /* NFT ART */
+.mobile-create-box h3 {
 
-        .nft-art {
+    position:
+        relative;
 
-            position:
-                absolute;
+    margin:
+        0 0 15px;
 
-            inset:
-                0;
+    color:
+        #00d9ff;
+}
 
-            overflow:
-                hidden;
 
-            background:
-                radial-gradient(
-                    circle at 30% 30%,
-                    #00d9ff,
-                    transparent 20%
-                ),
-                radial-gradient(
-                    circle at 70% 70%,
-                    #7b2cff,
-                    transparent 25%
-                ),
-                linear-gradient(
-                    135deg,
-                    #07101f,
-                    #15002b,
-                    #001c25
-                );
+.mobile-create-box p {
 
-            animation:
-                artMove 6s ease-in-out infinite alternate;
-        }
+    position:
+        relative;
 
+    margin:
+        0;
 
-        @keyframes artMove {
+    color:
+        #aeb8c8;
 
-            from {
+    line-height:
+        1.8;
+}
 
-                transform:
-                    scale(1);
-            }
 
-            to {
+/* ==================================================
+   PUBLISHING
+================================================== */
 
-                transform:
-                    scale(1.12)
-                    rotate(2deg);
-            }
-        }
+.publish-line {
 
+    display:
+        grid;
 
-        .nft-art::before {
+    grid-template-columns:
+        repeat(3, 1fr);
 
-            content:
-                "✦";
-
-            position:
-                absolute;
-
-            top:
-                25px;
-
-            left:
-                30px;
-
-            font-size:
-                70px;
-
-            color:
-                rgba(255,255,255,0.7);
-
-            animation:
-                starFloat 3s ease-in-out infinite;
-        }
-
-
-        .nft-art::after {
-
-            content:
-                "◆";
-
-            position:
-                absolute;
-
-            right:
-                35px;
-
-            top:
-                90px;
-
-            font-size:
-                100px;
-
-            color:
-                rgba(0,217,255,0.55);
-
-            text-shadow:
-                0 0 30px
-                #00d9ff;
-
-            animation:
-                diamondFloat 4s ease-in-out infinite;
-        }
-
-
-        @keyframes starFloat {
-
-            0%,100% {
-                transform:
-                    translateY(0)
-                    rotate(0deg);
-            }
-
-            50% {
-                transform:
-                    translateY(-15px)
-                    rotate(20deg);
-            }
-        }
-
-
-        @keyframes diamondFloat {
-
-            0%,100% {
-                transform:
-                    translateY(0)
-                    rotate(0deg);
-            }
-
-            50% {
-                transform:
-                    translateY(15px)
-                    rotate(12deg);
-            }
-        }
-
-
-        /* NFT INFORMATION */
-
-        .nft-info {
-
-            position:
-                absolute;
-
-            left:
-                0;
-
-            right:
-                0;
-
-            bottom:
-                0;
-
-            padding:
-                25px;
-
-            background:
-                linear-gradient(
-                    transparent,
-                    rgba(0,0,0,0.95)
-                );
-        }
-
-
-        .nft-info h3 {
-
-            color:
-                white;
-
-            margin:
-                0 0 6px;
-
-            font-size:
-                22px;
-        }
-
-
-        .nft-info p {
-
-            color:
-                #aeb8c8;
-
-            margin:
-                0;
-
-            font-size:
-                14px;
-        }
-
-
-        /* =========================
-           CREATIVE MESSAGE
-        ========================= */
-
-        .creative-box {
-
-            text-align:
-                center;
-
-            padding:
-                50px 25px;
-
-            border-radius:
-                25px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(0,217,255,0.10),
-                    rgba(123,44,255,0.08),
-                    rgba(255,255,255,0.02)
-                );
-
-            border:
-                1px solid
-                rgba(0,217,255,0.2);
-
-            margin-bottom:
-                40px;
-
-            animation:
-                glowBox 4s ease-in-out infinite;
-        }
-
-
-        @keyframes glowBox {
-
-            0%,100% {
-
-                box-shadow:
-                    0 20px 50px
-                    rgba(0,0,0,0.5);
-            }
-
-            50% {
-
-                box-shadow:
-                    0 20px 65px
-                    rgba(0,217,255,0.12);
-            }
-        }
-
-
-        .creative-box h2 {
-
-            color:
-                white;
-
-            font-size:
-                30px;
-
-            margin:
-                0 0 15px;
-        }
-
-
-        .creative-box h2 span {
-
-            color:
-                #00d9ff;
-        }
-
-
-        .creative-box p {
-
-            max-width:
-                700px;
-
-            margin:
-                auto;
-
-            color:
-                #aeb8c8;
-
-            line-height:
-                1.8;
-        }
-
-
-        /* =========================
-           BACK BUTTON
-        ========================= */
-
-        .back-button {
-
-            display:
-                block;
-
-            width:
-                fit-content;
-
-            margin:
-                50px auto 15px;
-
-            padding:
-                14px 30px;
-
-            border-radius:
-                50px;
-
-            text-decoration:
-                none;
-
-            color:
-                #ffffff !important;
-
-            background:
-                rgba(0,217,255,0.08) !important;
-
-            border:
-                1px solid #00d9ff;
-
-            font-size:
-                16px;
-
-            font-weight:
-                bold;
-
-            box-shadow:
-                0 0 18px
-                rgba(0,217,255,0.12);
-
-            transition:
-                0.3s ease;
-        }
-
-
-        .back-button:hover {
-
-            transform:
-                translateY(-5px);
-
-            background:
-                rgba(0,217,255,0.18) !important;
-
-            box-shadow:
-                0 0 30px
-                rgba(0,217,255,0.25);
-        }
-
-
-        /* =========================
-           MOBILE
-        ========================= */
-
-        @media (max-width:800px) {
-
-            .create-page {
-
-                padding:
-                    55px 18px 40px;
-            }
-
-
-            .create-hero h1 {
-
-                font-size:
-                    38px;
-            }
-
-
-            .create-hero p {
-
-                font-size:
-                    16px;
-            }
-
-
-            .create-grid {
-
-                grid-template-columns:
-                    1fr;
-
-                gap:
-                    20px;
-            }
-
-
-            .methods {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-
-            .nft-grid {
-
-                grid-template-columns:
-                    1fr;
-            }
-
-
-            .nft-card {
-
-                height:
-                    320px;
-            }
-
-
-            .step {
-
-                gap:
-                    15px;
-
-                padding:
-                    20px;
-            }
-
-        }
-
-    </style>
-
-</head>
-
-
-<body>
-
-
-<main class="create-page">
-
-
-    <!-- =========================
-         HERO
-    ========================= -->
-
-    <section class="create-hero">
-
-        <div class="create-icon">
-            🚀
-        </div>
-
-        <h1>
-            Let's <span>Create</span>
-        </h1>
-
-        <p>
-            Explore how ideas become real websites, projects
-            and digital experiences. From writing the first
-            line of HTML to publishing a complete website,
-            every creation starts with learning and imagination.
-        </p>
-
-    </section>
-
-
-
-    <!-- =========================
-         WHAT CAN
+   
