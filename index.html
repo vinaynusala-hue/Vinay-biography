@@ -3375,15 +3375,46 @@ section {
         rgba(0, 217, 255, 0.3);
 }
 
+
+/* VIDEO SIZE + TOUCH LOCK */
+
 .video-3d video {
 
-    width: 100%;
+    width:
+        100%;
 
-    display: block;
+    height:
+        auto;
 
-    border-radius: 15px;
+    max-width:
+        100%;
 
-    background: #000;
+    max-height:
+        100%;
+
+    display:
+        block;
+
+    border-radius:
+        15px;
+
+    background:
+        #000;
+
+    object-fit:
+        contain;
+
+    pointer-events:
+        none;
+
+    user-select:
+        none;
+
+    -webkit-user-select:
+        none;
+
+    -webkit-touch-callout:
+        none;
 }
 
 
@@ -4118,11 +4149,11 @@ footer {
     <div class="video-3d">
 
         <video
-            controls
             autoplay
             muted
             loop
-            playsinline>
+            playsinline
+            preload="auto">
 
             <source
                 src="84705-586995495.mp4"
