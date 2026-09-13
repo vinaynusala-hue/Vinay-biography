@@ -1,1 +1,1521 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Vinay | Future Growth</title>
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================================
+   GLOBAL
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: #000 !important;
+
+    color: #ffffff !important;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   PAGE
+========================================= */
+
+.grow-page {
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 55px 20px 50px;
+
+    position: relative;
+}
+
+
+/* =========================================
+   BACKGROUND GLOW
+========================================= */
+
+.grow-page::before {
+
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: #00d9ff;
+
+    filter: blur(180px);
+
+    opacity: 0.08;
+
+    top: 5%;
+    left: -150px;
+
+    pointer-events: none;
+}
+
+
+.grow-page::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background: #6c4cff;
+
+    filter: blur(170px);
+
+    opacity: 0.08;
+
+    right: -120px;
+
+    bottom: 10%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.grow-hero {
+
+    text-align: center;
+
+    padding:
+        25px 0 85px;
+
+    animation:
+        heroAppear 1s ease;
+}
+
+
+@keyframes heroAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(45px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   FUTURE ORBIT
+========================================= */
+
+.future-orbit {
+
+    width: 125px;
+    height: 125px;
+
+    margin: 0 auto 35px;
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(0,217,255,0.5);
+
+    box-shadow:
+        0 0 35px
+        rgba(0,217,255,0.15);
+
+    animation:
+        orbitFloat 4s ease-in-out infinite;
+}
+
+
+.future-orbit::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 155px;
+    height: 155px;
+
+    border-radius: 50%;
+
+    border:
+        1px dashed
+        rgba(0,217,255,0.25);
+
+    animation:
+        rotateOrbit 8s linear infinite;
+}
+
+
+.future-orbit::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #00d9ff;
+
+    box-shadow:
+        0 0 15px #00d9ff;
+
+    top: -5px;
+
+    left: 58px;
+
+    animation:
+        rotateOrbit 4s linear infinite;
+}
+
+
+@keyframes orbitFloat {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+@keyframes rotateOrbit {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+.future-symbol {
+
+    font-size: 55px;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   HERO TEXT
+========================================= */
+
+.grow-hero h1 {
+
+    margin: 0 0 20px;
+
+    font-size:
+        clamp(40px, 8vw, 62px);
+
+    line-height: 1.2;
+}
+
+
+.grow-hero h1 span {
+
+    color: #00d9ff;
+
+    text-shadow:
+        0 0 25px
+        rgba(0,217,255,0.4);
+}
+
+
+.grow-hero p {
+
+    max-width: 760px;
+
+    margin: auto;
+
+    color: #aeb8c8;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   SECTION
+========================================= */
+
+.grow-section {
+
+    margin-bottom: 80px;
+
+    animation:
+        sectionAppear 1s ease;
+}
+
+
+@keyframes sectionAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================================
+   SECTION TITLE
+========================================= */
+
+.grow-title {
+
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.grow-title h2 {
+
+    margin: 0 0 10px;
+
+    font-size: 31px;
+}
+
+
+.grow-title h2 span {
+
+    color: #00d9ff;
+}
+
+
+.grow-title p {
+
+    margin: 0;
+
+    color: #8995a7;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   FUTURE VISION
+========================================= */
+
+.vision-box {
+
+    position: relative;
+
+    padding: 40px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,217,255,0.08),
+            rgba(108,76,255,0.07),
+            rgba(255,255,255,0.025)
+        );
+
+    border:
+        1px solid
+        rgba(0,217,255,0.22);
+
+    overflow: hidden;
+}
+
+
+.vision-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background: #00d9ff;
+
+    filter: blur(90px);
+
+    opacity: 0.08;
+
+    right: -60px;
+    top: -60px;
+}
+
+
+.vision-box h3 {
+
+    margin: 0 0 18px;
+
+    color: #00d9ff;
+
+    font-size: 25px;
+}
+
+
+.vision-box p {
+
+    margin: 0 0 18px;
+
+    color: #b8c1d1;
+
+    line-height: 1.85;
+}
+
+
+.vision-box p:last-child {
+
+    margin-bottom: 0;
+}
+
+
+/* =========================================
+   LEARNING GRID
+========================================= */
+
+.learning-future-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.future-card {
+
+    position: relative;
+
+    padding: 30px 23px;
+
+    min-height: 230px;
+
+    border-radius: 22px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    transition:
+        0.4s ease;
+
+    overflow: hidden;
+}
+
+
+.future-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+
+    background: #00d9ff;
+
+    filter: blur(65px);
+
+    opacity: 0;
+
+    right: -30px;
+    top: -30px;
+
+    transition:
+        0.4s ease;
+}
+
+
+.future-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(0,217,255,0.45);
+
+    box-shadow:
+        0 20px 45px
+        rgba(0,0,0,0.4);
+}
+
+
+.future-card:hover::before {
+
+    opacity: 0.15;
+}
+
+
+.future-icon {
+
+    font-size: 38px;
+
+    margin-bottom: 18px;
+
+    display: inline-block;
+
+    transition:
+        0.4s ease;
+}
+
+
+.future-card:hover
+.future-icon {
+
+    transform:
+        scale(1.15)
+        rotate(-5deg);
+}
+
+
+.future-card h3 {
+
+    margin: 0 0 12px;
+
+    font-size: 21px;
+}
+
+
+.future-card p {
+
+    margin: 0;
+
+    color: #aeb8c8;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   SKILLS TO GROW
+========================================= */
+
+.skill-roadmap {
+
+    position: relative;
+
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+.skill-roadmap::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    top: 0;
+    bottom: 0;
+
+    width: 2px;
+
+    transform:
+        translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #00d9ff,
+            #6c4cff,
+            transparent
+        );
+}
+
+
+.roadmap-item {
+
+    width: 50%;
+
+    box-sizing: border-box;
+
+    padding: 0 35px 45px;
+
+    position: relative;
+}
+
+
+.roadmap-item:nth-child(odd) {
+
+    margin-left: 0;
+
+    text-align: right;
+}
+
+
+.roadmap-item:nth-child(even) {
+
+    margin-left: 50%;
+
+    text-align: left;
+}
+
+
+.roadmap-number {
+
+    position: absolute;
+
+    width: 38px;
+    height: 38px;
+
+    top: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #000;
+
+    border:
+        2px solid #00d9ff;
+
+    color: #00d9ff;
+
+    box-shadow:
+        0 0 18px
+        rgba(0,217,255,0.2);
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+.roadmap-item:nth-child(odd)
+.roadmap-number {
+
+    right: -19px;
+}
+
+
+.roadmap-item:nth-child(even)
+.roadmap-number {
+
+    left: -19px;
+}
+
+
+.roadmap-content {
+
+    padding: 23px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    transition:
+        0.35s ease;
+}
+
+
+.roadmap-content:hover {
+
+    border-color:
+        rgba(0,217,255,0.4);
+
+    transform:
+        translateY(-5px);
+}
+
+
+.roadmap-content h3 {
+
+    margin: 0 0 9px;
+
+    color: #00d9ff;
+}
+
+
+.roadmap-content p {
+
+    margin: 0;
+
+    color: #aeb8c8;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   IMPORTANT HABITS
+========================================= */
+
+.habits {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 18px;
+}
+
+
+.habit {
+
+    display: flex;
+
+    gap: 17px;
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            120deg,
+            rgba(255,255,255,0.06),
+            rgba(255,255,255,0.025)
+        );
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    transition:
+        0.35s ease;
+}
+
+
+.habit:hover {
+
+    transform:
+        translateX(6px);
+
+    border-color:
+        rgba(0,217,255,0.35);
+}
+
+
+.habit-icon {
+
+    font-size: 30px;
+
+    flex-shrink: 0;
+}
+
+
+.habit h3 {
+
+    margin: 0 0 7px;
+}
+
+
+.habit p {
+
+    margin: 0;
+
+    color: #aeb8c8;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================
+   CAREER GROWTH
+========================================= */
+
+.career-box {
+
+    text-align: center;
+
+    padding: 45px 25px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(0,217,255,0.09),
+            rgba(108,76,255,0.09)
+        );
+
+    border:
+        1px solid
+        rgba(0,217,255,0.2);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.35);
+}
+
+
+.career-box h2 {
+
+    margin: 0 0 18px;
+
+    font-size: 32px;
+}
+
+
+.career-box h2 span {
+
+    color: #00d9ff;
+}
+
+
+.career-box p {
+
+    max-width: 750px;
+
+    margin: auto;
+
+    color: #aeb8c8;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FUTURE PATH
+========================================= */
+
+.future-path {
+
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 35px;
+}
+
+
+.path-item {
+
+    flex: 1;
+
+    text-align: center;
+
+    padding: 22px 12px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255,255,255,0.045);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+}
+
+
+.path-item strong {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #00d9ff;
+}
+
+
+.path-item span {
+
+    color: #9da7b7;
+
+    font-size: 14px;
+}
+
+
+.path-arrow {
+
+    color: #00d9ff;
+
+    font-size: 22px;
+}
+
+
+/* =========================================
+   FINAL MESSAGE
+========================================= */
+
+.final-growth {
+
+    text-align: center;
+
+    padding: 45px 25px;
+
+    margin-bottom: 45px;
+
+    border-radius: 25px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.1);
+
+    background:
+        rgba(255,255,255,0.035);
+}
+
+
+.final-growth h2 {
+
+    margin: 0 0 15px;
+
+    font-size: 30px;
+}
+
+
+.final-growth h2 span {
+
+    color: #00d9ff;
+}
+
+
+.final-growth p {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #aeb8c8;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   BACK BUTTON
+========================================= */
+
+.back-button {
+
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto;
+
+    padding:
+        14px 30px;
+
+    border-radius: 50px;
+
+    text-decoration: none !important;
+
+    color: #ffffff !important;
+
+    background:
+        rgba(0,217,255,0.07) !important;
+
+    border:
+        1px solid #00d9ff;
+
+    font-weight: bold;
+
+    transition:
+        0.35s ease;
+}
+
+
+.back-button:hover {
+
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(0,217,255,0.16) !important;
+
+    box-shadow:
+        0 0 25px
+        rgba(0,217,255,0.25);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 750px) {
+
+    .grow-page {
+
+        padding:
+            45px 17px 50px;
+    }
+
+
+    .grow-hero {
+
+        padding-bottom: 60px;
+    }
+
+
+    .future-orbit {
+
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .future-orbit::before {
+
+        width: 130px;
+        height: 130px;
+    }
+
+
+    .future-symbol {
+
+        font-size: 45px;
+    }
+
+
+    .grow-hero h1 {
+
+        font-size: 40px;
+    }
+
+
+    .grow-hero p {
+
+        font-size: 16px;
+    }
+
+
+    .learning-future-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .habits {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .vision-box {
+
+        padding: 27px 22px;
+    }
+
+
+    .skill-roadmap::before {
+
+        left: 18px;
+
+        transform: none;
+    }
+
+
+    .roadmap-item,
+    .roadmap-item:nth-child(even),
+    .roadmap-item:nth-child(odd) {
+
+        width: 100%;
+
+        margin-left: 0;
+
+        padding:
+            0 0 35px 55px;
+
+        text-align: left;
+    }
+
+
+    .roadmap-item:nth-child(odd)
+    .roadmap-number,
+    .roadmap-item:nth-child(even)
+    .roadmap-number {
+
+        left: 0;
+
+        right: auto;
+    }
+
+
+    .future-path {
+
+        flex-direction: column;
+    }
+
+
+    .path-item {
+
+        width: 100%;
+
+        box-sizing: border-box;
+    }
+
+
+    .path-arrow {
+
+        transform:
+            rotate(90deg);
+    }
+
+
+    .career-box {
+
+        padding:
+            35px 20px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<main class="grow-page">
+
+
+<!-- =========================================
+     HERO
+========================================= -->
+
+<section class="grow-hero">
+
+    <div class="future-orbit">
+
+        <div class="future-symbol">
+            🚀
+        </div>
+
+    </div>
+
+
+    <h1>
+
+        Build Today.
+        <span>Grow Tomorrow.</span>
+
+    </h1>
+
+
+    <p>
+
+        My future is built one skill at a time.
+        This journey is about learning new technologies,
+        building meaningful projects, improving my
+        problem-solving ability and becoming better
+        every day.
+
+    </p>
+
+</section>
+
+
+
+<!-- =========================================
+     FUTURE VISION
+========================================= -->
+
+<section class="grow-section">
+
+
+    <div class="grow-title">
+
+        <h2>
+            🌟 My <span>Future Vision</span>
+        </h2>
+
+        <p>
+            Where I want my learning journey to take me.
+        </p>
+
+    </div>
+
+
+    <div class="vision-box">
+
+        <h3>
+            Becoming A Skilled Technology Professional
+        </h3>
+
+
+        <p>
+
+            As a B.Tech Data Science student, I want to
+            continuously improve my technical knowledge
+            and understand how technology can solve
+            real-world problems.
+
+        </p>
+
+
+        <p>
+
+            My goal is not only to learn programming
+            languages, but also to understand how to
+            think logically, analyze problems, create
+            useful solutions and work on meaningful
+            projects.
+
+        </p>
+
+
+        <p>
+
+            The future of technology is constantly changing,
+            so continuous learning will be an important
+            part of my growth.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     WHAT TO LEARN
+========================================= -->
+
+<section class="grow-section">
+
+
+    <div class="grow-title">
+
+        <h2>
+            🧠 What I Need To
+            <span>Learn</span>
+        </h2>
+
+        <p>
+            Important areas that can help me grow in the future.
+        </p>
+
+    </div>
+
+
+    <div class="learning-future-grid">
+
+
+        <div class="future-card">
+
+            <div class="future-icon">
+                💻
+            </div>
+
+            <h3>
+                Programming
+            </h3>
+
+            <p>
+
+                Strengthen programming fundamentals and
+                learn languages such as Java, Python and
+                other technologies useful for future projects.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="future-card">
+
+            <div class="future-icon">
+                📊
+            </div>
+
+            <h3>
+                Data Science
+            </h3>
+
+            <p>
+
+                Learn data analysis, statistics, visualization,
+                databases and machine learning concepts
+                step by step.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="future-card">
+
+            <div class="future-icon">
+                🌐
+            </div>
+
+            <h3>
+                Web Development
+            </h3>
+
+            <p>
+
+                Continue improving HTML, CSS and JavaScript
+                skills and learn how modern websites and
+                applications are built.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="future-card">
+
+            <div class="future-icon">
+                🤖
+            </div>
+
+            <h3>
+                AI & Emerging Technology
+            </h3>
+
+            <p>
+
+                Understand artificial intelligence,
+                machine learning and other emerging
+                technologies as my knowledge grows.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="future-card">
+
+            <div class="future-icon">
+                🧩
+            </div>
+
+            <h3>
+                Problem Solving
+            </h3>
+
+            <p>
+
+                Improve logical thinking, algorithms and
+                problem-solving skills through regular
+                programming practice.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="future-card">
+
+            <div class="future-icon">
+                ☁️
+            </div>
+
+            <h3>
+                Modern Tools
+            </h3>
+
+            <p>
+
+                Gradually learn tools such as Git, cloud
+                platforms, development environments and
+                other technologies used in real projects.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     ROADMAP
+========================================= -->
+
+<section class="grow-section">
+
+
+    <div class="grow-title">
+
+        <h2>
+            🚀 My <span>Growth Roadmap</span>
+        </h2>
+
+        <p>
+            A simple path for continuous improvement.
+        </p>
+
+    </div>
+
+
+    <div class="skill-roadmap">
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-number">
+                01
+            </div>
+
+            <div class="roadmap-content">
+
+                <h3>
+                    Build Strong Fundamentals
+                </h3>
+
+                <p>
+
+                    Master programming basics, data structures,
+                    algorithms, computer fundamentals and
+                    logical thinking.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-number">
+                02
+            </div>
+
+            <div class="roadmap-content">
+
+                <h3>
+                    Build Projects
+                </h3>
+
+                <p>
+
+                    Turn knowledge into practical projects.
+                    Building projects helps transform concepts
+                    into real experience.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-number">
+                03
+            </div>
+
+            <div class="roadmap-content">
+
+                <h3>
+                    Learn Data & AI
+                </h3>
+
+                <p>
+
+                    Develop knowledge in data analysis,
+                    statistics, machine learning and
+                    artificial intelligence.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-number">
+                04
+   
