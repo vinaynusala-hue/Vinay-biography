@@ -1,34 +1,395 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Vinay | About</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* ABOUT PAGE */
+
+        .about-page {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 20px;
+        }
+
+        /* HERO */
+
+        .about-hero {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .about-icon {
+            width: 90px;
+            height: 90px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 45px;
+
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 25px rgba(0, 200, 255, 0.25);
+
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIcon {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .about-hero h1 {
+            font-size: 48px;
+            margin: 20px 0 10px;
+        }
+
+        .about-hero h1 span {
+            color: #00d9ff;
+        }
+
+        .subtitle {
+            color: #b8c1d1;
+            font-size: 18px;
+        }
+
+
+        /* WHO AM I CARD */
+
+        .about-card {
+
+            position: relative;
+
+            padding: 35px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,255,255,0.10),
+                    rgba(255,255,255,0.03)
+                );
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(12px);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.25);
+
+            margin-bottom: 50px;
+
+            overflow: hidden;
+        }
+
+        .about-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            background: #00d9ff;
+
+            filter: blur(100px);
+
+            opacity: 0.12;
+
+            top: -80px;
+            right: -60px;
+        }
+
+        .about-card h2 {
+            color: #00d9ff;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .about-card p {
+            color: #d4d9e2;
+            line-height: 1.8;
+            margin-bottom: 15px;
+            font-size: 16px;
+        }
+
+
+        /* HIGHLIGHT CARDS */
+
+        .about-highlights {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* CLICKABLE CARD */
+
+        .highlight-card {
+
+            position: relative;
+
+            display: block;
+
+            text-decoration: none;
+
+            color: white;
+
+            padding: 35px 25px;
+
+            min-height: 250px;
+
+            border-radius: 22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.12),
+                    rgba(255,255,255,0.04)
+                );
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            backdrop-filter: blur(10px);
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.25);
+
+            transition:
+                transform 0.4s ease,
+                box-shadow 0.4s ease,
+                border-color 0.4s ease;
+
+            overflow: hidden;
+        }
+
+
+        /* GLOW */
+
+        .highlight-card::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 140px;
+            height: 140px;
+
+            background: #00d9ff;
+
+            border-radius: 50%;
+
+            filter: blur(80px);
+
+            opacity: 0;
+
+            transition: 0.4s;
+
+            top: -50px;
+            right: -50px;
+        }
+
+
+        /* HOVER 3D EFFECT */
+
+        .highlight-card:hover {
+
+            transform:
+                translateY(-12px)
+                perspective(700px)
+                rotateX(3deg)
+                rotateY(-3deg);
+
+            border-color: rgba(0,217,255,0.5);
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.4),
+                0 0 25px rgba(0,217,255,0.15);
+        }
+
+        .highlight-card:hover::before {
+            opacity: 0.18;
+        }
+
+
+        /* ICON */
+
+        .card-icon {
+
+            width: 65px;
+            height: 65px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 32px;
+
+            border-radius: 18px;
+
+            background: rgba(255,255,255,0.08);
+
+            margin-bottom: 20px;
+
+            transition: 0.4s;
+        }
+
+        .highlight-card:hover .card-icon {
+
+            transform:
+                scale(1.12)
+                rotate(-5deg);
+
+            background: rgba(0,217,255,0.12);
+        }
+
+
+        /* CARD TEXT */
+
+        .highlight-card h3 {
+
+            font-size: 25px;
+
+            margin: 0 0 12px;
+
+            color: #ffffff;
+        }
+
+        .highlight-card p {
+
+            color: #b8c1d1;
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* OPEN PAGE */
+
+        .card-link {
+
+            display: inline-block;
+
+            color: #00d9ff;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .highlight-card:hover .card-link {
+
+            transform: translateX(7px);
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 800px) {
+
+            .about-highlights {
+
+                grid-template-columns: 1fr;
+
+            }
+
+            .about-hero h1 {
+
+                font-size: 38px;
+
+            }
+
+            .about-card {
+
+                padding: 25px;
+
+            }
+
+        }
+
+    </style>
 </head>
+
 
 <body>
 
+
+<!-- NAVIGATION -->
+
 <nav>
+
     <a href="index.html">Home</a>
+
     <a href="about.html">About</a>
+
     <a href="education.html">Education</a>
+
     <a href="skills.html">Skills</a>
+
     <a href="projects.html">Projects</a>
+
     <a href="achievements.html">Achievements</a>
+
     <a href="resume.html">Resume</a>
+
     <a href="contact.html">Contact</a>
+
 </nav>
+
+
 
 <main class="about-page">
 
-    <div class="about-hero reveal">
-        <div class="about-icon">👨‍💻</div>
 
-        <h1>About <span>Me</span></h1>
+    <!-- HERO -->
+
+    <div class="about-hero reveal">
+
+        <div class="about-icon">
+            👨‍💻
+        </div>
+
+        <h1>
+            About <span>Me</span>
+        </h1>
 
         <p class="subtitle">
             B.Tech Data Science Student • Technology Enthusiast
         </p>
+
     </div>
+
+
+
+    <!-- ABOUT -->
 
     <div class="about-card reveal">
 
@@ -54,29 +415,98 @@
 
     </div>
 
+
+
+    <!-- INTERACTIVE CARDS -->
+
     <div class="about-highlights">
 
-        <div class="highlight-card reveal">
-            <div>💡</div>
-            <h3>Learn</h3>
-            <p>Always exploring new technologies and concepts.</p>
-        </div>
 
-        <div class="highlight-card reveal">
-            <div>🚀</div>
-            <h3>Create</h3>
-            <p>Building projects and experimenting with ideas.</p>
-        </div>
+        <!-- LEARN -->
 
-        <div class="highlight-card reveal">
-            <div>📈</div>
-            <h3>Grow</h3>
-            <p>Improving my programming and technical skills.</p>
-        </div>
+        <a href="learn.html"
+           class="highlight-card reveal">
+
+            <div class="card-icon">
+                💡
+            </div>
+
+            <h3>
+                Learn
+            </h3>
+
+            <p>
+                Explore my learning journey, technologies,
+                programming concepts and the skills I'm
+                developing step by step.
+            </p>
+
+            <span class="card-link">
+                Explore Learning →
+            </span>
+
+        </a>
+
+
+
+        <!-- CREATE -->
+
+        <a href="create.html"
+           class="highlight-card reveal">
+
+            <div class="card-icon">
+                🚀
+            </div>
+
+            <h3>
+                Create
+            </h3>
+
+            <p>
+                Discover the projects, experiments and creative
+                ideas I'm building while turning knowledge
+                into practical work.
+            </p>
+
+            <span class="card-link">
+                View Creations →
+            </span>
+
+        </a>
+
+
+
+        <!-- GROW -->
+
+        <a href="grow.html"
+           class="highlight-card reveal">
+
+            <div class="card-icon">
+                📈
+            </div>
+
+            <h3>
+                Grow
+            </h3>
+
+            <p>
+                Follow my goals, progress and journey toward
+                becoming a skilled technology and data science
+                professional.
+            </p>
+
+            <span class="card-link">
+                See My Growth →
+            </span>
+
+        </a>
+
 
     </div>
 
+
 </main>
+
 
 </body>
 </html>
