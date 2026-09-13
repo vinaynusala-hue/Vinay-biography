@@ -798,6 +798,30 @@ section {
     opacity: 1;
     transform: translateY(0);
 }
+    /* FUTURISTIC GRID */
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(0,217,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,217,255,0.06) 1px, transparent 1px);
+    background-size: 45px 45px;
+    animation: gridMove 12s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes gridMove {
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(45px, 45px);
+    }
+}
 </style>
 </head>
 
