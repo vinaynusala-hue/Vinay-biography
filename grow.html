@@ -14,9 +14,9 @@ content="width=device-width, initial-scale=1.0">
 
 <style>
 
-/* =========================================
-   GLOBAL
-========================================= */
+/* ==============================
+   BASIC
+============================== */
 
 html {
     scroll-behavior: smooth;
@@ -25,94 +25,92 @@ html {
 body {
     margin: 0 !important;
     padding: 0 !important;
-
     background: #000 !important;
-
-    color: #ffffff !important;
-
+    color: #fff !important;
     overflow-x: hidden;
 }
 
 
-/* =========================================
+/* ==============================
    PAGE
-========================================= */
+============================== */
 
 .grow-page {
-
     max-width: 1100px;
-
     margin: auto;
-
-    padding: 55px 20px 50px;
-
+    padding: 25px 20px 60px;
     position: relative;
 }
 
 
-/* =========================================
-   BACKGROUND GLOW
-========================================= */
+/* ==============================
+   BACK BUTTON
+============================== */
 
-.grow-page::before {
+.back-button {
+    display: inline-flex;
 
-    content: "";
+    align-items: center;
+    justify-content: center;
 
-    position: fixed;
+    gap: 8px;
 
-    width: 350px;
-    height: 350px;
+    padding: 12px 22px;
 
-    border-radius: 50%;
+    border-radius: 50px;
 
-    background: #00d9ff;
+    text-decoration: none !important;
 
-    filter: blur(180px);
+    color: #ffffff !important;
 
-    opacity: 0.08;
+    background: rgba(0, 217, 255, 0.08) !important;
 
-    top: 5%;
-    left: -150px;
+    border: 1px solid #00d9ff;
 
-    pointer-events: none;
+    font-size: 15px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.08);
+
+    transition: 0.35s ease;
+
+    position: relative;
+
+    z-index: 10;
+}
+
+.back-button:hover {
+    transform: translateY(-4px);
+
+    background:
+        rgba(0, 217, 255, 0.18) !important;
+
+    box-shadow:
+        0 0 25px
+        rgba(0, 217, 255, 0.25);
 }
 
 
-.grow-page::after {
+/* ==============================
+   TOP BACK AREA
+============================== */
 
-    content: "";
-
-    position: fixed;
-
-    width: 300px;
-    height: 300px;
-
-    border-radius: 50%;
-
-    background: #6c4cff;
-
-    filter: blur(170px);
-
-    opacity: 0.08;
-
-    right: -120px;
-
-    bottom: 10%;
-
-    pointer-events: none;
+.top-back {
+    margin-bottom: 20px;
 }
 
 
-/* =========================================
+/* ==============================
    HERO
-========================================= */
+============================== */
 
 .grow-hero {
-
     text-align: center;
 
     padding:
-        25px 0 85px;
+        30px 0 75px;
 
     animation:
         heroAppear 1s ease;
@@ -122,35 +120,28 @@ body {
 @keyframes heroAppear {
 
     from {
-
         opacity: 0;
-
-        transform:
-            translateY(45px);
+        transform: translateY(40px);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
+
 }
 
 
-/* =========================================
-   FUTURE ORBIT
-========================================= */
+/* ==============================
+   FUTURE ICON
+============================== */
 
 .future-orbit {
 
-    width: 125px;
-    height: 125px;
+    width: 120px;
+    height: 120px;
 
     margin: 0 auto 35px;
-
-    position: relative;
 
     display: flex;
 
@@ -159,16 +150,18 @@ body {
 
     border-radius: 50%;
 
+    position: relative;
+
     border:
         1px solid
-        rgba(0,217,255,0.5);
+        rgba(0, 217, 255, 0.5);
 
     box-shadow:
         0 0 35px
-        rgba(0,217,255,0.15);
+        rgba(0, 217, 255, 0.18);
 
     animation:
-        orbitFloat 4s ease-in-out infinite;
+        floatIcon 4s ease-in-out infinite;
 }
 
 
@@ -178,17 +171,17 @@ body {
 
     position: absolute;
 
-    width: 155px;
-    height: 155px;
+    width: 150px;
+    height: 150px;
 
     border-radius: 50%;
 
     border:
         1px dashed
-        rgba(0,217,255,0.25);
+        rgba(0, 217, 255, 0.3);
 
     animation:
-        rotateOrbit 8s linear infinite;
+        rotate 8s linear infinite;
 }
 
 
@@ -209,27 +202,23 @@ body {
         0 0 15px #00d9ff;
 
     top: -5px;
-
-    left: 58px;
-
-    animation:
-        rotateOrbit 4s linear infinite;
 }
 
 
-@keyframes orbitFloat {
+@keyframes floatIcon {
 
-    0%,100% {
+    0%, 100% {
         transform: translateY(0);
     }
 
     50% {
         transform: translateY(-12px);
     }
+
 }
 
 
-@keyframes rotateOrbit {
+@keyframes rotate {
 
     from {
         transform: rotate(0deg);
@@ -238,27 +227,26 @@ body {
     to {
         transform: rotate(360deg);
     }
+
 }
 
 
 .future-symbol {
-
-    font-size: 55px;
-
+    font-size: 52px;
     z-index: 2;
 }
 
 
-/* =========================================
+/* ==============================
    HERO TEXT
-========================================= */
+============================== */
 
 .grow-hero h1 {
 
     margin: 0 0 20px;
 
     font-size:
-        clamp(40px, 8vw, 62px);
+        clamp(38px, 8vw, 62px);
 
     line-height: 1.2;
 }
@@ -270,7 +258,7 @@ body {
 
     text-shadow:
         0 0 25px
-        rgba(0,217,255,0.4);
+        rgba(0, 217, 255, 0.4);
 }
 
 
@@ -288,9 +276,9 @@ body {
 }
 
 
-/* =========================================
-   SECTION
-========================================= */
+/* ==============================
+   SECTIONS
+============================== */
 
 .grow-section {
 
@@ -304,26 +292,21 @@ body {
 @keyframes sectionAppear {
 
     from {
-
         opacity: 0;
-
-        transform:
-            translateY(30px);
+        transform: translateY(30px);
     }
 
     to {
-
         opacity: 1;
-
-        transform:
-            translateY(0);
+        transform: translateY(0);
     }
+
 }
 
 
-/* =========================================
-   SECTION TITLE
-========================================= */
+/* ==============================
+   TITLES
+============================== */
 
 .grow-title {
 
@@ -357,13 +340,11 @@ body {
 }
 
 
-/* =========================================
-   FUTURE VISION
-========================================= */
+/* ==============================
+   VISION
+============================== */
 
 .vision-box {
-
-    position: relative;
 
     padding: 40px;
 
@@ -373,37 +354,28 @@ body {
         linear-gradient(
             135deg,
             rgba(0,217,255,0.08),
-            rgba(108,76,255,0.07),
-            rgba(255,255,255,0.025)
+            rgba(100,60,255,0.08),
+            rgba(255,255,255,0.02)
         );
 
     border:
         1px solid
         rgba(0,217,255,0.22);
 
-    overflow: hidden;
+    box-shadow:
+        0 20px 55px
+        rgba(0,0,0,0.4);
+
+    transition: 0.4s ease;
 }
 
 
-.vision-box::before {
+.vision-box:hover {
 
-    content: "";
+    transform: translateY(-5px);
 
-    position: absolute;
-
-    width: 150px;
-    height: 150px;
-
-    border-radius: 50%;
-
-    background: #00d9ff;
-
-    filter: blur(90px);
-
-    opacity: 0.08;
-
-    right: -60px;
-    top: -60px;
+    border-color:
+        rgba(0,217,255,0.45);
 }
 
 
@@ -433,11 +405,11 @@ body {
 }
 
 
-/* =========================================
-   LEARNING GRID
-========================================= */
+/* ==============================
+   LEARNING CARDS
+============================== */
 
-.learning-future-grid {
+.learning-grid {
 
     display: grid;
 
@@ -450,11 +422,9 @@ body {
 
 .future-card {
 
-    position: relative;
+    min-height: 220px;
 
-    padding: 30px 23px;
-
-    min-height: 230px;
+    padding: 28px 23px;
 
     border-radius: 22px;
 
@@ -465,42 +435,19 @@ body {
         1px solid
         rgba(255,255,255,0.1);
 
-    transition:
-        0.4s ease;
+    transition: 0.4s ease;
 
     overflow: hidden;
-}
 
-
-.future-card::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 90px;
-    height: 90px;
-
-    border-radius: 50%;
-
-    background: #00d9ff;
-
-    filter: blur(65px);
-
-    opacity: 0;
-
-    right: -30px;
-    top: -30px;
-
-    transition:
-        0.4s ease;
+    position: relative;
 }
 
 
 .future-card:hover {
 
     transform:
-        translateY(-10px);
+        translateY(-10px)
+        scale(1.02);
 
     border-color:
         rgba(0,217,255,0.45);
@@ -511,27 +458,19 @@ body {
 }
 
 
-.future-card:hover::before {
-
-    opacity: 0.15;
-}
-
-
 .future-icon {
 
     font-size: 38px;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 
     display: inline-block;
 
-    transition:
-        0.4s ease;
+    transition: 0.4s ease;
 }
 
 
-.future-card:hover
-.future-icon {
+.future-card:hover .future-icon {
 
     transform:
         scale(1.15)
@@ -557,21 +496,21 @@ body {
 }
 
 
-/* =========================================
-   SKILLS TO GROW
-========================================= */
+/* ==============================
+   ROADMAP
+============================== */
 
-.skill-roadmap {
+.roadmap {
 
-    position: relative;
-
-    max-width: 900px;
+    max-width: 850px;
 
     margin: auto;
+
+    position: relative;
 }
 
 
-.skill-roadmap::before {
+.roadmap::before {
 
     content: "";
 
@@ -604,17 +543,10 @@ body {
 
     box-sizing: border-box;
 
-    padding: 0 35px 45px;
+    padding:
+        0 35px 45px;
 
     position: relative;
-}
-
-
-.roadmap-item:nth-child(odd) {
-
-    margin-left: 0;
-
-    text-align: right;
 }
 
 
@@ -626,14 +558,20 @@ body {
 }
 
 
+.roadmap-item:nth-child(odd) {
+
+    text-align: right;
+}
+
+
 .roadmap-number {
 
     position: absolute;
 
+    top: 0;
+
     width: 38px;
     height: 38px;
-
-    top: 0;
 
     display: flex;
 
@@ -649,13 +587,13 @@ body {
 
     color: #00d9ff;
 
+    font-size: 12px;
+
+    font-weight: bold;
+
     box-shadow:
         0 0 18px
         rgba(0,217,255,0.2);
-
-    font-size: 13px;
-
-    font-weight: bold;
 }
 
 
@@ -686,18 +624,17 @@ body {
         1px solid
         rgba(255,255,255,0.1);
 
-    transition:
-        0.35s ease;
+    transition: 0.35s ease;
 }
 
 
 .roadmap-content:hover {
 
-    border-color:
-        rgba(0,217,255,0.4);
-
     transform:
         translateY(-5px);
+
+    border-color:
+        rgba(0,217,255,0.4);
 }
 
 
@@ -719,9 +656,9 @@ body {
 }
 
 
-/* =========================================
-   IMPORTANT HABITS
-========================================= */
+/* ==============================
+   HABITS
+============================== */
 
 .habits {
 
@@ -745,18 +682,13 @@ body {
     border-radius: 18px;
 
     background:
-        linear-gradient(
-            120deg,
-            rgba(255,255,255,0.06),
-            rgba(255,255,255,0.025)
-        );
+        rgba(255,255,255,0.045);
 
     border:
         1px solid
         rgba(255,255,255,0.1);
 
-    transition:
-        0.35s ease;
+    transition: 0.35s ease;
 }
 
 
@@ -794,9 +726,9 @@ body {
 }
 
 
-/* =========================================
-   CAREER GROWTH
-========================================= */
+/* ==============================
+   CAREER
+============================== */
 
 .career-box {
 
@@ -810,7 +742,7 @@ body {
         linear-gradient(
             135deg,
             rgba(0,217,255,0.09),
-            rgba(108,76,255,0.09)
+            rgba(100,60,255,0.09)
         );
 
     border:
@@ -849,18 +781,17 @@ body {
 }
 
 
-/* =========================================
+/* ==============================
    FUTURE PATH
-========================================= */
+============================== */
 
 .future-path {
 
     display: flex;
 
-    justify-content:
-        space-between;
-
     align-items: center;
+
+    justify-content: center;
 
     gap: 10px;
 
@@ -872,14 +803,12 @@ body {
 
     flex: 1;
 
-    text-align: center;
+    padding: 20px 10px;
 
-    padding: 22px 12px;
-
-    border-radius: 18px;
+    border-radius: 17px;
 
     background:
-        rgba(255,255,255,0.045);
+        rgba(255,255,255,0.05);
 
     border:
         1px solid
@@ -891,7 +820,7 @@ body {
 
     display: block;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 
     color: #00d9ff;
 }
@@ -901,7 +830,7 @@ body {
 
     color: #9da7b7;
 
-    font-size: 14px;
+    font-size: 13px;
 }
 
 
@@ -913,9 +842,9 @@ body {
 }
 
 
-/* =========================================
+/* ==============================
    FINAL MESSAGE
-========================================= */
+============================== */
 
 .final-growth {
 
@@ -927,12 +856,12 @@ body {
 
     border-radius: 25px;
 
+    background:
+        rgba(255,255,255,0.035);
+
     border:
         1px solid
         rgba(255,255,255,0.1);
-
-    background:
-        rgba(255,255,255,0.035);
 }
 
 
@@ -962,64 +891,34 @@ body {
 }
 
 
-/* =========================================
-   BACK BUTTON
-========================================= */
+/* ==============================
+   BOTTOM BACK BUTTON
+============================== */
 
-.back-button {
+.bottom-back {
 
-    display: block;
+    text-align: center;
 
-    width: fit-content;
-
-    margin: 0 auto;
-
-    padding:
-        14px 30px;
-
-    border-radius: 50px;
-
-    text-decoration: none !important;
-
-    color: #ffffff !important;
-
-    background:
-        rgba(0,217,255,0.07) !important;
-
-    border:
-        1px solid #00d9ff;
-
-    font-weight: bold;
-
-    transition:
-        0.35s ease;
+    margin-top: 10px;
 }
 
 
-.back-button:hover {
+.bottom-back .back-button {
 
-    transform:
-        translateY(-5px);
-
-    background:
-        rgba(0,217,255,0.16) !important;
-
-    box-shadow:
-        0 0 25px
-        rgba(0,217,255,0.25);
+    display: inline-flex;
 }
 
 
-/* =========================================
+/* ==============================
    MOBILE
-========================================= */
+============================== */
 
 @media (max-width: 750px) {
 
     .grow-page {
 
         padding:
-            45px 17px 50px;
+            20px 16px 50px;
     }
 
 
@@ -1051,7 +950,7 @@ body {
 
     .grow-hero h1 {
 
-        font-size: 40px;
+        font-size: 39px;
     }
 
 
@@ -1061,7 +960,19 @@ body {
     }
 
 
-    .learning-future-grid {
+    .grow-title h2 {
+
+        font-size: 27px;
+    }
+
+
+    .vision-box {
+
+        padding: 27px 22px;
+    }
+
+
+    .learning-grid {
 
         grid-template-columns: 1fr;
     }
@@ -1073,13 +984,9 @@ body {
     }
 
 
-    .vision-box {
+    /* MOBILE ROADMAP */
 
-        padding: 27px 22px;
-    }
-
-
-    .skill-roadmap::before {
+    .roadmap::before {
 
         left: 18px;
 
@@ -1088,8 +995,8 @@ body {
 
 
     .roadmap-item,
-    .roadmap-item:nth-child(even),
-    .roadmap-item:nth-child(odd) {
+    .roadmap-item:nth-child(odd),
+    .roadmap-item:nth-child(even) {
 
         width: 100%;
 
@@ -1113,6 +1020,13 @@ body {
     }
 
 
+    .career-box {
+
+        padding:
+            35px 20px;
+    }
+
+
     .future-path {
 
         flex-direction: column;
@@ -1133,13 +1047,6 @@ body {
             rotate(90deg);
     }
 
-
-    .career-box {
-
-        padding:
-            35px 20px;
-    }
-
 }
 
 </style>
@@ -1154,10 +1061,29 @@ body {
 
 
 <!-- =========================================
+     BACK TO ABOUT
+     TOP
+========================================= -->
+
+<div class="top-back">
+
+    <a href="about.html"
+       class="back-button">
+
+        ← Back to About
+
+    </a>
+
+</div>
+
+
+
+<!-- =========================================
      HERO
 ========================================= -->
 
 <section class="grow-hero">
+
 
     <div class="future-orbit">
 
@@ -1185,6 +1111,7 @@ body {
         every day.
 
     </p>
+
 
 </section>
 
@@ -1240,9 +1167,9 @@ body {
 
         <p>
 
-            The future of technology is constantly changing,
-            so continuous learning will be an important
-            part of my growth.
+            Technology is constantly changing, so
+            continuous learning will be an important
+            part of my future growth.
 
         </p>
 
@@ -1273,7 +1200,7 @@ body {
     </div>
 
 
-    <div class="learning-future-grid">
+    <div class="learning-grid">
 
 
         <div class="future-card">
@@ -1289,8 +1216,8 @@ body {
             <p>
 
                 Strengthen programming fundamentals and
-                learn languages such as Java, Python and
-                other technologies useful for future projects.
+                learn languages such as Java and Python
+                while improving coding skills.
 
             </p>
 
@@ -1310,9 +1237,9 @@ body {
 
             <p>
 
-                Learn data analysis, statistics, visualization,
-                databases and machine learning concepts
-                step by step.
+                Learn data analysis, statistics,
+                visualization, databases and
+                machine learning concepts.
 
             </p>
 
@@ -1332,9 +1259,9 @@ body {
 
             <p>
 
-                Continue improving HTML, CSS and JavaScript
-                skills and learn how modern websites and
-                applications are built.
+                Continue improving HTML, CSS and
+                JavaScript and understand how modern
+                websites and applications are created.
 
             </p>
 
@@ -1349,14 +1276,14 @@ body {
             </div>
 
             <h3>
-                AI & Emerging Technology
+                AI & Technology
             </h3>
 
             <p>
 
-                Understand artificial intelligence,
-                machine learning and other emerging
-                technologies as my knowledge grows.
+                Gradually understand artificial
+                intelligence, machine learning and
+                other emerging technologies.
 
             </p>
 
@@ -1376,8 +1303,8 @@ body {
 
             <p>
 
-                Improve logical thinking, algorithms and
-                problem-solving skills through regular
+                Improve logical thinking, algorithms
+                and problem-solving through regular
                 programming practice.
 
             </p>
@@ -1398,9 +1325,9 @@ body {
 
             <p>
 
-                Gradually learn tools such as Git, cloud
-                platforms, development environments and
-                other technologies used in real projects.
+                Learn tools such as Git, cloud platforms,
+                development environments and technologies
+                used in real-world projects.
 
             </p>
 
@@ -1414,7 +1341,7 @@ body {
 
 
 <!-- =========================================
-     ROADMAP
+     GROWTH ROADMAP
 ========================================= -->
 
 <section class="grow-section">
@@ -1427,13 +1354,13 @@ body {
         </h2>
 
         <p>
-            A simple path for continuous improvement.
+            A step-by-step path for continuous improvement.
         </p>
 
     </div>
 
 
-    <div class="skill-roadmap">
+    <div class="roadmap">
 
 
         <div class="roadmap-item">
@@ -1450,8 +1377,9 @@ body {
 
                 <p>
 
-                    Master programming basics, data structures,
-                    algorithms, computer fundamentals and
+                    Master programming basics,
+                    data structures, algorithms,
+                    computer fundamentals and
                     logical thinking.
 
                 </p>
@@ -1476,9 +1404,9 @@ body {
 
                 <p>
 
-                    Turn knowledge into practical projects.
-                    Building projects helps transform concepts
-                    into real experience.
+                    Turn knowledge into practical
+                    projects and learn by solving
+                    real problems.
 
                 </p>
 
@@ -1503,8 +1431,8 @@ body {
                 <p>
 
                     Develop knowledge in data analysis,
-                    statistics, machine learning and
-                    artificial intelligence.
+                    machine learning and artificial
+                    intelligence.
 
                 </p>
 
@@ -1518,4 +1446,68 @@ body {
 
             <div class="roadmap-number">
                 04
-   
+            </div>
+
+            <div class="roadmap-content">
+
+                <h3>
+                    Gain Experience
+                </h3>
+
+                <p>
+
+                    Work on larger projects, collaborate
+                    with others and gain practical
+                    experience.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="roadmap-item">
+
+            <div class="roadmap-number">
+                05
+            </div>
+
+            <div class="roadmap-content">
+
+                <h3>
+                    Keep Evolving
+                </h3>
+
+                <p>
+
+                    Continue learning new technologies,
+                    adapt to changes and improve
+                    continuously.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     HABITS
+========================================= -->
+
+<section class="grow-section">
+
+
+    <div class="grow-title">
+
+        <h2>
+            🔥 Habits That Help Me
+          
