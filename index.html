@@ -500,6 +500,99 @@ nav a:hover {
         opacity: 1;
     }
 }
+    /* ANIMATED TECH PARTICLES */
+
+.hero {
+    overflow: hidden;
+}
+
+.particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particles span {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #00d9ff;
+    box-shadow: 0 0 15px #00d9ff;
+    animation: floatParticle 6s infinite ease-in-out;
+}
+
+.particles span:nth-child(1) {
+    left: 10%;
+    top: 20%;
+}
+
+.particles span:nth-child(2) {
+    left: 20%;
+    top: 70%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(3) {
+    left: 35%;
+    top: 30%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(4) {
+    left: 50%;
+    top: 80%;
+    animation-delay: 3s;
+}
+
+.particles span:nth-child(5) {
+    left: 65%;
+    top: 25%;
+    animation-delay: 1.5s;
+}
+
+.particles span:nth-child(6) {
+    left: 75%;
+    top: 65%;
+    animation-delay: 2.5s;
+}
+
+.particles span:nth-child(7) {
+    left: 85%;
+    top: 35%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(8) {
+    left: 90%;
+    top: 80%;
+    animation-delay: 3.5s;
+}
+
+.particles span:nth-child(9) {
+    left: 5%;
+    top: 50%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(10) {
+    left: 45%;
+    top: 15%;
+    animation-delay: 4.5s;
+}
+
+@keyframes floatParticle {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.3;
+    }
+
+    50% {
+        transform: translateY(-35px) scale(1.8);
+        opacity: 1;
+    }
+}
 </style>
 </head>
 
@@ -526,6 +619,18 @@ nav a:hover {
 <!-- HOME -->
 
 <section class="hero" id="home">
+    <div class="particles">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    </div>
 
     <div class="hero-content">
 
