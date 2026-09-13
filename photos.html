@@ -35,34 +35,49 @@ body {
 
 
 /* =========================
-   BACKGROUND
+   BACKGROUND GLOW
 ========================= */
 
 body::before {
     content: "";
     position: fixed;
+
     width: 450px;
     height: 450px;
+
     background: #6c2cff;
+
     border-radius: 50%;
+
     filter: blur(150px);
+
     opacity: 0.20;
+
     top: -180px;
     left: -150px;
+
     z-index: -1;
 }
 
 body::after {
     content: "";
+
     position: fixed;
+
     width: 400px;
     height: 400px;
+
     background: #00d9ff;
+
     border-radius: 50%;
+
     filter: blur(150px);
+
     opacity: 0.15;
+
     right: -150px;
     bottom: -150px;
+
     z-index: -1;
 }
 
@@ -73,17 +88,20 @@ body::after {
 
 nav {
     position: fixed;
+
     top: 0;
     width: 100%;
     height: 70px;
 
     display: flex;
+
     align-items: center;
     justify-content: space-between;
 
     padding: 0 7%;
 
     background: rgba(7,11,32,0.85);
+
     backdrop-filter: blur(15px);
 
     border-bottom: 1px solid rgba(255,255,255,0.10);
@@ -94,6 +112,7 @@ nav {
 
 .logo {
     font-size: 25px;
+
     font-weight: bold;
 
     background: linear-gradient(
@@ -104,20 +123,25 @@ nav {
     );
 
     -webkit-background-clip: text;
+
     color: transparent;
 }
 
 
 nav ul {
     display: flex;
+
     gap: 25px;
+
     list-style: none;
 }
 
 
 nav a {
     color: white;
+
     text-decoration: none;
+
     font-size: 15px;
 
     transition: 0.3s;
@@ -130,14 +154,66 @@ nav a:hover {
 
 
 /* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+
+    position: fixed;
+
+    top: 85px;
+    left: 25px;
+
+    z-index: 999;
+
+    padding: 10px 18px;
+
+    border-radius: 25px;
+
+    border: 1px solid rgba(0,229,255,0.5);
+
+    background: rgba(10,15,40,0.80);
+
+    backdrop-filter: blur(10px);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.back-button:hover {
+
+    color: #00e5ff;
+
+    border-color: #00e5ff;
+
+    transform: translateX(-5px);
+
+    box-shadow:
+        0 0 15px rgba(0,229,255,0.35);
+}
+
+
+/* =========================
    HERO
 ========================= */
 
 .hero {
+
     min-height: 100vh;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     text-align: center;
@@ -147,11 +223,13 @@ nav a:hover {
 
 
 .hero-content {
+
     animation: appear 1.5s ease;
 }
 
 
 .hero h1 {
+
     font-size: clamp(55px, 12vw, 100px);
 
     background: linear-gradient(
@@ -165,6 +243,7 @@ nav a:hover {
     background-size: 300%;
 
     -webkit-background-clip: text;
+
     color: transparent;
 
     animation: gradient 5s linear infinite;
@@ -172,18 +251,28 @@ nav a:hover {
 
 
 .hero h2 {
+
     margin-top: 15px;
+
     font-size: 25px;
+
     color: #e2e8f0;
 }
 
 
 .hero p {
+
     margin-top: 15px;
+
     color: #94a3b8;
+
     font-size: 17px;
 }
 
+
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes gradient {
 
@@ -202,11 +291,13 @@ nav a:hover {
 
     from {
         opacity: 0;
+
         transform: translateY(40px);
     }
 
     to {
         opacity: 1;
+
         transform: translateY(0);
     }
 
@@ -218,6 +309,7 @@ nav a:hover {
 ========================= */
 
 .button {
+
     display: inline-block;
 
     margin-top: 30px;
@@ -242,8 +334,11 @@ nav a:hover {
 
 
 .button:hover {
+
     transform: translateY(-5px);
-    box-shadow: 0 0 25px rgba(0,229,255,0.35);
+
+    box-shadow:
+        0 0 25px rgba(0,229,255,0.35);
 }
 
 
@@ -252,11 +347,13 @@ nav a:hover {
 ========================= */
 
 section {
+
     padding: 90px 7%;
 }
 
 
 .section-title {
+
     text-align: center;
 
     font-size: 40px;
@@ -287,7 +384,8 @@ section {
 
     backdrop-filter: blur(15px);
 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.25);
 
     transition: 0.4s;
 }
@@ -295,10 +393,10 @@ section {
 
 .box:hover {
 
-    border-color: rgba(0,229,255,0.5);
+    border-color:
+        rgba(0,229,255,0.5);
 
     transform: translateY(-5px);
-
 }
 
 
@@ -315,7 +413,6 @@ section {
     color: #d1d5db;
 
     font-size: 17px;
-
 }
 
 
@@ -328,7 +425,6 @@ section {
     max-width: 800px;
 
     margin: auto;
-
 }
 
 
@@ -339,7 +435,6 @@ section {
     font-size: 25px;
 
     margin-bottom: 15px;
-
 }
 
 
@@ -348,7 +443,6 @@ section {
     color: #cbd5e1;
 
     line-height: 1.8;
-
 }
 
 
@@ -363,7 +457,6 @@ section {
     margin: auto;
 
     text-align: center;
-
 }
 
 
@@ -383,7 +476,6 @@ section {
     -webkit-background-clip: text;
 
     color: transparent;
-
 }
 
 
@@ -394,12 +486,11 @@ section {
     line-height: 1.9;
 
     font-size: 17px;
-
 }
 
 
 /* =========================
-   COLLEGE PHOTOS
+   COLLEGE GALLERY
 ========================= */
 
 .gallery {
@@ -410,10 +501,10 @@ section {
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+        repeat(2, 1fr);
 
     gap: 25px;
-
 }
 
 
@@ -427,12 +518,24 @@ section {
 
     border-radius: 20px;
 
-    border: 1px solid rgba(255,255,255,0.15);
+    border:
+        1px solid rgba(255,255,255,0.15);
 
     background: #111827;
 
-    box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.35);
 
+    transition: 0.4s;
+}
+
+
+.photo:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 45px rgba(0,229,255,0.18);
 }
 
 
@@ -445,14 +548,12 @@ section {
     object-fit: cover;
 
     transition: 0.6s;
-
 }
 
 
 .photo:hover img {
 
     transform: scale(1.08);
-
 }
 
 
@@ -464,11 +565,11 @@ section {
 
     inset: 0;
 
-    background: linear-gradient(
-        transparent 60%,
-        rgba(0,0,0,0.7)
-    );
-
+    background:
+        linear-gradient(
+            transparent 60%,
+            rgba(0,0,0,0.75)
+        );
 }
 
 
@@ -481,14 +582,12 @@ section {
     left: 20px;
 
     z-index: 2;
-
 }
 
 
 .photo-title h3 {
 
     font-size: 21px;
-
 }
 
 
@@ -497,7 +596,6 @@ section {
     margin-top: 5px;
 
     color: #d1d5db;
-
 }
 
 
@@ -508,7 +606,6 @@ section {
 .contact {
 
     text-align: center;
-
 }
 
 
@@ -519,7 +616,6 @@ section {
     color: #cbd5e1;
 
     font-size: 17px;
-
 }
 
 
@@ -533,10 +629,10 @@ footer {
 
     padding: 30px;
 
-    border-top: 1px solid rgba(255,255,255,0.10);
+    border-top:
+        1px solid rgba(255,255,255,0.10);
 
     color: #94a3b8;
-
 }
 
 
@@ -547,51 +643,73 @@ footer {
 @media (max-width: 700px) {
 
     nav {
+
         padding: 0 20px;
     }
 
 
     nav ul {
+
         display: none;
     }
 
 
+    .back-button {
+
+        top: 82px;
+
+        left: 15px;
+
+        padding: 8px 14px;
+
+        font-size: 14px;
+    }
+
+
     section {
+
         padding: 70px 20px;
     }
 
 
     .hero h1 {
+
         font-size: 60px;
     }
 
 
     .hero h2 {
+
         font-size: 20px;
     }
 
 
     .section-title {
+
         font-size: 32px;
     }
 
 
     .box {
+
         padding: 25px;
     }
 
 
     .college-name {
+
         font-size: 25px;
     }
 
 
     .gallery {
+
         grid-template-columns: 1fr;
     }
 
 
     .photo {
+
         height: 240px;
     }
 
@@ -618,23 +736,33 @@ footer {
     <ul>
 
         <li>
-            <a href="#home">Home</a>
+            <a href="#home">
+                Home
+            </a>
         </li>
 
         <li>
-            <a href="#about">About</a>
+            <a href="#about">
+                About
+            </a>
         </li>
 
         <li>
-            <a href="#education">Education</a>
+            <a href="#education">
+                Education
+            </a>
         </li>
 
         <li>
-            <a href="#college">College</a>
+            <a href="#college">
+                College
+            </a>
         </li>
 
         <li>
-            <a href="#contact">Contact</a>
+            <a href="#contact">
+                Contact
+            </a>
         </li>
 
     </ul>
@@ -644,14 +772,32 @@ footer {
 
 
 <!-- =========================
+     BACK BUTTON
+========================= -->
+
+<button
+    class="back-button"
+    onclick="goBack()"
+>
+    ← Back
+</button>
+
+
+
+<!-- =========================
      HOME
 ========================= -->
 
-<section class="hero" id="home">
+<section
+    class="hero"
+    id="home"
+>
 
     <div class="hero-content">
 
-        <h1>VINAY</h1>
+        <h1>
+            VINAY
+        </h1>
 
         <h2>
             B.Tech Data Science Student
@@ -661,7 +807,10 @@ footer {
             Technology Enthusiast • Learner • Future Developer
         </p>
 
-        <a href="#about" class="button">
+        <a
+            href="#about"
+            class="button"
+        >
             Explore My Journey
         </a>
 
@@ -784,9 +933,9 @@ footer {
 
         <p>
 
-            The institute was established in 2009 and provides
-            an environment for engineering education,
-            academic learning and student development.
+            The institute provides an environment for
+            engineering education, academic learning and
+            student development.
 
         </p>
 
@@ -807,10 +956,13 @@ footer {
 
 
     <!-- =========================
-         GALLERY
+         COLLEGE PHOTOS
     ========================= -->
 
-    <h2 class="section-title" style="margin-top:70px;">
+    <h2
+        class="section-title"
+        style="margin-top:70px;"
+    >
 
         College Gallery
 
@@ -977,6 +1129,30 @@ footer {
     </p>
 
 </footer>
+
+
+
+<!-- =========================
+     BACK BUTTON SCRIPT
+========================= -->
+
+<script>
+
+function goBack() {
+
+    if (document.referrer) {
+
+        history.back();
+
+    } else {
+
+        window.location.href = "index.html";
+
+    }
+
+}
+
+</script>
 
 
 </body>
