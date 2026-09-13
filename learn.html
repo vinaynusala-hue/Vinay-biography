@@ -10,15 +10,9 @@
 
     <title>Vinay | Learning Journey</title>
 
-    <link rel="stylesheet"
-          href="style.css">
-
+    <link rel="stylesheet" href="style.css">
 
     <style>
-
-        /* =========================
-           LEARN PAGE
-        ========================= */
 
         body {
             overflow-x: hidden;
@@ -31,19 +25,15 @@
         }
 
 
-        /* =========================
-           HERO
-        ========================= */
+        /* HERO */
 
         .learn-hero {
             text-align: center;
             margin-bottom: 70px;
-
             animation: heroEnter 1s ease forwards;
         }
 
         @keyframes heroEnter {
-
             from {
                 opacity: 0;
                 transform: translateY(40px);
@@ -53,12 +43,10 @@
                 opacity: 1;
                 transform: translateY(0);
             }
-
         }
 
 
         .learn-icon {
-
             width: 100px;
             height: 100px;
 
@@ -72,23 +60,19 @@
 
             border-radius: 50%;
 
-            background:
-                rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.08);
 
-            border:
-                1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.15);
 
             box-shadow:
                 0 0 35px rgba(0,217,255,0.25);
 
-            animation:
-                floating 3s ease-in-out infinite;
+            animation: floating 3s ease-in-out infinite;
         }
-
 
         @keyframes floating {
 
-            0%,100% {
+            0%, 100% {
                 transform: translateY(0);
             }
 
@@ -100,23 +84,16 @@
 
 
         .learn-hero h1 {
-
             font-size: 50px;
-
-            margin:
-                25px 0 10px;
+            margin: 25px 0 15px;
         }
-
 
         .learn-hero h1 span {
             color: #00d9ff;
         }
 
-
         .learn-hero p {
-
             max-width: 700px;
-
             margin: auto;
 
             color: #b8c1d1;
@@ -127,38 +104,26 @@
         }
 
 
-        /* =========================
-           SECTION TITLE
-        ========================= */
+        /* SECTION TITLE */
 
         .section-title {
-
             text-align: center;
-
             margin-bottom: 35px;
         }
 
-
         .section-title h2 {
-
             font-size: 30px;
-
             margin-bottom: 8px;
         }
 
-
         .section-title p {
-
             color: #9fa8b8;
         }
 
 
-        /* =========================
-           LEARNING CARDS
-        ========================= */
+        /* LEARNING CARDS */
 
         .learning-grid {
-
             display: grid;
 
             grid-template-columns:
@@ -190,8 +155,7 @@
             border:
                 1px solid rgba(255,255,255,0.12);
 
-            backdrop-filter:
-                blur(12px);
+            backdrop-filter: blur(12px);
 
             overflow: hidden;
 
@@ -257,8 +221,7 @@
             right: -50px;
             top: -50px;
 
-            transition:
-                opacity 0.4s ease;
+            transition: opacity 0.4s ease;
         }
 
 
@@ -317,24 +280,18 @@
 
 
         .learning-card h3 {
-
             font-size: 23px;
-
             margin-bottom: 12px;
         }
 
 
         .learning-card p {
-
             color: #b8c1d1;
-
             line-height: 1.6;
         }
 
 
-        /* =========================
-           JOURNEY TIMELINE
-        ========================= */
+        /* JOURNEY TIMELINE */
 
         .journey {
 
@@ -458,9 +415,7 @@
         }
 
 
-        /* =========================
-           GOAL BOX
-        ========================= */
+        /* GOAL */
 
         .learning-goal {
 
@@ -491,7 +446,7 @@
 
         @keyframes pulseBox {
 
-            0%,100% {
+            0%, 100% {
                 box-shadow:
                     0 20px 50px
                     rgba(0,0,0,0.25);
@@ -502,7 +457,6 @@
                     0 20px 55px
                     rgba(0,217,255,0.12);
             }
-
         }
 
 
@@ -526,9 +480,7 @@
         }
 
 
-        /* =========================
-           BACK BUTTON
-        ========================= */
+        /* BACK TO ABOUT */
 
         .back-button {
 
@@ -536,11 +488,9 @@
 
             width: fit-content;
 
-            margin:
-                45px auto 0;
+            margin: 50px auto 10px;
 
-            padding:
-                12px 25px;
+            padding: 13px 28px;
 
             border-radius: 30px;
 
@@ -555,26 +505,28 @@
                 rgba(255,255,255,0.06);
 
             transition:
-                0.3s ease;
+                all 0.3s ease;
         }
 
 
         .back-button:hover {
 
             transform:
-                translateY(-4px);
+                translateY(-5px);
 
             background:
                 rgba(0,217,255,0.12);
 
             border-color:
                 #00d9ff;
+
+            box-shadow:
+                0 0 20px
+                rgba(0,217,255,0.2);
         }
 
 
-        /* =========================
-           MOBILE
-        ========================= */
+        /* MOBILE */
 
         @media (max-width: 800px) {
 
@@ -612,32 +564,6 @@
 <body>
 
 
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<nav>
-
-    <a href="index.html">Home</a>
-
-    <a href="about.html">About</a>
-
-    <a href="education.html">Education</a>
-
-    <a href="skills.html">Skills</a>
-
-    <a href="projects.html">Projects</a>
-
-    <a href="achievements.html">Achievements</a>
-
-    <a href="resume.html">Resume</a>
-
-    <a href="contact.html">Contact</a>
-
-</nav>
-
-
-
 <main class="learn-page">
 
 
@@ -663,7 +589,7 @@
 
 
 
-    <!-- TECHNOLOGIES -->
+    <!-- WHAT I'M LEARNING -->
 
     <section>
 
@@ -682,6 +608,8 @@
 
         <div class="learning-grid">
 
+
+            <!-- JAVA -->
 
             <div class="learning-card">
 
@@ -703,6 +631,8 @@
 
 
 
+            <!-- WEB DEVELOPMENT -->
+
             <div class="learning-card">
 
                 <div class="learning-icon">
@@ -722,6 +652,8 @@
             </div>
 
 
+
+            <!-- DATA SCIENCE -->
 
             <div class="learning-card">
 
@@ -748,7 +680,7 @@
 
 
 
-    <!-- JOURNEY -->
+    <!-- MY JOURNEY -->
 
     <section>
 
@@ -832,7 +764,7 @@
 
 
 
-    <!-- GOAL -->
+    <!-- LEARNING GOAL -->
 
     <section class="learning-goal">
 
@@ -851,7 +783,7 @@
 
 
 
-    <!-- BACK -->
+    <!-- ONLY NAVIGATION OPTION -->
 
     <a href="about.html"
        class="back-button">
