@@ -822,6 +822,43 @@ section {
         transform: translate(45px, 45px);
     }
 }
+    .quick-info {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 35px;
+    flex-wrap: wrap;
+}
+
+.info-box {
+    width: 170px;
+    padding: 20px;
+    background: rgba(10, 18, 42, 0.85);
+    border: 1px solid rgba(0, 217, 255, 0.4);
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.12);
+    transition: 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0, 217, 255, 0.35);
+}
+
+.info-box span {
+    font-size: 30px;
+}
+
+.info-box h3 {
+    color: #00d9ff;
+    margin: 10px 0 5px;
+}
+
+.info-box p {
+    color: #b7c5d6;
+    margin: 0;
+}
 </style>
 </head>
 
@@ -895,6 +932,27 @@ section {
         </div>
 
         <a href="about.html" class="btn">Explore My Story →</a>
+        <div class="quick-info">
+
+    <div class="info-box">
+        <span>🎓</span>
+        <h3>B.Tech</h3>
+        <p>Data Science</p>
+    </div>
+
+    <div class="info-box">
+        <span>💻</span>
+        <h3>Developer</h3>
+        <p>Learning & Building</p>
+    </div>
+
+    <div class="info-box">
+        <span>🚀</span>
+        <h3>Projects</h3>
+        <p>Coming Soon</p>
+    </div>
+
+        </div>
 
     </div>
 
