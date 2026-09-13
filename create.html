@@ -1,1 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Vinay | Create & Build</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        /* =========================
+           CREATE PAGE
+        ========================= */
+
+        html {
+            background: #000000;
+        }
+
+        body {
+
+            margin: 0;
+
+            padding: 0;
+
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% 5%,
+                    rgba(0,217,255,0.10),
+                    transparent 35%
+                ),
+                #000000 !important;
+
+            color: white !important;
+        }
+
+
+        .create-page {
+
+            width: 100%;
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            padding:
+                70px 20px 50px;
+
+            box-sizing: border-box;
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .create-hero {
+
+            text-align: center;
+
+            margin-bottom: 75px;
+
+            animation:
+                heroEnter 1s ease forwards;
+        }
+
+
+        @keyframes heroEnter {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(40px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+        }
+
+
+        .create-icon {
+
+            width: 105px;
+
+            height: 105px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 52px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            border:
+                1px solid
+                rgba(0,217,255,0.25);
+
+            box-shadow:
+
+                0 0 25px
+                rgba(0,217,255,0.25),
+
+                0 0 70px
+                rgba(0,217,255,0.08);
+
+            animation:
+                floating 3s ease-in-out infinite;
+        }
+
+
+        @keyframes floating {
+
+            0%,100% {
+
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+            }
+
+            50% {
+
+                transform:
+                    translateY(-12px)
+                    rotate(4deg);
+            }
+        }
+
+
+        .create-hero h1 {
+
+            color:
+                #ffffff !important;
+
+            font-size: 50px;
+
+            margin:
+                25px 0 15px;
+
+            line-height: 1.2;
+        }
+
+
+        .create-hero h1 span {
+
+            color:
+                #00d9ff !important;
+
+            text-shadow:
+                0 0 20px
+                rgba(0,217,255,0.4);
+        }
+
+
+        .create-hero p {
+
+            max-width: 720px;
+
+            margin: auto;
+
+            color:
+                #aeb8c8 !important;
+
+            line-height: 1.8;
+
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           SECTION TITLE
+        ========================= */
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 35px;
+        }
+
+
+        .section-title h2 {
+
+            color:
+                #ffffff !important;
+
+            font-size: 32px;
+
+            margin:
+                0 0 10px;
+        }
+
+
+        .section-title p {
+
+            color:
+                #8e9aaa !important;
+
+            line-height: 1.6;
+        }
+
+
+        /* =========================
+           WEBSITE CREATION CARDS
+        ========================= */
+
+        .create-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+
+            margin-bottom: 85px;
+        }
+
+
+        .create-card {
+
+            position: relative;
+
+            padding:
+                30px 25px;
+
+            min-height:
+                250px;
+
+            border-radius:
+                22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.025)
+                ) !important;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            box-shadow:
+                0 15px 40px
+                rgba(0,0,0,0.5);
+
+            backdrop-filter:
+                blur(12px);
+
+            overflow:
+                hidden;
+
+            transition:
+                0.4s ease;
+
+            animation:
+                cardEnter 0.8s ease both;
+        }
+
+
+        .create-card:nth-child(1) {
+            animation-delay:
+                0.2s;
+        }
+
+        .create-card:nth-child(2) {
+            animation-delay:
+                0.4s;
+        }
+
+        .create-card:nth-child(3) {
+            animation-delay:
+                0.6s;
+        }
+
+
+        @keyframes cardEnter {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(40px)
+                    scale(0.95);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+        }
+
+
+        .create-card:hover {
+
+            transform:
+                translateY(-12px);
+
+            border-color:
+                rgba(0,217,255,0.5);
+
+            box-shadow:
+
+                0 25px 60px
+                rgba(0,0,0,0.65),
+
+                0 0 30px
+                rgba(0,217,255,0.12);
+        }
+
+
+        .create-card-icon {
+
+            width: 65px;
+
+            height: 65px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 32px;
+
+            border-radius: 18px;
+
+            background:
+                rgba(255,255,255,0.06);
+
+            margin-bottom:
+                20px;
+
+            transition:
+                0.4s ease;
+        }
+
+
+        .create-card:hover
+        .create-card-icon {
+
+            transform:
+                scale(1.15)
+                rotate(-6deg);
+
+            box-shadow:
+                0 0 25px
+                rgba(0,217,255,0.18);
+        }
+
+
+        .create-card h3 {
+
+            color:
+                #ffffff !important;
+
+            font-size:
+                23px;
+
+            margin:
+                0 0 12px;
+        }
+
+
+        .create-card p {
+
+            color:
+                #aeb8c8 !important;
+
+            line-height:
+                1.7;
+
+            margin:
+                0;
+        }
+
+
+        /* =========================
+           HOW TO CREATE WEBSITE
+        ========================= */
+
+        .steps {
+
+            max-width:
+                850px;
+
+            margin:
+                0 auto 85px;
+        }
+
+
+        .step {
+
+            display:
+                flex;
+
+            align-items:
+                flex-start;
+
+            gap:
+                25px;
+
+            padding:
+                25px;
+
+            margin-bottom:
+                20px;
+
+            border-radius:
+                20px;
+
+            background:
+                rgba(255,255,255,0.04);
+
+            border:
+                1px solid
+                rgba(255,255,255,0.09);
+
+            transition:
+                0.4s ease;
+
+            animation:
+                stepEnter 0.8s ease both;
+        }
+
+
+        .step:nth-child(1) {
+            animation-delay:
+                0.2s;
+        }
+
+        .step:nth-child(2) {
+            animation-delay:
+                0.4s;
+        }
+
+        .step:nth-child(3) {
+            animation-delay:
+                0.6s;
+        }
+
+        .step:nth-child(4) {
+            animation-delay:
+                0.8s;
+        }
+
+
+        @keyframes stepEnter {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateX(-30px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateX(0);
+            }
+        }
+
+
+        .step:hover {
+
+            transform:
+                translateX(8px);
+
+            border-color:
+                rgba(0,217,255,0.35);
+
+            background:
+                rgba(0,217,255,0.05);
+        }
+
+
+        .step-number {
+
+            min-width:
+                50px;
+
+            height:
+                50px;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            border-radius:
+                50%;
+
+            border:
+                2px solid
+                #00d9ff;
+
+            color:
+                #00d9ff;
+
+            font-weight:
+                bold;
+
+            box-shadow:
+                0 0 18px
+                rgba(0,217,255,0.25);
+        }
+
+
+        .step h3 {
+
+            color:
+                #00d9ff !important;
+
+            margin:
+                0 0 8px;
+        }
+
+
+        .step p {
+
+            color:
+                #aeb8c8 !important;
+
+            line-height:
+                1.7;
+
+            margin:
+                0;
+        }
+
+
+        /* =========================
+           DEVELOPMENT METHODS
+        ========================= */
+
+        .methods {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(2,1fr);
+
+            gap:
+                25px;
+
+            margin-bottom:
+                90px;
+        }
+
+
+        .method {
+
+            padding:
+                30px;
+
+            border-radius:
+                22px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.07),
+                    rgba(255,255,255,0.02)
+                );
+
+            border:
+                1px solid
+                rgba(255,255,255,0.10);
+
+            transition:
+                0.4s ease;
+        }
+
+
+        .method:hover {
+
+            transform:
+                translateY(-8px);
+
+            border-color:
+                rgba(0,217,255,0.4);
+        }
+
+
+        .method h3 {
+
+            color:
+                #ffffff;
+
+            margin:
+                0 0 12px;
+        }
+
+
+        .method h3 span {
+
+            color:
+                #00d9ff;
+        }
+
+
+        .method p {
+
+            color:
+                #aeb8c8;
+
+            line-height:
+                1.7;
+
+            margin:
+                0;
+        }
+
+
+        /* =========================
+           NFT ART SECTION
+        ========================= */
+
+        .nft-grid {
+
+            display:
+                grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:
+                25px;
+
+            margin-bottom:
+                80px;
+        }
+
+
+        .nft-card {
+
+            position:
+                relative;
+
+            height:
+                330px;
+
+            border-radius:
+                25px;
+
+            overflow:
+                hidden;
+
+            background:
+                #080808;
+
+            border:
+                1px solid
+                rgba(255,255,255,0.12);
+
+            transition:
+                0.5s ease;
+
+            animation:
+                nftAppear 1s ease both;
+        }
+
+
+        .nft-card:nth-child(1) {
+            animation-delay:
+                0.2s;
+        }
+
+        .nft-card:nth-child(2) {
+            animation-delay:
+                0.4s;
+        }
+
+        .nft-card:nth-child(3) {
+            animation-delay:
+                0.6s;
+        }
+
+
+        @keyframes nftAppear {
+
+            from {
+
+                opacity:
+                    0;
+
+                transform:
+                    scale(0.85)
+                    rotateY(15deg);
+            }
+
+            to {
+
+                opacity:
+                    1;
+
+                transform:
+                    scale(1)
+                    rotateY(0);
+            }
+        }
+
+
+        .nft-card:hover {
+
+            transform:
+                translateY(-12px)
+                rotateY(-5deg);
+
+            box-shadow:
+                0 25px 60px
+                rgba(0,0,0,0.7);
+
+            border-color:
+                rgba(0,217,255,0.45);
+        }
+
+
+        /* NFT ART */
+
+        .nft-art {
+
+            position:
+                absolute;
+
+            inset:
+                0;
+
+            overflow:
+                hidden;
+
+            background:
+                radial-gradient(
+                    circle at 30% 30%,
+                    #00d9ff,
+                    transparent 20%
+                ),
+                radial-gradient(
+                    circle at 70% 70%,
+                    #7b2cff,
+                    transparent 25%
+                ),
+                linear-gradient(
+                    135deg,
+                    #07101f,
+                    #15002b,
+                    #001c25
+                );
+
+            animation:
+                artMove 6s ease-in-out infinite alternate;
+        }
+
+
+        @keyframes artMove {
+
+            from {
+
+                transform:
+                    scale(1);
+            }
+
+            to {
+
+                transform:
+                    scale(1.12)
+                    rotate(2deg);
+            }
+        }
+
+
+        .nft-art::before {
+
+            content:
+                "✦";
+
+            position:
+                absolute;
+
+            top:
+                25px;
+
+            left:
+                30px;
+
+            font-size:
+                70px;
+
+            color:
+                rgba(255,255,255,0.7);
+
+            animation:
+                starFloat 3s ease-in-out infinite;
+        }
+
+
+        .nft-art::after {
+
+            content:
+                "◆";
+
+            position:
+                absolute;
+
+            right:
+                35px;
+
+            top:
+                90px;
+
+            font-size:
+                100px;
+
+            color:
+                rgba(0,217,255,0.55);
+
+            text-shadow:
+                0 0 30px
+                #00d9ff;
+
+            animation:
+                diamondFloat 4s ease-in-out infinite;
+        }
+
+
+        @keyframes starFloat {
+
+            0%,100% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-15px)
+                    rotate(20deg);
+            }
+        }
+
+
+        @keyframes diamondFloat {
+
+            0%,100% {
+                transform:
+                    translateY(0)
+                    rotate(0deg);
+            }
+
+            50% {
+                transform:
+                    translateY(15px)
+                    rotate(12deg);
+            }
+        }
+
+
+        /* NFT INFORMATION */
+
+        .nft-info {
+
+            position:
+                absolute;
+
+            left:
+                0;
+
+            right:
+                0;
+
+            bottom:
+                0;
+
+            padding:
+                25px;
+
+            background:
+                linear-gradient(
+                    transparent,
+                    rgba(0,0,0,0.95)
+                );
+        }
+
+
+        .nft-info h3 {
+
+            color:
+                white;
+
+            margin:
+                0 0 6px;
+
+            font-size:
+                22px;
+        }
+
+
+        .nft-info p {
+
+            color:
+                #aeb8c8;
+
+            margin:
+                0;
+
+            font-size:
+                14px;
+        }
+
+
+        /* =========================
+           CREATIVE MESSAGE
+        ========================= */
+
+        .creative-box {
+
+            text-align:
+                center;
+
+            padding:
+                50px 25px;
+
+            border-radius:
+                25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(0,217,255,0.10),
+                    rgba(123,44,255,0.08),
+                    rgba(255,255,255,0.02)
+                );
+
+            border:
+                1px solid
+                rgba(0,217,255,0.2);
+
+            margin-bottom:
+                40px;
+
+            animation:
+                glowBox 4s ease-in-out infinite;
+        }
+
+
+        @keyframes glowBox {
+
+            0%,100% {
+
+                box-shadow:
+                    0 20px 50px
+                    rgba(0,0,0,0.5);
+            }
+
+            50% {
+
+                box-shadow:
+                    0 20px 65px
+                    rgba(0,217,255,0.12);
+            }
+        }
+
+
+        .creative-box h2 {
+
+            color:
+                white;
+
+            font-size:
+                30px;
+
+            margin:
+                0 0 15px;
+        }
+
+
+        .creative-box h2 span {
+
+            color:
+                #00d9ff;
+        }
+
+
+        .creative-box p {
+
+            max-width:
+                700px;
+
+            margin:
+                auto;
+
+            color:
+                #aeb8c8;
+
+            line-height:
+                1.8;
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-button {
+
+            display:
+                block;
+
+            width:
+                fit-content;
+
+            margin:
+                50px auto 15px;
+
+            padding:
+                14px 30px;
+
+            border-radius:
+                50px;
+
+            text-decoration:
+                none;
+
+            color:
+                #ffffff !important;
+
+            background:
+                rgba(0,217,255,0.08) !important;
+
+            border:
+                1px solid #00d9ff;
+
+            font-size:
+                16px;
+
+            font-weight:
+                bold;
+
+            box-shadow:
+                0 0 18px
+                rgba(0,217,255,0.12);
+
+            transition:
+                0.3s ease;
+        }
+
+
+        .back-button:hover {
+
+            transform:
+                translateY(-5px);
+
+            background:
+                rgba(0,217,255,0.18) !important;
+
+            box-shadow:
+                0 0 30px
+                rgba(0,217,255,0.25);
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width:800px) {
+
+            .create-page {
+
+                padding:
+                    55px 18px 40px;
+            }
+
+
+            .create-hero h1 {
+
+                font-size:
+                    38px;
+            }
+
+
+            .create-hero p {
+
+                font-size:
+                    16px;
+            }
+
+
+            .create-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap:
+                    20px;
+            }
+
+
+            .methods {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .nft-grid {
+
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .nft-card {
+
+                height:
+                    320px;
+            }
+
+
+            .step {
+
+                gap:
+                    15px;
+
+                padding:
+                    20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<main class="create-page">
+
+
+    <!-- =========================
+         HERO
+    ========================= -->
+
+    <section class="create-hero">
+
+        <div class="create-icon">
+            🚀
+        </div>
+
+        <h1>
+            Let's <span>Create</span>
+        </h1>
+
+        <p>
+            Explore how ideas become real websites, projects
+            and digital experiences. From writing the first
+            line of HTML to publishing a complete website,
+            every creation starts with learning and imagination.
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         WHAT CAN
