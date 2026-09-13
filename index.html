@@ -1087,6 +1087,20 @@ footer {
         transform: scale(0.97) translateY(-4px);
     }
   }
+  .profile-wrapper {
+    animation: profileFloat 4s ease-in-out infinite;
+    transform-style: preserve-3d;
+}
+
+@keyframes profileFloat {
+    0%, 100% {
+        transform: translateY(0) rotateY(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotateY(4deg);
+    }
+}
      </style>
 
 </head>
