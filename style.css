@@ -1052,3 +1052,23 @@ p {
 
 }
 ``
+/* FINAL PROJECT CARD COLOR FIX */
+
+.project-card {
+    background: rgba(10, 18, 42, 0.95) !important;
+    background-color: #0a122a !important;
+    border: 1px solid rgba(0, 217, 255, 0.35) !important;
+    color: #ffffff !important;
+}
+
+.project-card h2 {
+    color: #00d9ff !important;
+}
+
+.project-card p {
+    color: #b7c5d6 !important;
+}
+
+.project-number {
+    color: rgba(0, 217, 255, 0.18) !important;
+}
