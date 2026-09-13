@@ -358,6 +358,148 @@ nav a:hover {
     border-radius: 50%;
     display: block;
 }
+    /* FUTURISTIC PHOTO ORBIT */
+
+.profile-wrapper {
+    width: 270px;
+    height: 270px;
+    margin: 20px auto 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* PHOTO */
+
+.profile-photo {
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    padding: 5px;
+    background: linear-gradient(135deg, #00d9ff, #7c4dff);
+    box-shadow:
+        0 0 20px #00d9ff,
+        0 0 50px rgba(0,217,255,0.5);
+    position: relative;
+    z-index: 5;
+}
+
+.profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+}
+
+/* GLOWING RINGS */
+
+.orbit {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #00d9ff;
+    pointer-events: none;
+}
+
+.orbit-1 {
+    width: 205px;
+    height: 205px;
+    border-color: #00d9ff;
+    box-shadow: 0 0 15px #00d9ff;
+    animation: rotate1 5s linear infinite;
+}
+
+.orbit-2 {
+    width: 235px;
+    height: 235px;
+    border-color: #7c4dff;
+    border-style: dashed;
+    box-shadow: 0 0 15px #7c4dff;
+    animation: rotate2 8s linear infinite reverse;
+}
+
+.orbit-3 {
+    width: 265px;
+    height: 265px;
+    border-color: #00d9ff;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    box-shadow: 0 0 20px #00d9ff;
+    animation: rotate3 10s linear infinite;
+}
+
+/* ORBITING DOTS */
+
+.orbit-dot {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #00d9ff;
+    box-shadow: 0 0 15px #00d9ff;
+    z-index: 6;
+}
+
+.dot-1 {
+    top: 5px;
+    left: 130px;
+    animation: pulse 1.5s infinite alternate;
+}
+
+.dot-2 {
+    right: 5px;
+    top: 130px;
+    background: #7c4dff;
+    box-shadow: 0 0 15px #7c4dff;
+    animation: pulse 2s infinite alternate;
+}
+
+.dot-3 {
+    bottom: 8px;
+    left: 70px;
+    animation: pulse 1.8s infinite alternate;
+}
+
+/* ANIMATIONS */
+
+@keyframes rotate1 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate2 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotate3 {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.7);
+        opacity: 0.5;
+    }
+    to {
+        transform: scale(1.4);
+        opacity: 1;
+    }
+}
 </style>
 </head>
 
@@ -395,8 +537,20 @@ nav a:hover {
             <div class="face top"></div>
             <div class="face bottom"></div>
         </div>
-        <div class="profile-photo">
-    <img src="Gemini_Generated_Image_dm95lbdm95lbdm95.png" alt="Vinay">
+        <div class="profile-wrapper">
+
+    <div class="orbit orbit-1"></div>
+    <div class="orbit orbit-2"></div>
+    <div class="orbit orbit-3"></div>
+
+    <div class="orbit-dot dot-1"></div>
+    <div class="orbit-dot dot-2"></div>
+    <div class="orbit-dot dot-3"></div>
+
+    <div class="profile-photo">
+        <img src="Gemini_Generated_Image_dm95lbdm95lbdm95.png" alt="Vinay">
+    </div>
+
         </div>
 
         <h1>Hello, I'm <span>Vinay</span></h1>
