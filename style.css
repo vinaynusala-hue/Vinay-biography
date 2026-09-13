@@ -89,3 +89,142 @@ p {
         padding: 8px 11px;
     }
 }
+/* ABOUT PAGE */
+
+.about-page {
+    min-height: 100vh;
+    padding: 130px 7% 70px;
+    background:
+        radial-gradient(circle at 20% 20%, #123c66, transparent 30%),
+        radial-gradient(circle at 80% 70%, #30145e, transparent 30%),
+        #050816;
+    color: white;
+}
+
+.about-hero {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.about-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+.about-hero h1 {
+    font-size: clamp(40px, 8vw, 70px);
+}
+
+.about-hero h1 span {
+    color: #00d9ff;
+    text-shadow: 0 0 20px #00d9ff;
+}
+
+.subtitle {
+    margin-top: 15px;
+    color: #aebed1;
+    font-size: 18px;
+}
+
+.about-card {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px;
+    border-radius: 25px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(0,217,255,0.25);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+}
+
+.about-card h2 {
+    color: #00d9ff;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.about-card p {
+    color: #c4d0df;
+    line-height: 1.8;
+    font-size: 17px;
+    margin-bottom: 18px;
+}
+
+.about-highlights {
+    max-width: 1000px;
+    margin: 40px auto 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.highlight-card {
+    padding: 30px;
+    text-align: center;
+    border-radius: 20px;
+    background: linear-gradient(145deg,#101a35,#080d20);
+    border: 1px solid #1f3555;
+    transition: 0.4s;
+}
+
+.highlight-card > div {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.highlight-card h3 {
+    color: #00d9ff;
+    margin-bottom: 10px;
+}
+
+.highlight-card p {
+    color: #aebed1;
+    line-height: 1.6;
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,217,255,0.2);
+}
+
+.reveal {
+    animation: aboutReveal 1s ease both;
+}
+
+@keyframes aboutReveal {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatIcon {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@media(max-width:700px) {
+
+    .about-page {
+        padding: 110px 5% 50px;
+    }
+
+    .about-card {
+        padding: 25px;
+    }
+
+    .about-card p {
+        font-size: 16px;
+    }
+
+}
