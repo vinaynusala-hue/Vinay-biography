@@ -1,43 +1,168 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Vinay | Resume</title>
+
     <link rel="stylesheet" href="style.css">
 
     <style>
-        .resume-box {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            margin-top: 25px;
+        /* ===== RESUME PAGE ===== */
+
+        .resume-page {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px 60px;
         }
 
-        .resume-section {
+        /* ===== HERO ===== */
+
+        .resume-hero {
+            text-align: center;
+            padding: 50px 20px;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, #0f172a, #1e3a8a);
+            color: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        }
+
+        .resume-icon {
+            font-size: 55px;
+            margin-bottom: 10px;
+        }
+
+        .resume-hero h1 {
+            font-size: 42px;
+            margin: 10px 0;
+        }
+
+        .resume-hero h1 span {
+            color: #60a5fa;
+        }
+
+        .resume-hero p {
+            font-size: 17px;
+            opacity: 0.9;
             margin-bottom: 25px;
         }
 
-        .resume-section h2 {
-            margin-bottom: 8px;
-        }
+        /* ===== BUTTONS ===== */
 
         .download-btn {
             display: inline-block;
-            padding: 12px 20px;
+            padding: 13px 22px;
             background: #2563eb;
             color: white;
             text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-weight: bold;
+            transition: 0.3s;
         }
 
         .download-btn:hover {
             background: #1d4ed8;
+            transform: translateY(-3px);
+        }
+
+        .home-btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 11px 20px;
+            border: 1px solid rgba(255,255,255,0.5);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .home-btn:hover {
+            background: white;
+            color: #1e3a8a;
+        }
+
+        /* ===== RESUME CARD ===== */
+
+        .resume-card {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .resume-card h2 {
+            font-size: 32px;
+            margin-bottom: 5px;
+        }
+
+        .resume-role {
+            color: #2563eb;
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        /* ===== SECTIONS ===== */
+
+        .resume-section {
+            padding: 20px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .resume-section:last-child {
+            border-bottom: none;
+        }
+
+        .resume-section h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1e3a8a;
+        }
+
+        .resume-section p {
+            line-height: 1.7;
+            color: #374151;
+        }
+
+        /* ===== MOBILE ===== */
+
+        @media (max-width: 600px) {
+
+            .resume-page {
+                padding: 25px 15px 50px;
+            }
+
+            .resume-hero {
+                padding: 35px 15px;
+            }
+
+            .resume-hero h1 {
+                font-size: 32px;
+            }
+
+            .resume-card {
+                padding: 25px 20px;
+            }
+
+            .resume-card h2 {
+                font-size: 27px;
+            }
+
+            .download-btn,
+            .home-btn {
+                width: 100%;
+                text-align: center;
+            }
         }
     </style>
 </head>
 
 <body>
+
+<!-- ===== NAVIGATION ===== -->
 
 <nav>
     <a href="index.html">Home</a>
@@ -50,21 +175,45 @@
     <a href="contact.html">Contact</a>
 </nav>
 
+
+<!-- ===== MAIN RESUME PAGE ===== -->
+
 <main class="resume-page">
 
+    <!-- RESUME HERO -->
+
     <div class="resume-hero reveal">
+
         <div class="resume-icon">📄</div>
 
-        <h1>My <span>Resume</span></h1>
+        <h1>
+            My <span>Resume</span>
+        </h1>
 
         <p>
             My education, skills and professional profile
         </p>
 
-        <a href="N_Vinay_Resume.pdf" class="btn" download>
-    📄 Download Resume
+        <!-- DOWNLOAD PDF -->
+
+        <a href="N_Vinay_Resume.pdf"
+           class="download-btn"
+           download>
+            📄 Download Resume
         </a>
+
+        <br>
+
+        <!-- BACK TO HOME -->
+
+        <a href="index.html" class="home-btn">
+            🏠 Back to Home
+        </a>
+
     </div>
+
+
+    <!-- RESUME INFORMATION -->
 
     <div class="resume-card reveal">
 
@@ -74,37 +223,79 @@
             B.Tech Data Science Student
         </p>
 
+
+        <!-- EDUCATION -->
+
         <div class="resume-section">
+
             <h3>🎓 Education</h3>
+
             <p>
                 Currently pursuing B.Tech in Data Science.
             </p>
+
         </div>
 
+
+        <!-- TECHNICAL SKILLS -->
+
         <div class="resume-section">
+
             <h3>💻 Technical Skills</h3>
+
             <p>
                 HTML • CSS • C • Java • Python • Data Science
             </p>
+
         </div>
 
+
+        <!-- INTERESTS -->
+
         <div class="resume-section">
+
             <h3>🚀 Interests</h3>
+
             <p>
                 Web Development • Programming • Technology • Data Science
             </p>
+
         </div>
 
+
+        <!-- CAREER GOAL -->
+
         <div class="resume-section">
+
             <h3>🎯 Career Goal</h3>
+
             <p>
                 To continuously improve my technical skills
                 and build useful technology projects.
             </p>
+
+        </div>
+
+
+        <!-- CONTACT -->
+
+        <div class="resume-section">
+
+            <h3>📞 Contact</h3>
+
+            <p>
+                Email: vinaynusala@gmail.com
+            </p>
+
+            <p>
+                Location: Vijayawada, Andhra Pradesh
+            </p>
+
         </div>
 
     </div>
 
 </main>
+
 </body>
 </html>
