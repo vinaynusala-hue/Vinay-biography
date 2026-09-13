@@ -14,26 +14,62 @@
 
     <style>
 
-        body {
-            overflow-x: hidden;
+        /* =========================
+           LEARN PAGE - BLACK THEME
+        ========================= */
+
+        html {
+            background: #000000;
         }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+
+            background:
+                radial-gradient(
+                    circle at 50% 10%,
+                    rgba(0,217,255,0.10),
+                    transparent 35%
+                ),
+                #000000 !important;
+
+            color: #ffffff !important;
+        }
+
 
         .learn-page {
+
+            width: 100%;
             max-width: 1100px;
+
             margin: auto;
-            padding: 70px 20px;
+
+            padding:
+                70px 20px 50px;
+
+            box-sizing: border-box;
         }
 
 
-        /* HERO */
+        /* =========================
+           HERO
+        ========================= */
 
         .learn-hero {
+
             text-align: center;
-            margin-bottom: 70px;
-            animation: heroEnter 1s ease forwards;
+
+            margin-bottom: 75px;
+
+            animation:
+                heroEnter 1s ease forwards;
         }
 
+
         @keyframes heroEnter {
+
             from {
                 opacity: 0;
                 transform: translateY(40px);
@@ -43,36 +79,46 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
 
 
+        /* LIGHT BULB */
+
         .learn-icon {
-            width: 100px;
-            height: 100px;
+
+            width: 105px;
+            height: 105px;
 
             margin: auto;
 
             display: flex;
+
             align-items: center;
             justify-content: center;
 
-            font-size: 50px;
+            font-size: 52px;
 
             border-radius: 50%;
 
-            background: rgba(255,255,255,0.08);
+            background:
+                rgba(255,255,255,0.06);
 
-            border: 1px solid rgba(255,255,255,0.15);
+            border:
+                1px solid rgba(0,217,255,0.25);
 
             box-shadow:
-                0 0 35px rgba(0,217,255,0.25);
+                0 0 20px rgba(0,217,255,0.20),
+                0 0 60px rgba(0,217,255,0.08);
 
-            animation: floating 3s ease-in-out infinite;
+            animation:
+                floating 3s ease-in-out infinite;
         }
+
 
         @keyframes floating {
 
-            0%, 100% {
+            0%,100% {
                 transform: translateY(0);
             }
 
@@ -84,46 +130,77 @@
 
 
         .learn-hero h1 {
+
+            color: #ffffff !important;
+
             font-size: 50px;
-            margin: 25px 0 15px;
+
+            margin:
+                25px 0 15px;
+
+            line-height: 1.2;
         }
+
 
         .learn-hero h1 span {
-            color: #00d9ff;
+
+            color: #00d9ff !important;
+
+            text-shadow:
+                0 0 20px rgba(0,217,255,0.35);
         }
 
+
         .learn-hero p {
+
             max-width: 700px;
+
             margin: auto;
 
-            color: #b8c1d1;
+            color: #aeb8c8 !important;
 
-            line-height: 1.7;
+            line-height: 1.8;
 
             font-size: 17px;
         }
 
 
-        /* SECTION TITLE */
+        /* =========================
+           SECTION TITLES
+        ========================= */
 
         .section-title {
+
             text-align: center;
+
             margin-bottom: 35px;
         }
 
+
         .section-title h2 {
-            font-size: 30px;
-            margin-bottom: 8px;
+
+            color: #ffffff !important;
+
+            font-size: 32px;
+
+            margin-bottom: 10px;
         }
+
 
         .section-title p {
-            color: #9fa8b8;
+
+            color: #8e9aaa !important;
+
+            line-height: 1.6;
         }
 
 
-        /* LEARNING CARDS */
+        /* =========================
+           LEARNING GRID
+        ========================= */
 
         .learning-grid {
+
             display: grid;
 
             grid-template-columns:
@@ -131,9 +208,13 @@
 
             gap: 25px;
 
-            margin-bottom: 80px;
+            margin-bottom: 85px;
         }
 
+
+        /* =========================
+           LEARNING CARD
+        ========================= */
 
         .learning-card {
 
@@ -141,28 +222,32 @@
 
             padding: 30px 25px;
 
-            min-height: 240px;
+            min-height: 245px;
 
             border-radius: 22px;
 
             background:
                 linear-gradient(
                     145deg,
-                    rgba(255,255,255,0.11),
-                    rgba(255,255,255,0.035)
-                );
+                    rgba(255,255,255,0.08),
+                    rgba(255,255,255,0.025)
+                ) !important;
 
             border:
                 1px solid rgba(255,255,255,0.12);
 
-            backdrop-filter: blur(12px);
+            box-shadow:
+                0 15px 40px rgba(0,0,0,0.5);
+
+            backdrop-filter:
+                blur(12px);
 
             overflow: hidden;
 
+            box-sizing: border-box;
+
             transition:
-                transform 0.4s ease,
-                box-shadow 0.4s ease,
-                border-color 0.4s ease;
+                0.4s ease;
 
             animation:
                 cardEnter 0.8s ease both;
@@ -207,8 +292,11 @@
 
             position: absolute;
 
-            width: 130px;
-            height: 130px;
+            width: 150px;
+            height: 150px;
+
+            right: -60px;
+            top: -60px;
 
             border-radius: 50%;
 
@@ -218,33 +306,31 @@
 
             opacity: 0;
 
-            right: -50px;
-            top: -50px;
-
-            transition: opacity 0.4s ease;
+            transition: 0.4s ease;
         }
 
 
         .learning-card:hover {
 
             transform:
-                translateY(-12px)
-                rotateX(3deg)
-                rotateY(-3deg);
+                translateY(-12px);
 
             border-color:
-                rgba(0,217,255,0.45);
+                rgba(0,217,255,0.5);
 
             box-shadow:
-                0 25px 55px rgba(0,0,0,0.35),
+                0 25px 60px rgba(0,0,0,0.65),
                 0 0 25px rgba(0,217,255,0.12);
         }
 
 
         .learning-card:hover::before {
-            opacity: 0.18;
+
+            opacity: 0.16;
         }
 
+
+        /* CARD ICON */
 
         .learning-icon {
 
@@ -256,17 +342,17 @@
             align-items: center;
             justify-content: center;
 
-            border-radius: 18px;
-
             font-size: 32px;
 
+            border-radius: 18px;
+
             background:
-                rgba(255,255,255,0.08);
+                rgba(255,255,255,0.06);
 
             margin-bottom: 20px;
 
             transition:
-                transform 0.4s ease;
+                0.4s ease;
         }
 
 
@@ -274,24 +360,39 @@
         .learning-icon {
 
             transform:
-                scale(1.15)
+                scale(1.12)
                 rotate(-6deg);
+
+            box-shadow:
+                0 0 20px
+                rgba(0,217,255,0.15);
         }
 
 
         .learning-card h3 {
-            font-size: 23px;
-            margin-bottom: 12px;
+
+            color: #ffffff !important;
+
+            font-size: 24px;
+
+            margin:
+                0 0 12px;
         }
 
 
         .learning-card p {
-            color: #b8c1d1;
-            line-height: 1.6;
+
+            color: #aeb8c8 !important;
+
+            line-height: 1.7;
+
+            margin: 0;
         }
 
 
-        /* JOURNEY TIMELINE */
+        /* =========================
+           JOURNEY
+        ========================= */
 
         .journey {
 
@@ -300,7 +401,7 @@
             max-width: 850px;
 
             margin:
-                0 auto 70px;
+                0 auto 80px;
         }
 
 
@@ -333,23 +434,10 @@
 
             padding-left: 75px;
 
-            margin-bottom: 45px;
+            margin-bottom: 50px;
 
             animation:
                 journeyAppear 1s ease both;
-        }
-
-
-        .journey-item:nth-child(1) {
-            animation-delay: 0.3s;
-        }
-
-        .journey-item:nth-child(2) {
-            animation-delay: 0.6s;
-        }
-
-        .journey-item:nth-child(3) {
-            animation-delay: 0.9s;
         }
 
 
@@ -373,8 +461,7 @@
             position: absolute;
 
             left: 10px;
-
-            top: 5px;
+            top: 3px;
 
             width: 32px;
             height: 32px;
@@ -386,58 +473,68 @@
 
             border-radius: 50%;
 
-            background: #07101f;
+            background: #000000;
 
             border:
                 2px solid #00d9ff;
+
+            color: #00d9ff;
 
             box-shadow:
                 0 0 18px
                 rgba(0,217,255,0.45);
 
-            font-size: 14px;
+            font-size: 12px;
+
+            font-weight: bold;
         }
 
 
         .journey-item h3 {
 
-            color: #00d9ff;
+            color: #00d9ff !important;
 
-            margin-bottom: 8px;
+            margin:
+                0 0 10px;
         }
 
 
         .journey-item p {
 
-            color: #b8c1d1;
+            color: #aeb8c8 !important;
 
             line-height: 1.7;
+
+            margin: 0;
         }
 
 
-        /* GOAL */
+        /* =========================
+           GOAL
+        ========================= */
 
         .learning-goal {
 
             text-align: center;
 
-            padding: 45px 25px;
+            padding:
+                45px 25px;
 
             border-radius: 25px;
 
             background:
                 linear-gradient(
                     135deg,
-                    rgba(0,217,255,0.12),
-                    rgba(255,255,255,0.04)
-                );
+                    rgba(0,217,255,0.10),
+                    rgba(255,255,255,0.03)
+                ) !important;
 
             border:
-                1px solid rgba(0,217,255,0.2);
+                1px solid rgba(0,217,255,0.25);
 
             box-shadow:
                 0 20px 50px
-                rgba(0,0,0,0.25);
+                rgba(0,0,0,0.5);
 
             animation:
                 pulseBox 4s ease-in-out infinite;
@@ -446,25 +543,29 @@
 
         @keyframes pulseBox {
 
-            0%, 100% {
+            0%,100% {
                 box-shadow:
                     0 20px 50px
-                    rgba(0,0,0,0.25);
+                    rgba(0,0,0,0.5);
             }
 
             50% {
                 box-shadow:
-                    0 20px 55px
+                    0 20px 60px
                     rgba(0,217,255,0.12);
             }
+
         }
 
 
         .learning-goal h2 {
 
+            color: #ffffff !important;
+
             font-size: 30px;
 
-            margin-bottom: 15px;
+            margin:
+                0 0 15px;
         }
 
 
@@ -474,13 +575,15 @@
 
             margin: auto;
 
-            color: #b8c1d1;
+            color: #aeb8c8 !important;
 
             line-height: 1.8;
         }
 
 
-        /* BACK TO ABOUT */
+        /* =========================
+           BACK TO ABOUT
+        ========================= */
 
         .back-button {
 
@@ -488,24 +591,34 @@
 
             width: fit-content;
 
-            margin: 50px auto 10px;
+            margin:
+                55px auto 15px;
 
-            padding: 13px 28px;
+            padding:
+                14px 30px;
 
-            border-radius: 30px;
+            border-radius: 50px;
 
             text-decoration: none;
 
-            color: white;
-
-            border:
-                1px solid rgba(255,255,255,0.15);
+            color: #ffffff !important;
 
             background:
-                rgba(255,255,255,0.06);
+                rgba(0,217,255,0.08) !important;
+
+            border:
+                1px solid #00d9ff;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 0 18px
+                rgba(0,217,255,0.12);
 
             transition:
-                all 0.3s ease;
+                0.3s ease;
         }
 
 
@@ -515,43 +628,82 @@
                 translateY(-5px);
 
             background:
-                rgba(0,217,255,0.12);
-
-            border-color:
-                #00d9ff;
+                rgba(0,217,255,0.18) !important;
 
             box-shadow:
-                0 0 20px
-                rgba(0,217,255,0.2);
+                0 0 30px
+                rgba(0,217,255,0.25);
         }
 
 
-        /* MOBILE */
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 800px) {
 
             .learn-page {
-                padding: 55px 18px;
+
+                padding:
+                    55px 18px 40px;
             }
 
+
             .learn-hero h1 {
+
                 font-size: 38px;
             }
 
-            .learning-grid {
-                grid-template-columns: 1fr;
+
+            .learn-hero p {
+
+                font-size: 16px;
             }
 
+
+            .learning-grid {
+
+                grid-template-columns:
+                    1fr;
+
+                gap: 20px;
+            }
+
+
+            .learning-card {
+
+                min-height: auto;
+            }
+
+
             .journey::before {
+
                 left: 18px;
             }
 
+
             .journey-item {
+
                 padding-left: 55px;
             }
 
+
             .journey-dot {
+
                 left: 3px;
+            }
+
+
+            .learning-goal {
+
+                padding:
+                    35px 20px;
+            }
+
+
+            .learning-goal h2 {
+
+                font-size: 26px;
             }
 
         }
@@ -609,8 +761,6 @@
         <div class="learning-grid">
 
 
-            <!-- JAVA -->
-
             <div class="learning-card">
 
                 <div class="learning-icon">
@@ -631,8 +781,6 @@
 
 
 
-            <!-- WEB DEVELOPMENT -->
-
             <div class="learning-card">
 
                 <div class="learning-icon">
@@ -652,8 +800,6 @@
             </div>
 
 
-
-            <!-- DATA SCIENCE -->
 
             <div class="learning-card">
 
@@ -783,7 +929,7 @@
 
 
 
-    <!-- ONLY NAVIGATION OPTION -->
+    <!-- ONLY OPTION -->
 
     <a href="about.html"
        class="back-button">
