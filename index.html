@@ -1166,6 +1166,62 @@ footer {
         0 0 15px rgba(0,255,255,0.6),
         0 0 35px rgba(0,255,255,0.3);
 }
+  .hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(0, 255, 255, 0.12),
+        transparent 70%
+    );
+    top: 10%;
+    left: -15%;
+    animation: backgroundMove 8s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle,
+        rgba(120, 0, 255, 0.12),
+        transparent 70%
+    );
+    bottom: 5%;
+    right: -15%;
+    animation: backgroundMove2 10s ease-in-out infinite alternate;
+    pointer-events: none;
+}
+
+@keyframes backgroundMove {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(120px, 80px);
+    }
+}
+
+@keyframes backgroundMove2 {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-100px, -70px);
+    }
+}
      </style>
 
 </head>
