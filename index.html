@@ -1020,6 +1020,29 @@ footer {
         width: 150px;
     }
 }
+  .hero-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    margin-bottom: 18px;
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    border-radius: 30px;
+    color: #00ffff;
+    font-size: 12px;
+    letter-spacing: 2px;
+    background: rgba(0, 255, 255, 0.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    animation: badgeGlow 2s infinite alternate;
+}
+
+@keyframes badgeGlow {
+    from {
+        box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+    }
+
+    to {
+        box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+    }
+}
      </style>
 
 </head>
@@ -1085,6 +1108,9 @@ footer {
     </div>
 
         </div>
+     <div class="hero-badge">
+    ✦ WELCOME TO MY DIGITAL WORLD ✦
+     </div>
 
         <h1>Hello, I'm <span>Vinay</span></h1>
 
