@@ -1,1 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vinay | Biography</title>
+
+<style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050816;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================
+   ANIMATED BACKGROUND
+========================= */
+
+body::before {
+    content: "";
+    position: fixed;
+    width: 500px;
+    height: 500px;
+    background: #7c3aed;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.25;
+    top: -200px;
+    left: -150px;
+    z-index: -1;
+    animation: moveGlow 8s infinite alternate;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    background: #06b6d4;
+    border-radius: 50%;
+    filter: blur(150px);
+    opacity: 0.20;
+    right: -150px;
+    bottom: -150px;
+    z-index: -1;
+    animation: moveGlow2 10s infinite alternate;
+}
+
+@keyframes moveGlow {
+    from {
+        transform: translate(0,0);
+    }
+    to {
+        transform: translate(180px,120px);
+    }
+}
+
+@keyframes moveGlow2 {
+    from {
+        transform: translate(0,0);
+    }
+    to {
+        transform: translate(-150px,-100px);
+    }
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5,8,22,0.75);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #00e5ff;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00e5ff;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px 50px;
+}
+
+.hero-content {
+    animation: fadeUp 1.5s ease;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 10vw, 90px);
+    background: linear-gradient(
+        90deg,
+        #00e5ff,
+        #8b5cf6,
+        #ec4899,
+        #00e5ff
+    );
+    background-size: 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradientMove 5s infinite linear;
+}
+
+.hero h2 {
+    margin-top: 10px;
+    font-size: 25px;
+    color: #d1d5db;
+}
+
+.hero p {
+    margin-top: 15px;
+    color: #9ca3af;
+    font-size: 18px;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 300%;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 13px 28px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(90deg,#06b6d4,#8b5cf6,#ec4899);
+    background-size: 200%;
+    transition: 0.4s;
+    box-shadow: 0 0 25px rgba(0,229,255,0.25);
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.05);
+    background-position: right;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 90px 7%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 38px;
+    margin-bottom: 45px;
+    color: #00e5ff;
+}
+
+/* =========================
+   GLASS CARDS
+========================= */
+
+.card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #00e5ff;
+    box-shadow:
+        0 0 30px rgba(0,229,255,0.2);
+}
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-text {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+    color: #d1d5db;
+    font-size: 17px;
+}
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.education-card h3 {
+    color: #00e5ff;
+    margin-bottom: 12px;
+}
+
+.education-card p {
+    color: #cbd5e1;
+    line-height: 1.7;
+}
+
+/* =========================
+   COLLEGE SECTION
+========================= */
+
+.college-intro {
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+    line-height: 1.8;
+    color: #d1d5db;
+}
+
+.college-name {
+    font-size: 30px;
+    margin-bottom: 15px;
+
+    background: linear-gradient(
+        90deg,
+        #00e5ff,
+        #8b5cf6,
+        #ec4899
+    );
+
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* =========================
+   COLLEGE INFO
+========================= */
+
+.info-grid {
+    max-width: 1100px;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    gap: 20px;
+}
+
+.info-box {
+    text-align: center;
+}
+
+.info-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.info-box h3 {
+    color: #00e5ff;
+    margin-bottom: 8px;
+}
+
+.info-box p {
+    color: #cbd5e1;
+}
+
+/* =========================
+   COLLEGE PHOTO GALLERY
+========================= */
+
+.gallery {
+    max-width: 1150px;
+    margin: 50px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+}
+
+.gallery-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    height: 300px;
+    border: 2px solid rgba(255,255,255,0.12);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.35);
+}
+
+.gallery-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(0,229,255,0.25),
+        transparent
+    );
+    transform: translateX(-100%);
+    transition: 0.7s;
+    z-index: 2;
+}
+
+.gallery-card:hover::before {
+    transform: translateX(100%);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.7s;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.12);
+}
+
+.gallery-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.85)
+    );
+    z-index: 3;
+}
+
+.gallery-label h3 {
+    font-size: 20px;
+}
+
+.gallery-label p {
+    color: #cbd5e1;
+    margin-top: 5px;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    max-width: 850px;
+    margin: auto;
+}
+
+.skill {
+    margin-bottom: 25px;
+}
+
+.skill-name {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.bar {
+    height: 10px;
+    background: #1e293b;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        #00e5ff,
+        #8b5cf6,
+        #ec4899
+    );
+    animation: loadBar 2s ease;
+}
+
+.html {
+    width: 85%;
+}
+
+.css {
+    width: 75%;
+}
+
+.java {
+    width: 60%;
+}
+
+.python {
+    width: 55%;
+}
+
+@keyframes loadBar {
+    from {
+        width: 0;
+    }
+}
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+}
+
+.project h3 {
+    color: #00e5ff;
+    margin-bottom: 12px;
+}
+
+.project p {
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    max-width: 800px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact p {
+    margin: 12px 0;
+    color: #cbd5e1;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    color: #94a3b8;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px) {
+
+    nav {
+        padding: 15px 20px;
+    }
+
+    nav ul {
+        display: none;
+    }
+
+    section {
+        padding: 70px 20px;
+    }
+
+    .hero {
+        padding-top: 120px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-card {
+        height: 240px;
+    }
+
+    .section-title {
+        font-size: 30px;
+    }
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<nav>
+
+    <div class="logo">VINAY</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#college">College</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+
+<!-- =========================
+     HOME
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>VINAY</h1>
+
+        <h2>B.Tech Data Science Student</h2>
+
+        <p>
+            Technology Enthusiast • Learner • Future Developer
+        </p>
+
+        <a href="#about" class="btn">
+            Explore My Journey
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        About Me
+    </h2>
+
+    <div class="card about-text">
+
+        <p>
+            Hello! I'm Vinay, a B.Tech Data Science student
+            passionate about technology, programming and
+            continuous learning.
+        </p>
+
+        <br>
+
+        <p>
+            I am currently developing my skills in programming,
+            web development and data science. My goal is to
+            learn new technologies, build useful projects and
+            grow as a technology professional.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EDUCATION
+========================= -->
+
+<section id="education">
+
+    <h2 class="section-title">
+        Education
+    </h2>
+
+    <div class="education-grid">
+
+        <div class="card education-card">
+
+            <h3>B.Tech – Data Science</h3>
+
+            <p>
+                Dhanekula Institute of Engineering & Technology
+            </p>
+
+            <p>
+                Vijayawada, Andhra Pradesh
+            </p>
+
+        </div>
+
+
+        <div class="card education-card">
+
+            <h3>Engineering Journey</h3>
+
+            <p>
+                Exploring programming, data science,
+                web development and emerging technologies.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     COLLEGE
+========================= -->
+
+<section id="college">
+
+    <h2 class="section-title">
+        My College
+    </h2>
+
+
+    <div class="college-intro card">
+
+        <h3 class="college-name">
+            Dhanekula Institute of Engineering & Technology
+        </h3>
+
+        <p>
+
+            Dhanekula Institute of Engineering & Technology
+            (DIET) is an engineering institution located at
+            Ganguru, Vijayawada, Andhra Pradesh.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            Established in 2009, the institute focuses on
+            professional engineering education, infrastructure,
+            laboratories, research and student development.
+
+        </p>
+
+        <br>
+
+        <p>
+
+            As a Data Science student, my college journey gives
+            me an environment to learn programming, technology
+            and engineering while developing practical skills.
+
+        </p>
+
+    </div>
+
+
+    <!-- COLLEGE INFORMATION -->
+
+    <div class="info-grid">
+
+        <div class="card info-box">
+
+            <div class="info-icon">🏫</div>
+
+            <h3>Campus</h3>
+
+            <p>
+                Engineering campus at Ganguru,
+                Vijayawada.
+            </p>
+
+        </div>
+
+
+        <div class="card info-box">
+
+            <div class="info-icon">💻</div>
+
+            <h3>Technology</h3>
+
+            <p>
+                Computer Science and
+                Data Science programs.
+            </p>
+
+        </div>
+
+
+        <div class="card info-box">
+
+            <div class="info-icon">📚</div>
+
+            <h3>Library</h3>
+
+            <p>
+                Learning resources supporting
+                academic development.
+            </p>
+
+        </div>
+
+
+        <div class="card info-box">
+
+            <div class="info-icon">🔬</div>
+
+            <h3>Learning</h3>
+
+            <p>
+                Laboratories, academic activities
+                and skill development.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PHOTO GALLERY
+    ========================= -->
+
+    <h2 class="section-title">
+        Campus Gallery
+    </h2>
+
+
+    <div class="gallery">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="gallery-card">
+
+            <img
+                src="1789309305949.jpeg"
+                alt="Dhanekula Institute of Engineering and Technology campus outside view"
+            >
+
+            <div class="gallery-label">
+
+                <h3>Campus View</h3>
+
+                <p>
+                    Outside view of the college campus
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="gallery-card">
+
+            <img
+                src="1789309353059.jpeg"
+                alt="Dhanekula Institute of Engineering and Technology main campus"
+            >
+
+            <div class="gallery-label">
+
+                <h3>College Building</h3>
+
+                <p>
+                    A view of the college exterior
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="gallery-card">
+
+            <img
+                src="1789309530502.jpeg"
+                alt="Dhanekula Institute library"
+            >
+
+            <div class="gallery-label">
+
+                <h3>Library</h3>
+
+                <p>
+                    Learning and reading space
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="gallery-card">
+
+            <img
+                src="1789309537984.jpeg"
+                alt="Dhanekula Institute library interior"
+            >
+
+            <div class="gallery-label">
+
+                <h3>Inside Campus</h3>
+
+                <p>
+                    Interior learning environment
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <h2 class="section-title">
+        My Skills
+    </h2>
+
+    <div class="skills">
+
+        <div class="skill">
+
+            <div class="skill-name">
+                <span>HTML</span>
+                <span>85%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress html"></div>
+            </div>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-name">
+                <span>CSS</span>
+                <span>75%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress css"></div>
+            </div>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-name">
+                <span>Java</span>
+                <span>60%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress java"></div>
+            </div>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-name">
+                <span>Python</span>
+                <span>55%</span>
+            </div>
+
+            <div class="bar">
+                <div class="progress python"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROJECTS
+========================= -->
+
+<section id="projects">
+
+    <h2 class="section-title">
+        Projects
+    </h2>
+
+    <div class="projects">
+
+        <div class="card project">
+
+            <h3>🌐 Biography Website</h3>
+
+            <p>
+                A personal website created using HTML and CSS
+                to showcase my education, skills, college
+                journey and projects.
+            </p>
+
+        </div>
+
+
+        <div class="card project">
+
+            <h3>💻 Future Projects</h3>
+
+            <p>
+                More programming, data science and technology
+                projects will be added as I continue learning.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact">
+
+    <h2 class="section-title">
+        Contact
+    </h2>
+
+    <div class="card contact">
+
+        <h3>Let's Connect 🚀</h3>
+
+        <p>
+            I am continuously learning and building
+            new technology projects.
+        </p>
+
+        <p>
+            📍 Vijayawada, Andhra Pradesh
+        </p>
+
+        <a href="mailto:your-email@example.com" class="btn">
+            Contact Me
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        © 2026 Vinay | Biography Website
+    </p>
+
+    <p>
+        Built with HTML & CSS ❤️
+    </p>
+
+</footer>
+
+
+</body>
+  </html>
