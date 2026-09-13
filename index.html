@@ -1299,61 +1299,49 @@ let wordIndex = 0;
 let charIndex = 0;
 let deleting = false;
 
+const typingElement = document.querySelector(".typing");
+
 function typeEffect() {
 
-    const typing = document.querySelector(".typing");
-    const word = words[wordIndex];
+    const currentWord = words[wordIndex];
 
     if (!deleting) {
-        typing.textContent = word.substring(0, charIndex + 1);
+        typingElement.textContent =
+            currentWord.substring(0, charIndex + 1);
+
         charIndex++;
 
-        if (charIndex === word.length) {
+        if (charIndex === currentWord.length) {
             deleting = true;
+
             setTimeout(typeEffect, 1500);
             return;
         }
 
     } else {
-        typing.textContent = word.substring(0, charIndex - 1);
+
+        typingElement.textContent =
+            currentWord.substring(0, charIndex - 1);
+
         charIndex--;
 
         if (charIndex === 0) {
             deleting = false;
-            wordIndex = (wordIndex + 1) % words.length;
+
+            wordIndex++;
+
+            if (wordIndex === words.length) {
+                wordIndex = 0;
+            }
         }
     }
 
-    setTimeout(typeEffect, deleting ? 50 : 100);
+    const speed = deleting ? 50 : 100;
+
+    setTimeout(typeEffect, speed);
 }
 
 typeEffect();
-        </script>
-    <script>
-const reveals = document.querySelectorAll(
-    ".card, .project, .about-box, .skill"
-);
-
-reveals.forEach(element => {
-    element.classList.add("reveal");
-});
-
-const observer = new IntersectionObserver(
-    entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show");
-            }
-        });
-    },
-    {
-        threshold: 0.15
-    }
-);
-
-reveals.forEach(element => {
-    observer.observe(element);
-});
-    </script>
+</script>
 </body>
   </html>
