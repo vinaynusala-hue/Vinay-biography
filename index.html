@@ -32,6 +32,15 @@ body {
 
 
 /* =========================
+   INVISIBLE AUDIO
+========================= */
+
+.background-audio {
+    display: none;
+}
+
+
+/* =========================
    NAVIGATION
 ========================= */
 
@@ -1557,15 +1566,7 @@ section {
 
     border:
         1px solid
-        rgba(0, 217, 255, 0.25);
-
-    box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.4);
-
-    transform:
-        perspective(1000px)
-      <!DOCTYPE html>
+        rgba(0, 217, <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -1595,6 +1596,15 @@ body {
     background: #050816;
     color: white;
     overflow-x: hidden;
+}
+
+
+/* =========================
+   INVISIBLE AUDIO
+========================= */
+
+.background-audio {
+    display: none;
 }
 
 
@@ -3149,7 +3159,7 @@ section {
 
 
 /* =====================================================
-   ✨ NEW FUTURISTIC BACK BUTTON
+   FUTURISTIC BACK BUTTON
 ===================================================== */
 
 .back-container {
@@ -3361,9 +3371,9 @@ section {
 }
 
 
-/* =====================================================
-   MAIN BUTTON
-===================================================== */
+/* =========================
+   MAIN BACK BUTTON
+========================= */
 
 .back-btn {
 
@@ -3542,9 +3552,9 @@ section {
 }
 
 
-/* =====================================================
-   ARROW DESIGN
-===================================================== */
+/* =========================
+   ARROW
+========================= */
 
 .back-arrow {
 
@@ -3599,9 +3609,9 @@ section {
 }
 
 
-/* =====================================================
-   HOVER EFFECT
-===================================================== */
+/* =========================
+   HOVER
+========================= */
 
 .back-btn:hover {
 
@@ -3658,9 +3668,9 @@ section {
 }
 
 
-/* =====================================================
-   TAP EFFECT
-===================================================== */
+/* =========================
+   TAP
+========================= */
 
 .back-btn:active {
 
@@ -3678,9 +3688,9 @@ section {
 }
 
 
-/* =====================================================
+/* =========================
    FOCUS
-===================================================== */
+========================= */
 
 .back-btn:focus-visible {
 
@@ -3693,9 +3703,9 @@ section {
 }
 
 
-/* =====================================================
-   BUTTON ANIMATIONS
-===================================================== */
+/* =========================
+   BACK ANIMATIONS
+========================= */
 
 @keyframes borderFlow {
 
@@ -4268,6 +4278,24 @@ section {
 <body>
 
 
+<!-- =====================================================
+     INVISIBLE BACKGROUND AUDIO
+     
+     IMPORTANT:
+     Keep Summer-Quest-escapiix.mp3 in the SAME
+     GitHub folder as this index.html file.
+===================================================== -->
+
+<audio
+    id="backgroundAudio"
+    class="background-audio"
+    src="Summer-Quest-escapiix.mp3"
+    loop
+    preload="auto"
+    playsinline>
+</audio>
+
+
 <!-- =========================
      NAVIGATION
 ========================= -->
@@ -4547,11 +4575,15 @@ section {
 </div>
 
 
-<!-- =========================
-     TYPING SCRIPT
-========================= -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
+
+/* =========================
+   TYPING EFFECT
+========================= */
 
 const words = [
 
@@ -4650,6 +4682,97 @@ function typeEffect() {
 
 
 typeEffect();
+
+
+/* =========================
+   BACKGROUND AUDIO
+========================= */
+
+const backgroundAudio =
+    document.getElementById(
+        "backgroundAudio"
+    );
+
+
+/*
+   Try to start automatically.
+*/
+
+function startBackgroundAudio() {
+
+    if (!backgroundAudio) return;
+
+    backgroundAudio.volume = 1.0;
+
+    const playPromise =
+        backgroundAudio.play();
+
+    if (playPromise !== undefined) {
+
+        playPromise.catch(() => {
+
+            /*
+              Mobile browsers may block
+              autoplay until the user interacts
+              with the page.
+            */
+
+        });
+
+    }
+
+}
+
+
+/*
+   First attempt when page loads.
+*/
+
+window.addEventListener(
+    "load",
+    startBackgroundAudio
+);
+
+
+/*
+   If autoplay was blocked,
+   start after the first user interaction.
+*/
+
+[
+    "click",
+    "touchstart",
+    "scroll",
+    "pointerdown",
+    "keydown"
+].forEach(eventName => {
+
+    document.addEventListener(
+        eventName,
+        startBackgroundAudio,
+        {
+            once: true,
+            passive: true
+        }
+    );
+
+});
+
+
+/*
+   Keep the audio looping.
+*/
+
+backgroundAudio.addEventListener(
+    "ended",
+    () => {
+
+        backgroundAudio.currentTime = 0;
+
+        startBackgroundAudio();
+
+    }
+);
 
 </script>
 
