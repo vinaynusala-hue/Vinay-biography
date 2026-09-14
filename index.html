@@ -3165,39 +3165,153 @@ section {
 }
 
 
-/* =========================
-   BACK BUTTON
-========================= */
+/* =====================================================
+   UNIQUE ANIMATED BACK BUTTON
+===================================================== */
 
 .back-container {
-    text-align: center;
+
+    position:
+        relative;
+
+    text-align:
+        center;
 
     padding:
-        20px 20px 45px;
+        45px 20px 55px;
 
     background:
-        #02040c;
+        radial-gradient(
+            circle at center,
+            rgba(0,217,255,0.08),
+            transparent 55%
+        );
+
+    overflow:
+        hidden;
 }
+
+
+/* BACKGROUND LINES */
+
+.back-container::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        260px;
+
+    height:
+        260px;
+
+    border:
+        1px solid
+        rgba(0,217,255,0.12);
+
+    border-radius:
+        50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    animation:
+        backOrbit 8s
+        linear infinite;
+
+    pointer-events:
+        none;
+}
+
+.back-container::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    top:
+        50%;
+
+    width:
+        190px;
+
+    height:
+        190px;
+
+    border:
+        1px dashed
+        rgba(124,77,255,0.25);
+
+    border-radius:
+        50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    animation:
+        backOrbitReverse 6s
+        linear infinite;
+
+    pointer-events:
+        none;
+}
+
+
+/* MAIN BUTTON */
 
 .back-btn {
 
+    position:
+        relative;
+
     display:
-        inline-block;
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        12px;
+
+    min-width:
+        220px;
 
     padding:
-        14px 32px;
+        15px 28px;
 
     border:
-        2px solid #00d9ff;
+        1px solid
+        rgba(0,217,255,0.8);
 
     border-radius:
-        30px;
+        50px;
 
     color:
         #00d9ff;
 
     background:
-        rgba(0,217,255,0.05);
+        linear-gradient(
+            135deg,
+            rgba(0,217,255,0.10),
+            rgba(124,77,255,0.10)
+        );
 
     text-decoration:
         none;
@@ -3208,15 +3322,152 @@ section {
     font-size:
         15px;
 
+    letter-spacing:
+        1px;
+
+    overflow:
+        hidden;
+
+    isolation:
+        isolate;
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
     box-shadow:
-        0 0 12px rgba(0,217,255,0.35);
+        0 0 10px
+        rgba(0,217,255,0.35),
+
+        inset 0 0 15px
+        rgba(0,217,255,0.08);
 
     transition:
-        0.3s;
+        0.35s ease;
 
-    cursor:
-        pointer;
+    animation:
+        backPulse 2.2s
+        ease-in-out infinite;
 }
+
+
+/* MOVING SHINE */
+
+.back-btn::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        -80%;
+
+    left:
+        -100%;
+
+    width:
+        55%;
+
+    height:
+        260%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.5),
+            transparent
+        );
+
+    transform:
+        rotate(25deg);
+
+    animation:
+        backShine 3s
+        linear infinite;
+
+    pointer-events:
+        none;
+
+    z-index:
+        -1;
+}
+
+
+/* INNER BORDER */
+
+.back-btn::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        3px;
+
+    border:
+        1px solid
+        rgba(255,255,255,0.08);
+
+    border-radius:
+        46px;
+
+    pointer-events:
+        none;
+}
+
+
+/* ARROW */
+
+.back-arrow {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        30px;
+
+    height:
+        30px;
+
+    border:
+        1px solid
+        #00d9ff;
+
+    border-radius:
+        50%;
+
+    font-size:
+        17px;
+
+    line-height:
+        1;
+
+    text-shadow:
+        0 0 10px #00d9ff;
+
+    box-shadow:
+        0 0 10px
+        rgba(0,217,255,0.5);
+
+    transition:
+        0.35s;
+}
+
+
+/* HOVER */
 
 .back-btn:hover {
 
@@ -3224,20 +3475,147 @@ section {
         #02040c;
 
     background:
-        #00d9ff;
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #7c4dff
+        );
+
+    border-color:
+        #00ffff;
 
     transform:
-        translateY(-4px);
+        translateY(-7px)
+        scale(1.06);
 
     box-shadow:
-        0 0 20px #00d9ff,
-        0 0 45px #00d9ff;
+        0 0 15px #00d9ff,
+        0 0 35px #00d9ff,
+        0 0 65px rgba(124,77,255,0.7);
 }
+
+.back-btn:hover .back-arrow {
+
+    color:
+        #02040c;
+
+    border-color:
+        #02040c;
+
+    transform:
+        translateX(-5px)
+        rotate(-360deg);
+
+    box-shadow:
+        none;
+}
+
+
+/* CLICK */
 
 .back-btn:active {
 
     transform:
+        translateY(1px)
         scale(0.96);
+
+    box-shadow:
+        0 0 10px #00d9ff;
+}
+
+
+/* KEYBOARD FOCUS */
+
+.back-btn:focus-visible {
+
+    outline:
+        3px solid
+        #7c4dff;
+
+    outline-offset:
+        5px;
+}
+
+
+/* BUTTON PULSE */
+
+@keyframes backPulse {
+
+    0%,100% {
+
+        box-shadow:
+            0 0 10px
+            rgba(0,217,255,0.35),
+
+            inset 0 0 15px
+            rgba(0,217,255,0.08);
+    }
+
+    50% {
+
+        box-shadow:
+            0 0 20px
+            rgba(0,217,255,0.65),
+
+            0 0 40px
+            rgba(124,77,255,0.25),
+
+            inset 0 0 20px
+            rgba(0,217,255,0.12);
+    }
+
+}
+
+
+/* SHINE ANIMATION */
+
+@keyframes backShine {
+
+    0% {
+        left:
+            -100%;
+    }
+
+    45%,100% {
+        left:
+            160%;
+    }
+
+}
+
+
+/* ORBIT ANIMATIONS */
+
+@keyframes backOrbit {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+}
+
+@keyframes backOrbitReverse {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg);
+    }
+
 }
 
 
@@ -3558,17 +3936,69 @@ section {
             14px;
     }
 
+
+    /* MOBILE BACK BUTTON */
+
     .back-container {
+
         padding:
-            15px 20px 35px;
+            40px 20px 45px;
+    }
+
+    .back-container::before {
+
+        width:
+            220px;
+
+        height:
+            220px;
+    }
+
+    .back-container::after {
+
+        width:
+            160px;
+
+        height:
+            160px;
     }
 
     .back-btn {
+
         width:
-            min(90%, 280px);
+            min(92%, 300px);
+
+        min-width:
+            0;
 
         padding:
-            13px 20px;
+            14px 20px;
+
+        font-size:
+            14px;
+    }
+
+}
+
+
+/* =========================
+   REDUCE MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
     }
 
 }
@@ -3825,17 +4255,24 @@ section {
 </section>
 
 
-<!-- =========================
-     BACK BUTTON
-========================= -->
+<!-- =====================================================
+     UNIQUE ANIMATED BACK BUTTON
+===================================================== -->
 
 <div class="back-container">
 
     <a
         href="#home"
-        class="back-btn">
+        class="back-btn"
+        aria-label="Back to Home">
 
-        ↑ Back to Home
+        <span class="back-arrow">
+            ↑
+        </span>
+
+        <span>
+            BACK TO HOME
+        </span>
 
     </a>
 
