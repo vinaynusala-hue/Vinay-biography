@@ -32,6 +32,1583 @@ body {
 
 
 /* =========================
+   HIDDEN BACKGROUND AUDIO
+========================= */
+
+.background-audio {
+    display: none;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    padding: 15px 6%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    background: rgba(5, 8, 22, 0.75);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom:
+        1px solid rgba(0, 217, 255, 0.25);
+
+    box-shadow:
+        0 5px 30px rgba(0, 217, 255, 0.08);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #00d9ff;
+
+    text-shadow:
+        0 0 15px #00d9ff;
+}
+
+nav a {
+    position: relative;
+
+    color: white;
+    text-decoration: none;
+
+    margin-left: 12px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+nav a::after {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: #00d9ff;
+
+    box-shadow:
+        0 0 10px #00d9ff;
+
+    transform:
+        translateX(-50%);
+
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #00d9ff;
+
+    text-shadow:
+        0 0 10px #00d9ff;
+}
+
+nav a:hover::after {
+    width: 80%;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    min-height: 100vh;
+    padding: 110px 8%;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            #123c66,
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            #30145e,
+            transparent 30%
+        ),
+
+        #050816;
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 3;
+
+    width: 100%;
+    max-width: 1100px;
+}
+
+.hero h1 {
+    font-size:
+        clamp(45px, 10vw, 90px);
+
+    margin-bottom: 15px;
+}
+
+.hero h1 span {
+    color: #00d9ff;
+
+    text-shadow:
+        0 0 30px #00d9ff;
+}
+
+
+/* =========================
+   FUTURISTIC GRID
+========================= */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0, 217, 255, 0.06) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(0, 217, 255, 0.06) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+    animation:
+        gridMove 12s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+@keyframes gridMove {
+
+    from {
+        transform:
+            translate(0, 0);
+    }
+
+    to {
+        transform:
+            translate(45px, 45px);
+    }
+
+}
+
+
+/* =====================================================
+   3D GREEN CUBE
+===================================================== */
+
+.cube-container {
+
+    width: 170px;
+    height: 170px;
+
+    margin:
+        0 auto 25px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    perspective:
+        900px;
+}
+
+.cube-container::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(0,255,100,0.25),
+            transparent 70%
+        );
+
+    filter:
+        blur(10px);
+
+    animation:
+        greenPulse 2s
+        ease-in-out infinite;
+}
+
+@keyframes greenPulse {
+
+    0%,100% {
+        transform:
+            scale(0.8);
+
+        opacity:
+            0.5;
+    }
+
+    50% {
+        transform:
+            scale(1.25);
+
+        opacity:
+            1;
+    }
+
+}
+
+
+/* MAIN CUBE */
+
+.cube {
+
+    width: 90px;
+    height: 90px;
+
+    position: relative;
+
+    transform-style:
+        preserve-3d;
+
+    animation:
+        cubeRotate 7s
+        linear infinite;
+
+    z-index: 5;
+
+    filter:
+        drop-shadow(
+            0 0 12px #00ff66
+        )
+        drop-shadow(
+            0 0 30px rgba(0,255,100,0.6)
+        );
+}
+
+
+/* CUBE FACES */
+
+.face {
+
+    position: absolute;
+
+    width: 90px;
+    height: 90px;
+
+    border:
+        3px solid #00ff66;
+
+    background:
+        rgba(0,255,100,0.07);
+
+    box-shadow:
+
+        inset 0 0 20px
+        rgba(0,255,100,0.25),
+
+        0 0 15px
+        rgba(0,255,100,0.7);
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+}
+
+.front {
+    transform:
+        translateZ(45px);
+}
+
+.back {
+    transform:
+        rotateY(180deg)
+        translateZ(45px);
+}
+
+.right {
+    transform:
+        rotateY(90deg)
+        translateZ(45px);
+}
+
+.left {
+    transform:
+        rotateY(-90deg)
+        translateZ(45px);
+}
+
+.top {
+    transform:
+        rotateX(90deg)
+        translateZ(45px);
+}
+
+.bottom {
+    transform:
+        rotateX(-90deg)
+        translateZ(45px);
+}
+
+
+/* CUBE ROTATION */
+
+@keyframes cubeRotate {
+
+    0% {
+        transform:
+            rotateX(0deg)
+            rotateY(0deg)
+            rotateZ(0deg);
+    }
+
+    50% {
+        transform:
+            rotateX(180deg)
+            rotateY(180deg)
+            rotateZ(20deg);
+    }
+
+    100% {
+        transform:
+            rotateX(360deg)
+            rotateY(360deg)
+            rotateZ(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   ANIMATED STRINGS
+===================================================== */
+
+.cube-string {
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    border-radius: 50%;
+
+    border:
+        2px solid transparent;
+
+    border-top:
+        2px solid #00ff66;
+
+    border-right:
+        2px solid #00ff66;
+
+    box-shadow:
+        0 0 12px #00ff66;
+
+    pointer-events:
+        none;
+}
+
+.string-1 {
+
+    animation:
+        stringRotate1 3s
+        linear infinite;
+}
+
+.string-2 {
+
+    width: 130px;
+    height: 130px;
+
+    border-top:
+        2px solid #39ff88;
+
+    border-left:
+        2px solid #39ff88;
+
+    animation:
+        stringRotate2 2.5s
+        linear infinite reverse;
+}
+
+.string-3 {
+
+    width: 180px;
+    height: 80px;
+
+    border:
+        2px solid transparent;
+
+    border-bottom:
+        2px solid #00ff66;
+
+    border-left:
+        2px solid #00ff66;
+
+    animation:
+        stringRotate3 4s
+        linear infinite;
+}
+
+@keyframes stringRotate1 {
+
+    from {
+        transform:
+            rotateX(65deg)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            rotateX(65deg)
+            rotateZ(360deg);
+    }
+
+}
+
+@keyframes stringRotate2 {
+
+    from {
+        transform:
+            rotateY(65deg)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            rotateY(65deg)
+            rotateZ(360deg);
+    }
+
+}
+
+@keyframes stringRotate3 {
+
+    from {
+        transform:
+            rotateX(70deg)
+            rotateY(15deg)
+            rotateZ(0deg);
+    }
+
+    to {
+        transform:
+            rotateX(70deg)
+            rotateY(15deg)
+            rotateZ(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   GREEN CUBE PARTICLES
+===================================================== */
+
+.cube-particle {
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        #00ff66;
+
+    box-shadow:
+        0 0 12px #00ff66,
+        0 0 25px #00ff66;
+
+    pointer-events:
+        none;
+}
+
+.cp1 {
+    top: 5px;
+    left: 30px;
+    animation:
+        particleFloat1 2s infinite;
+}
+
+.cp2 {
+    top: 40px;
+    right: 5px;
+    animation:
+        particleFloat2 2.5s infinite;
+}
+
+.cp3 {
+    bottom: 10px;
+    left: 20px;
+    animation:
+        particleFloat3 3s infinite;
+}
+
+.cp4 {
+    bottom: 25px;
+    right: 20px;
+    animation:
+        particleFloat4 2.2s infinite;
+}
+
+@keyframes particleFloat1 {
+
+    0%,100% {
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-20px,-25px)
+            scale(1.8);
+    }
+
+}
+
+@keyframes particleFloat2 {
+
+    0%,100% {
+        transform:
+            translate(0,0);
+    }
+
+    50% {
+        transform:
+            translate(25px,-20px);
+    }
+
+}
+
+@keyframes particleFloat3 {
+
+    0%,100% {
+        transform:
+            translate(0,0)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translate(-15px,20px)
+            scale(1.7);
+    }
+
+}
+
+@keyframes particleFloat4 {
+
+    0%,100% {
+        transform:
+            translate(0,0);
+    }
+
+    50% {
+        transform:
+            translate(20px,15px);
+    }
+
+}
+
+
+/* =========================
+   PROFILE PHOTO
+========================= */
+
+.profile-wrapper {
+
+    width: 270px;
+    height: 270px;
+
+    margin:
+        20px auto 40px;
+
+    position: relative;
+
+    display: flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    animation:
+        profileFloat 4s
+        ease-in-out infinite;
+
+    transform-style:
+        preserve-3d;
+}
+
+.profile-photo {
+
+    width: 175px;
+    height: 175px;
+
+    border-radius: 50%;
+
+    padding: 5px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #00d9ff,
+            #7c4dff
+        );
+
+    box-shadow:
+        0 0 20px #00d9ff,
+        0 0 50px
+        rgba(0, 217, 255, 0.5);
+
+    position: relative;
+
+    z-index: 5;
+}
+
+.profile-photo img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    display: block;
+}
+
+
+/* =========================
+   ORBITS
+========================= */
+
+.orbit {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    border:
+        2px solid #00d9ff;
+
+    pointer-events: none;
+}
+
+.orbit-1 {
+
+    width: 205px;
+    height: 205px;
+
+    border-color:
+        #00d9ff;
+
+    box-shadow:
+        0 0 15px #00d9ff;
+
+    animation:
+        rotate1 5s linear infinite;
+}
+
+.orbit-2 {
+
+    width: 235px;
+    height: 235px;
+
+    border-color:
+        #7c4dff;
+
+    border-style:
+        dashed;
+
+    box-shadow:
+        0 0 15px #7c4dff;
+
+    animation:
+        rotate2 8s linear infinite reverse;
+}
+
+.orbit-3 {
+
+    width: 265px;
+    height: 265px;
+
+    border-color:
+        #00d9ff;
+
+    border-left-color:
+        transparent;
+
+    border-right-color:
+        transparent;
+
+    box-shadow:
+        0 0 20px #00d9ff;
+
+    animation:
+        rotate3 10s linear infinite;
+}
+
+
+/* =========================
+   ORBIT DOTS
+========================= */
+
+.orbit-dot {
+
+    position: absolute;
+
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background:
+        #00d9ff;
+
+    box-shadow:
+        0 0 15px #00d9ff;
+
+    z-index: 6;
+}
+
+.dot-1 {
+
+    top: 5px;
+    left: 130px;
+
+    animation:
+        pulse 1.5s infinite alternate;
+}
+
+.dot-2 {
+
+    right: 5px;
+    top: 130px;
+
+    background:
+        #7c4dff;
+
+    box-shadow:
+        0 0 15px #7c4dff;
+
+    animation:
+        pulse 2s infinite alternate;
+}
+
+.dot-3 {
+
+    bottom: 8px;
+    left: 70px;
+
+    animation:
+        pulse 1.8s infinite alternate;
+}
+
+@keyframes rotate1 {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+@keyframes rotate2 {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+@keyframes rotate3 {
+
+    from {
+        transform:
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            rotate(360deg);
+    }
+
+}
+
+@keyframes pulse {
+
+    from {
+        transform:
+            scale(0.7);
+
+        opacity:
+            0.5;
+    }
+
+    to {
+        transform:
+            scale(1.4);
+
+        opacity:
+            1;
+    }
+
+}
+
+@keyframes profileFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0)
+            rotateY(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotateY(4deg);
+    }
+
+}
+
+
+/* =========================
+   PARTICLES
+========================= */
+
+.particles {
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events:
+        none;
+
+    z-index: 1;
+}
+
+.particles span {
+
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background:
+        #00d9ff;
+
+    box-shadow:
+        0 0 15px #00d9ff;
+
+    animation:
+        floatParticle
+        6s infinite ease-in-out;
+}
+
+.particles span:nth-child(1) {
+    left: 10%;
+    top: 20%;
+}
+
+.particles span:nth-child(2) {
+    left: 20%;
+    top: 70%;
+    animation-delay: 1s;
+}
+
+.particles span:nth-child(3) {
+    left: 35%;
+    top: 30%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(4) {
+    left: 50%;
+    top: 80%;
+    animation-delay: 3s;
+}
+
+.particles span:nth-child(5) {
+    left: 65%;
+    top: 25%;
+    animation-delay: 1.5s;
+}
+
+.particles span:nth-child(6) {
+    left: 75%;
+    top: 65%;
+    animation-delay: 2.5s;
+}
+
+.particles span:nth-child(7) {
+    left: 85%;
+    top: 35%;
+    animation-delay: 4s;
+}
+
+.particles span:nth-child(8) {
+    left: 90%;
+    top: 80%;
+    animation-delay: 3.5s;
+}
+
+.particles span:nth-child(9) {
+    left: 5%;
+    top: 50%;
+    animation-delay: 2s;
+}
+
+.particles span:nth-child(10) {
+    left: 45%;
+    top: 15%;
+    animation-delay: 4.5s;
+}
+
+@keyframes floatParticle {
+
+    0%, 100% {
+
+        transform:
+            translateY(0)
+            scale(1);
+
+        opacity:
+            0.3;
+    }
+
+    50% {
+
+        transform:
+            translateY(-35px)
+            scale(1.8);
+
+        opacity:
+            1;
+    }
+
+}
+
+
+/* =========================
+   TYPING TEXT
+========================= */
+
+.typing-text {
+
+    font-size: 20px;
+
+    color:
+        #b8c7d9;
+
+    margin-bottom:
+        30px;
+
+    min-height:
+        30px;
+}
+
+.typing {
+
+    color:
+        #00d9ff;
+
+    font-weight:
+        bold;
+
+    border-right:
+        3px solid #00d9ff;
+
+    padding-right:
+        5px;
+
+    animation:
+        blink 0.7s infinite;
+}
+
+@keyframes blink {
+
+    50% {
+        border-color:
+            transparent;
+    }
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn {
+
+    display:
+        inline-block;
+
+    padding:
+        15px 32px;
+
+    border-radius:
+        30px;
+
+    background:
+        transparent;
+
+    color:
+        #00d9ff;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        bold;
+
+    border:
+        2px solid #00d9ff;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    transition:
+        0.4s;
+
+    box-shadow:
+        0 0 10px
+        rgba(0, 217, 255, 0.4);
+}
+
+.btn::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -100%;
+
+    width:
+        100%;
+
+    height:
+        100%;
+
+    background:
+        #00d9ff;
+
+    transition:
+        0.4s;
+
+    z-index:
+        -1;
+}
+
+.btn:hover::before {
+    left: 0;
+}
+
+.btn:hover {
+
+    color:
+        #03101b;
+
+    transform:
+        translateY(-5px)
+        scale(1.05);
+
+    box-shadow:
+        0 0 15px #00d9ff,
+        0 0 40px #00d9ff;
+}
+
+
+/* =====================================================
+   3D GREEN PHOTOS BUTTON
+===================================================== */
+
+.photos-btn {
+
+    display:
+        inline-block;
+
+    margin-top:
+        18px;
+
+    padding:
+        14px 34px;
+
+    border-radius:
+        14px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #063d20,
+            #021b0d
+        );
+
+    color:
+        #00ff66;
+
+    text-decoration:
+        none;
+
+    font-weight:
+        bold;
+
+    letter-spacing:
+        1px;
+
+    border:
+        2px solid #00ff66;
+
+    position:
+        relative;
+
+    overflow:
+        hidden;
+
+    transform:
+        perspective(600px)
+        translateZ(0);
+
+    box-shadow:
+        0 5px 0 #006b2c,
+        0 0 12px #00ff66,
+        0 0 30px rgba(0,255,100,0.45);
+
+    transition:
+        0.3s;
+
+    animation:
+        photosGlow 2s
+        ease-in-out infinite;
+}
+
+.photos-btn::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        -50%;
+
+    left:
+        -80%;
+
+    width:
+        50%;
+
+    height:
+        200%;
+
+    background:
+        rgba(255,255,255,0.35);
+
+    transform:
+        rotate(25deg);
+
+    animation:
+        photosShine 2.8s
+        linear infinite;
+
+    pointer-events:
+        none;
+}
+
+.photos-btn::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    inset:
+        0;
+
+    border-radius:
+        12px;
+
+    box-shadow:
+        inset 0 0 15px
+        rgba(0,255,100,0.25);
+
+    pointer-events:
+        none;
+}
+
+.photos-btn:hover {
+
+    color:
+        #001b0b;
+
+    background:
+        #00ff66;
+
+    transform:
+        perspective(600px)
+        translateY(-6px)
+        rotateX(8deg)
+        scale(1.05);
+
+    box-shadow:
+        0 8px 0 #006b2c,
+        0 0 20px #00ff66,
+        0 0 50px #00ff66,
+        0 0 80px rgba(0,255,100,0.6);
+}
+
+.photos-btn:active {
+
+    transform:
+        perspective(600px)
+        translateY(2px)
+        scale(0.98);
+
+    box-shadow:
+        0 2px 0 #006b2c,
+        0 0 15px #00ff66;
+}
+
+@keyframes photosGlow {
+
+    0%, 100% {
+
+        box-shadow:
+            0 5px 0 #006b2c,
+            0 0 12px #00ff66,
+            0 0 30px rgba(0,255,100,0.45);
+
+    }
+
+    50% {
+
+        box-shadow:
+            0 5px 0 #006b2c,
+            0 0 20px #00ff66,
+            0 0 45px rgba(0,255,100,0.75);
+
+    }
+
+}
+
+@keyframes photosShine {
+
+    0% {
+        left: -80%;
+    }
+
+    45%,100% {
+        left: 150%;
+    }
+
+}
+
+
+/* =========================
+   SCROLL
+========================= */
+
+.scroll-down {
+
+    margin-top:
+        35px;
+
+    text-align:
+        center;
+
+    opacity:
+        0.8;
+
+    animation:
+        scrollFloat 2s infinite;
+}
+
+.scroll-down span {
+
+    display:
+        block;
+
+    font-size:
+        10px;
+
+    letter-spacing:
+        3px;
+
+    color:
+        #aaa;
+}
+
+.scroll-arrow {
+
+    font-size:
+        28px;
+
+    color:
+        #00ffff;
+
+    margin-top:
+        5px;
+
+    text-shadow:
+        0 0 15px #00ffff;
+}
+
+@keyframes scrollFloat {
+
+    0%, 100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(8px);
+    }
+
+}
+
+
+/* =========================
+   HERO BADGE
+========================= */
+
+.hero-badge {
+
+    display:
+        inline-block;
+
+    padding:
+        8px 18px;
+
+    margin-bottom:
+        18px;
+
+    border:
+        1px solid
+        rgba(0, 255, 255, 0.5);
+
+    border-radius:
+        30px;
+
+    color:
+        #00ffff;
+
+    font-size:
+        12px;
+
+    letter-spacing:
+        2px;
+
+    background:
+        rgba(0, 255, 255, 0.05);
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 255, 255, 0.2);
+
+    animation:
+        badgeGlow 2s infinite alternate;
+}
+
+@keyframes badgeGlow {
+
+    from {
+        box-shadow:
+            0 0 10px
+            rgba(0, 255, 255, 0.2);
+    }
+
+    to {
+        box-shadow:
+            0 0 25px
+            rgba(0, 255, 255, 0.6);
+    }
+
+}
+
+
+/* =========================
+   TITLES
+========================= */
+
+.title {
+
+    text-align:
+        center;
+
+    font-size:
+        40px;
+
+    margin-bottom:
+        50px;
+}
+
+.title span {
+
+    color:
+        #00d9ff;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-box {
+
+    max-width:
+        900px;
+
+    margin:
+        auto;
+
+    padding:
+        35px;
+
+    border-radius:
+        20px;
+
+    background:
+        rgba(255, 255, 255, 0.05);
+
+    border:
+        1px solid
+        rgba(<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Vinay | Biography</title>
+
+<style>
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050816;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HIDDEN BACKGROUND AUDIO
+========================= */
+
+.background-audio {
+    display: none;
+}
+
+
+/* =========================
    NAVIGATION
 ========================= */
 
@@ -2687,6 +4264,20 @@ section {
 
 
 <!-- =========================
+     HIDDEN BACKGROUND MUSIC
+========================= -->
+
+<audio
+    id="backgroundMusic"
+    class="background-audio"
+    src="Summer-Quest-escapiix.mp3"
+    autoplay
+    loop
+    preload="auto">
+</audio>
+
+
+<!-- =========================
      NAVIGATION
 ========================= -->
 
@@ -2970,10 +4561,100 @@ section {
 
 
 <!-- =========================
-     TYPING SCRIPT
+     TYPING + BACKGROUND MUSIC
 ========================= -->
 
 <script>
+
+/* =========================
+   BACKGROUND MUSIC
+========================= */
+
+const backgroundMusic =
+    document.getElementById("backgroundMusic");
+
+/*
+   Try to start the music automatically.
+   Chrome/Android may block autoplay with sound.
+*/
+
+function startBackgroundMusic() {
+
+    backgroundMusic.volume = 1.0;
+
+    const playPromise =
+        backgroundMusic.play();
+
+    if (playPromise !== undefined) {
+
+        playPromise.catch(() => {
+
+            /*
+               Autoplay was blocked.
+               The first user interaction will
+               attempt to start the music again.
+            */
+
+        });
+
+    }
+
+}
+
+
+/* Try immediately */
+
+startBackgroundMusic();
+
+
+/*
+   Start music after the visitor interacts
+   with the website if autoplay was blocked.
+*/
+
+function startMusicAfterInteraction() {
+
+    startBackgroundMusic();
+
+    document.removeEventListener(
+        "click",
+        startMusicAfterInteraction
+    );
+
+    document.removeEventListener(
+        "touchstart",
+        startMusicAfterInteraction
+    );
+
+    document.removeEventListener(
+        "keydown",
+        startMusicAfterInteraction
+    );
+
+}
+
+document.addEventListener(
+    "click",
+    startMusicAfterInteraction,
+    { once: true }
+);
+
+document.addEventListener(
+    "touchstart",
+    startMusicAfterInteraction,
+    { once: true }
+);
+
+document.addEventListener(
+    "keydown",
+    startMusicAfterInteraction,
+    { once: true }
+);
+
+
+/* =========================
+   TYPING EFFECT
+========================= */
 
 const words = [
 
