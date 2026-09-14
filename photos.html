@@ -724,6 +724,27 @@ footer {
 
 
 <!-- =========================
+     INVISIBLE BACKGROUND MUSIC
+========================= -->
+
+<audio
+    id="backgroundMusic"
+    autoplay
+    loop
+    preload="auto"
+    style="display:none;"
+>
+
+    <source
+        src="quentingaming-interstellar-582594.mp3"
+        type="audio/mpeg"
+    >
+
+</audio>
+
+
+
+<!-- =========================
      NAVIGATION
 ========================= -->
 
@@ -1138,6 +1159,10 @@ footer {
 
 <script>
 
+/* =========================
+   BACK BUTTON
+========================= */
+
 function goBack() {
 
     if (document.referrer) {
@@ -1151,6 +1176,75 @@ function goBack() {
     }
 
 }
+
+
+/* =========================
+   BACKGROUND MUSIC
+========================= */
+
+const backgroundMusic =
+    document.getElementById("backgroundMusic");
+
+
+/*
+   Try to start the music automatically.
+   Some mobile browsers block autoplay with sound.
+*/
+
+window.addEventListener("load", function() {
+
+    backgroundMusic.volume = 1.0;
+
+    const playMusic = backgroundMusic.play();
+
+    if (playMusic !== undefined) {
+
+        playMusic.catch(function() {
+
+            /*
+               Chrome/mobile browser blocked autoplay.
+               Start it after the visitor interacts
+               with the page.
+            */
+
+        });
+
+    }
+
+});
+
+
+/*
+   If autoplay was blocked, start the music
+   after the first user interaction.
+*/
+
+function startMusic() {
+
+    backgroundMusic.play().catch(function() {});
+
+}
+
+
+document.addEventListener(
+    "click",
+    startMusic,
+    { once: true }
+);
+
+
+document.addEventListener(
+    "touchstart",
+    startMusic,
+    { once: true }
+);
+
+
+document.addEventListener(
+    "scroll",
+    startMusic,
+    { once: true }
+);
 
 </script>
 
