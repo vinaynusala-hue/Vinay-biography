@@ -3241,11 +3241,13 @@ section {
     border-radius: 18px;
 
     overflow: hidden;
+
+    width: 100%;
 }
 
 
 /* =========================
-   VIDEO - AUTO PLAY / LOOP
+   VIDEO - ANDROID RESPONSIVE
 ========================= */
 
 .video-inner video {
@@ -3253,7 +3255,12 @@ section {
     display: block;
 
     width: 100%;
+
     height: auto;
+
+    aspect-ratio: 16 / 9;
+
+    max-width: 100%;
 
     max-height: 75vh;
 
@@ -3698,7 +3705,9 @@ section {
     }
 
 
-    /* MOBILE VIDEO */
+    /* =========================
+       MOBILE VIDEO
+    ========================= */
 
     .video-section {
         padding:
@@ -3709,6 +3718,9 @@ section {
         width:
             100%;
 
+        max-width:
+            100%;
+
         padding:
             4px;
 
@@ -3717,19 +3729,35 @@ section {
     }
 
     .video-inner {
+        width:
+            100%;
+
         border-radius:
             14px;
+
+        overflow:
+            hidden;
     }
 
     .video-inner video {
+
+        display:
+            block;
+
         width:
+            100%;
+
+        max-width:
             100%;
 
         height:
             auto;
 
+        aspect-ratio:
+            16 / 9;
+
         max-height:
-            65vh;
+            60vh;
 
         object-fit:
             contain;
