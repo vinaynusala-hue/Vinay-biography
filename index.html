@@ -4280,7 +4280,7 @@ section {
 
 <!-- =====================================================
      INVISIBLE BACKGROUND AUDIO
-     
+
      IMPORTANT:
      Keep Summer-Quest-escapiix.mp3 in the SAME
      GitHub folder as this index.html file.
@@ -4686,6 +4686,7 @@ typeEffect();
 
 /* =========================
    BACKGROUND AUDIO
+   ONLY AUDIO BEHAVIOR CHANGED
 ========================= */
 
 const backgroundAudio =
@@ -4693,9 +4694,85 @@ const backgroundAudio =
         "backgroundAudio"
     );
 
+const AUDIO_TIME_KEY =
+    "vinayBackgroundAudioTime";
+
+const AUDIO_PLAYING_KEY =
+    "vinayBackgroundAudioPlaying";
+
 
 /*
-   Try to start automatically.
+   Restore the previous music position.
+*/
+
+function restoreAudioPosition() {
+
+    if (!backgroundAudio) return;
+
+    const savedTime =
+        parseFloat(
+            localStorage.getItem(
+                AUDIO_TIME_KEY
+            )
+        );
+
+    if (
+        !isNaN(savedTime) &&
+        isFinite(savedTime) &&
+        savedTime >= 0
+    ) {
+
+        try {
+
+            backgroundAudio.currentTime =
+                savedTime;
+
+        } catch (error) {
+
+            /*
+              Audio may not be ready yet.
+              The position will be restored
+              again when metadata is loaded.
+            */
+
+        }
+
+    }
+
+}
+
+
+/*
+   Save the current music position.
+*/
+
+function saveAudioPosition() {
+
+    if (!backgroundAudio) return;
+
+    if (
+        isFinite(backgroundAudio.currentTime)
+    ) {
+
+        localStorage.setItem(
+            AUDIO_TIME_KEY,
+            backgroundAudio.currentTime.toString()
+        );
+
+    }
+
+    localStorage.setItem(
+        AUDIO_PLAYING_KEY,
+        backgroundAudio.paused
+            ? "false"
+            : "true"
+    );
+
+}
+
+
+/*
+   Start background music.
 */
 
 function startBackgroundAudio() {
@@ -4704,24 +4781,52 @@ function startBackgroundAudio() {
 
     backgroundAudio.volume = 1.0;
 
+    restoreAudioPosition();
+
     const playPromise =
         backgroundAudio.play();
 
-    if (playPromise !== undefined) {
+    if (
+        playPromise !== undefined
+    ) {
 
-        playPromise.catch(() => {
+        playPromise
+            .then(() => {
 
-            /*
-              Mobile browsers may block
-              autoplay until the user interacts
-              with the page.
-            */
+                localStorage.setItem(
+                    AUDIO_PLAYING_KEY,
+                    "true"
+                );
 
-        });
+            })
+            .catch(() => {
+
+                /*
+                  Mobile browsers may block
+                  autoplay until the user interacts
+                  with the page.
+                */
+
+            });
 
     }
 
 }
+
+
+/*
+   Restore position after audio metadata
+   becomes available.
+*/
+
+backgroundAudio.addEventListener(
+    "loadedmetadata",
+    () => {
+
+        restoreAudioPosition();
+
+    }
+);
 
 
 /*
@@ -4735,8 +4840,8 @@ window.addEventListener(
 
 
 /*
-   If autoplay was blocked,
-   start after the first user interaction.
+   If autoplay is blocked,
+   start after the first interaction.
 */
 
 [
@@ -4760,6 +4865,50 @@ window.addEventListener(
 
 
 /*
+   Save the position continuously.
+   This makes navigation more accurate.
+*/
+
+setInterval(
+    saveAudioPosition,
+    1000
+);
+
+
+/*
+   Save immediately before leaving
+   the current page.
+*/
+
+window.addEventListener(
+    "pagehide",
+    saveAudioPosition
+);
+
+window.addEventListener(
+    "beforeunload",
+    saveAudioPosition
+);
+
+
+/*
+   Save when clicking any internal
+   navigation link.
+*/
+
+document.querySelectorAll(
+    'a[href$=".html"]'
+).forEach(link => {
+
+    link.addEventListener(
+        "click",
+        saveAudioPosition
+    );
+
+});
+
+
+/*
    Keep the audio looping.
 */
 
@@ -4768,6 +4917,11 @@ backgroundAudio.addEventListener(
     () => {
 
         backgroundAudio.currentTime = 0;
+
+        localStorage.setItem(
+            AUDIO_TIME_KEY,
+            "0"
+        );
 
         startBackgroundAudio();
 
