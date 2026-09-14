@@ -23,111 +23,99 @@
     scroll-behavior: smooth;
 }
 
+
+/* =========================
+   BODY
+========================= */
+
 body {
+
     font-family: Arial, sans-serif;
+
     background: #050816;
+
     color: white;
+
     overflow-x: hidden;
 }
 
 
 /* =========================
-   NAVIGATION
+   NAVBAR
 ========================= */
 
 nav {
+
     position: fixed;
+
     top: 0;
     left: 0;
+
     width: 100%;
 
-    padding: 15px 6%;
+    height: 70px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
+    padding: 0 6%;
+
+    background:
+        rgba(5,8,22,0.75);
+
+    backdrop-filter: blur(15px);
+
+    border-bottom:
+        1px solid rgba(0,217,255,0.2);
+
+    z-index: 999;
+}
+
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    color: #00d9ff;
+
+    text-shadow:
+        0 0 10px #00d9ff;
+}
+
+
+nav ul {
+
+    display: flex;
 
     gap: 20px;
 
-    background: rgba(5, 8, 22, 0.75);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border-bottom:
-        1px solid rgba(0, 217, 255, 0.25);
-
-    box-shadow:
-        0 5px 30px rgba(0, 217, 255, 0.08);
-
-    z-index: 1000;
+    list-style: none;
 }
 
-.logo {
-    font-size: 25px;
-    font-weight: bold;
 
-    color: #00d9ff;
-
-    text-shadow:
-        0 0 15px #00d9ff;
-}
-
-nav a {
-    position: relative;
+nav ul li a {
 
     color: white;
+
     text-decoration: none;
 
-    margin-left: 12px;
-
     font-size: 14px;
-    font-weight: bold;
 
     transition: 0.3s;
 }
 
-nav a::after {
-    content: "";
 
-    position: absolute;
+nav ul li a:hover {
 
-    left: 50%;
-    bottom: -6px;
-
-    width: 0;
-    height: 2px;
-
-    background: #00d9ff;
-
-    box-shadow:
-        0 0 10px #00d9ff;
-
-    transform:
-        translateX(-50%);
-
-    transition: 0.3s;
-}
-
-nav a:hover {
     color: #00d9ff;
 
     text-shadow:
         0 0 10px #00d9ff;
-}
-
-nav a:hover::after {
-    width: 80%;
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-section {
-    min-height: 100vh;
-    padding: 110px 8%;
 }
 
 
@@ -136,684 +124,229 @@ section {
 ========================= */
 
 .hero {
-    position: relative;
+
+    min-height: 100vh;
+
+    padding-top: 100px;
 
     display: flex;
+
+    flex-direction: column;
+
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
 
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 20% 30%,
-            #123c66,
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 80% 70%,
-            #30145e,
-            transparent 30%
-        ),
-
-        #050816;
-}
-
-.hero-content {
     position: relative;
 
-    z-index: 3;
-
-    width: 100%;
-    max-width: 1100px;
+    overflow: hidden;
 }
+
 
 .hero h1 {
-    font-size:
-        clamp(45px, 10vw, 90px);
 
-    margin-bottom: 15px;
-}
+    font-size: clamp(40px, 8vw, 75px);
 
-.hero h1 span {
-    color: #00d9ff;
+    margin-top: 25px;
+
+    color: white;
 
     text-shadow:
-        0 0 30px #00d9ff;
+        0 0 15px rgba(0,217,255,0.6);
+}
+
+
+.hero h1 span {
+
+    color: #00d9ff;
+}
+
+
+.hero p {
+
+    margin-top: 15px;
+
+    font-size: 18px;
+
+    color: #b9c7d9;
 }
 
 
 /* =========================
-   FUTURISTIC GRID
+   TYPING TEXT
 ========================= */
 
-.hero::after {
-    content: "";
+.typing {
 
-    position: absolute;
+    margin-top: 15px;
 
-    inset: 0;
+    font-size: 18px;
 
-    background-image:
+    color: #00ff66;
 
-        linear-gradient(
-            rgba(0, 217, 255, 0.06) 1px,
-            transparent 1px
-        ),
+    text-shadow:
+        0 0 10px #00ff66;
+}
 
-        linear-gradient(
-            90deg,
-            rgba(0, 217, 255, 0.06) 1px,
-            transparent 1px
-        );
 
-    background-size:
-        45px 45px;
+.cursor {
 
     animation:
-        gridMove 12s linear infinite;
-
-    pointer-events: none;
-
-    z-index: 0;
+        blink 0.7s infinite;
 }
 
-@keyframes gridMove {
 
-    from {
-        transform:
-            translate(0, 0);
+@keyframes blink {
+
+    0%, 50% {
+        opacity: 1;
     }
 
-    to {
-        transform:
-            translate(45px, 45px);
+    51%, 100% {
+        opacity: 0;
     }
-
-}
-
-
-/* =====================================================
-   3D GREEN CUBE
-===================================================== */
-
-.cube-container {
-
-    width: 170px;
-    height: 170px;
-
-    margin:
-        0 auto 25px;
-
-    position: relative;
-
-    display: flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    perspective:
-        900px;
-}
-
-.cube-container::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 150px;
-    height: 150px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,255,100,0.25),
-            transparent 70%
-        );
-
-    filter:
-        blur(10px);
-
-    animation:
-        greenPulse 2s
-        ease-in-out infinite;
-}
-
-@keyframes greenPulse {
-
-    0%,100% {
-        transform:
-            scale(0.8);
-
-        opacity:
-            0.5;
-    }
-
-    50% {
-        transform:
-            scale(1.25);
-
-        opacity:
-            1;
-    }
-
-}
-
-
-/* MAIN CUBE */
-
-.cube {
-
-    width: 90px;
-    height: 90px;
-
-    position: relative;
-
-    transform-style:
-        preserve-3d;
-
-    animation:
-        cubeRotate 7s
-        linear infinite;
-
-    z-index: 5;
-
-    filter:
-        drop-shadow(
-            0 0 12px #00ff66
-        )
-        drop-shadow(
-            0 0 30px rgba(0,255,100,0.6)
-        );
-}
-
-
-/* CUBE FACES */
-
-.face {
-
-    position: absolute;
-
-    width: 90px;
-    height: 90px;
-
-    border:
-        3px solid #00ff66;
-
-    background:
-        rgba(0,255,100,0.07);
-
-    box-shadow:
-
-        inset 0 0 20px
-        rgba(0,255,100,0.25),
-
-        0 0 15px
-        rgba(0,255,100,0.7);
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-}
-
-.front {
-    transform:
-        translateZ(45px);
-}
-
-.back {
-    transform:
-        rotateY(180deg)
-        translateZ(45px);
-}
-
-.right {
-    transform:
-        rotateY(90deg)
-        translateZ(45px);
-}
-
-.left {
-    transform:
-        rotateY(-90deg)
-        translateZ(45px);
-}
-
-.top {
-    transform:
-        rotateX(90deg)
-        translateZ(45px);
-}
-
-.bottom {
-    transform:
-        rotateX(-90deg)
-        translateZ(45px);
-}
-
-
-/* CUBE ROTATION */
-
-@keyframes cubeRotate {
-
-    0% {
-        transform:
-            rotateX(0deg)
-            rotateY(0deg)
-            rotateZ(0deg);
-    }
-
-    50% {
-        transform:
-            rotateX(180deg)
-            rotateY(180deg)
-            rotateZ(20deg);
-    }
-
-    100% {
-        transform:
-            rotateX(360deg)
-            rotateY(360deg)
-            rotateZ(360deg);
-    }
-
-}
-
-
-/* =====================================================
-   ANIMATED STRINGS
-===================================================== */
-
-.cube-string {
-
-    position: absolute;
-
-    width: 150px;
-    height: 150px;
-
-    border-radius: 50%;
-
-    border:
-        2px solid transparent;
-
-    border-top:
-        2px solid #00ff66;
-
-    border-right:
-        2px solid #00ff66;
-
-    box-shadow:
-        0 0 12px #00ff66;
-
-    pointer-events:
-        none;
-}
-
-.string-1 {
-
-    animation:
-        stringRotate1 3s
-        linear infinite;
-}
-
-.string-2 {
-
-    width: 130px;
-    height: 130px;
-
-    border-top:
-        2px solid #39ff88;
-
-    border-left:
-        2px solid #39ff88;
-
-    animation:
-        stringRotate2 2.5s
-        linear infinite reverse;
-}
-
-.string-3 {
-
-    width: 180px;
-    height: 80px;
-
-    border:
-        2px solid transparent;
-
-    border-bottom:
-        2px solid #00ff66;
-
-    border-left:
-        2px solid #00ff66;
-
-    animation:
-        stringRotate3 4s
-        linear infinite;
-}
-
-@keyframes stringRotate1 {
-
-    from {
-        transform:
-            rotateX(65deg)
-            rotateZ(0deg);
-    }
-
-    to {
-        transform:
-            rotateX(65deg)
-            rotateZ(360deg);
-    }
-
-}
-
-@keyframes stringRotate2 {
-
-    from {
-        transform:
-            rotateY(65deg)
-            rotateZ(0deg);
-    }
-
-    to {
-        transform:
-            rotateY(65deg)
-            rotateZ(360deg);
-    }
-
-}
-
-@keyframes stringRotate3 {
-
-    from {
-        transform:
-            rotateX(70deg)
-            rotateY(15deg)
-            rotateZ(0deg);
-    }
-
-    to {
-        transform:
-            rotateX(70deg)
-            rotateY(15deg)
-            rotateZ(360deg);
-    }
-
-}
-
-
-/* =====================================================
-   GREEN CUBE PARTICLES
-===================================================== */
-
-.cube-particle {
-
-    position: absolute;
-
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    background:
-        #00ff66;
-
-    box-shadow:
-        0 0 12px #00ff66,
-        0 0 25px #00ff66;
-
-    pointer-events:
-        none;
-}
-
-.cp1 {
-
-    top: 5px;
-    left: 30px;
-
-    animation:
-        particleFloat1 2s infinite;
-}
-
-.cp2 {
-
-    top: 40px;
-    right: 5px;
-
-    animation:
-        particleFloat2 2.5s infinite;
-}
-
-.cp3 {
-
-    bottom: 10px;
-    left: 20px;
-
-    animation:
-        particleFloat3 3s infinite;
-}
-
-.cp4 {
-
-    bottom: 25px;
-    right: 20px;
-
-    animation:
-        particleFloat4 2.2s infinite;
-}
-
-@keyframes particleFloat1 {
-
-    0%,100% {
-        transform:
-            translate(0,0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translate(-20px,-25px)
-            scale(1.8);
-    }
-
-}
-
-@keyframes particleFloat2 {
-
-    0%,100% {
-        transform:
-            translate(0,0);
-    }
-
-    50% {
-        transform:
-            translate(25px,-20px);
-    }
-
-}
-
-@keyframes particleFloat3 {
-
-    0%,100% {
-        transform:
-            translate(0,0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translate(-15px,20px)
-            scale(1.7);
-    }
-
-}
-
-@keyframes particleFloat4 {
-
-    0%,100% {
-        transform:
-            translate(0,0);
-    }
-
-    50% {
-        transform:
-            translate(20px,15px);
-    }
-
 }
 
 
 /* =========================
-   PROFILE PHOTO
+   HERO BADGE
+========================= */
+
+.hero-badge {
+
+    padding:
+        8px 18px;
+
+    border:
+        1px solid #00d9ff;
+
+    border-radius: 30px;
+
+    color: #00d9ff;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    box-shadow:
+        0 0 15px rgba(0,217,255,0.3);
+}
+
+
+/* =========================
+   PROFILE AREA
 ========================= */
 
 .profile-wrapper {
 
-    width: 270px;
-    height: 270px;
+    width: 230px;
 
-    margin:
-        20px auto 40px;
+    height: 230px;
+
+    margin-top: 30px;
 
     position: relative;
 
     display: flex;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    align-items:
-        center;
-
-    animation:
-        profileFloat 4s
-        ease-in-out infinite;
-
-    transform-style:
-        preserve-3d;
+    align-items: center;
 }
 
-.profile-photo {
 
-    width: 175px;
-    height: 175px;
+.profile-wrapper img {
 
-    border-radius: 50%;
+    width: 150px;
 
-    padding: 5px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #00d9ff,
-            #7c4dff
-        );
-
-    box-shadow:
-        0 0 20px #00d9ff,
-        0 0 50px
-        rgba(0, 217, 255, 0.5);
-
-    position: relative;
-
-    z-index: 5;
-}
-
-.profile-photo img {
-
-    width: 100%;
-    height: 100%;
+    height: 150px;
 
     object-fit: cover;
 
     border-radius: 50%;
 
-    display: block;
+    border:
+        3px solid #00d9ff;
+
+    box-shadow:
+        0 0 20px #00d9ff,
+        0 0 50px rgba(0,217,255,0.4);
+
+    position: relative;
+
+    z-index: 5;
 }
 
 
 /* =========================
-   ORBITS
+   ORBIT RINGS
 ========================= */
 
-.orbit {
+.orbit-1,
+.orbit-2,
+.orbit-3 {
 
     position: absolute;
 
     border-radius: 50%;
 
     border:
-        2px solid #00d9ff;
+        2px solid rgba(0,217,255,0.5);
 
-    pointer-events: none;
+    animation:
+        orbitRotate linear infinite;
 }
+
 
 .orbit-1 {
 
-    width: 205px;
-    height: 205px;
+    width: 190px;
 
-    border-color:
-        #00d9ff;
+    height: 190px;
 
-    box-shadow:
-        0 0 15px #00d9ff;
-
-    animation:
-        rotate1 5s linear infinite;
+    animation-duration: 7s;
 }
+
 
 .orbit-2 {
 
-    width: 235px;
-    height: 235px;
+    width: 215px;
+
+    height: 215px;
 
     border-color:
-        #7c4dff;
+        rgba(124,77,255,0.5);
 
-    border-style:
-        dashed;
+    animation-duration: 10s;
 
-    box-shadow:
-        0 0 15px #7c4dff;
-
-    animation:
-        rotate2 8s linear infinite reverse;
+    animation-direction: reverse;
 }
+
 
 .orbit-3 {
 
-    width: 265px;
-    height: 265px;
+    width: 240px;
+
+    height: 240px;
 
     border-color:
-        #00d9ff;
+        rgba(0,255,102,0.35);
 
-    border-left-color:
-        transparent;
+    animation-duration: 14s;
+}
 
-    border-right-color:
-        transparent;
 
-    box-shadow:
-        0 0 20px #00d9ff;
+@keyframes orbitRotate {
 
-    animation:
-        rotate3 10s linear infinite;
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -825,1071 +358,70 @@ section {
 
     position: absolute;
 
-    width: 12px;
-    height: 12px;
+    width: 10px;
+
+    height: 10px;
 
     border-radius: 50%;
 
-    background:
-        #00d9ff;
+    background: #00ff66;
 
     box-shadow:
-        0 0 15px #00d9ff;
-
-    z-index: 6;
+        0 0 15px #00ff66;
 }
+
 
 .dot-1 {
 
     top: 5px;
-    left: 130px;
 
-    animation:
-        pulse 1.5s infinite alternate;
+    left: 50%;
 }
+
 
 .dot-2 {
 
     right: 5px;
-    top: 130px;
 
-    background:
-        #7c4dff;
-
-    box-shadow:
-        0 0 15px #7c4dff;
-
-    animation:
-        pulse 2s infinite alternate;
+    top: 50%;
 }
+
 
 .dot-3 {
 
-    bottom: 8px;
-    left: 70px;
-
-    animation:
-        pulse 1.8s infinite alternate;
-}
-
-@keyframes rotate1 {
-
-    from {
-        transform:
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
-}
-
-@keyframes rotate2 {
-
-    from {
-        transform:
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
-}
-
-@keyframes rotate3 {
-
-    from {
-        transform:
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
-}
-
-@keyframes pulse {
-
-    from {
-        transform:
-            scale(0.7);
-
-        opacity:
-            0.5;
-    }
-
-    to {
-        transform:
-            scale(1.4);
-
-        opacity:
-            1;
-    }
-
-}
-
-@keyframes profileFloat {
-
-    0%, 100% {
-        transform:
-            translateY(0)
-            rotateY(0deg);
-    }
-
-    50% {
-        transform:
-            translateY(-10px)
-            rotateY(4deg);
-    }
-
-}
-
-
-/* =========================
-   PARTICLES
-========================= */
-
-.particles {
-
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events:
-        none;
-
-    z-index: 1;
-}
-
-.particles span {
-
-    position: absolute;
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background:
-        #00d9ff;
-
-    box-shadow:
-        0 0 15px #00d9ff;
-
-    animation:
-        floatParticle
-        6s infinite ease-in-out;
-}
-
-.particles span:nth-child(1) {
-    left: 10%;
-    top: 20%;
-}
-
-.particles span:nth-child(2) {
-    left: 20%;
-    top: 70%;
-    animation-delay: 1s;
-}
-
-.particles span:nth-child(3) {
-    left: 35%;
-    top: 30%;
-    animation-delay: 2s;
-}
-
-.particles span:nth-child(4) {
-    left: 50%;
-    top: 80%;
-    animation-delay: 3s;
-}
-
-.particles span:nth-child(5) {
-    left: 65%;
-    top: 25%;
-    animation-delay: 1.5s;
-}
-
-.particles span:nth-child(6) {
-    left: 75%;
-    top: 65%;
-    animation-delay: 2.5s;
-}
-
-.particles span:nth-child(7) {
-    left: 85%;
-    top: 35%;
-    animation-delay: 4s;
-}
-
-.particles span:nth-child(8) {
-    left: 90%;
-    top: 80%;
-    animation-delay: 3.5s;
-}
-
-.particles span:nth-child(9) {
-    left: 5%;
-    top: 50%;
-    animation-delay: 2s;
-}
-
-.particles span:nth-child(10) {
-    left: 45%;
-    top: 15%;
-    animation-delay: 4.5s;
-}
-
-@keyframes floatParticle {
-
-    0%, 100% {
-
-        transform:
-            translateY(0)
-            scale(1);
-
-        opacity:
-            0.3;
-    }
-
-    50% {
-
-        transform:
-            translateY(-35px)
-            scale(1.8);
-
-        opacity:
-            1;
-    }
-
-}
-
-
-/* =========================
-   TYPING TEXT
-========================= */
-
-.typing-text {
-
-    font-size: 20px;
-
-    color:
-        #b8c7d9;
-
-    margin-bottom:
-        30px;
-
-    min-height:
-        30px;
-}
-
-.typing {
-
-    color:
-        #00d9ff;
-
-    font-weight:
-        bold;
-
-    border-right:
-        3px solid #00d9ff;
-
-    padding-right:
-        5px;
-
-    animation:
-        blink 0.7s infinite;
-}
-
-@keyframes blink {
-
-    50% {
-        border-color:
-            transparent;
-    }
-
-}
-
-
-/* =========================
-   BUTTON
-========================= */
-
-.btn {
-
-    display:
-        inline-block;
-
-    padding:
-        15px 32px;
-
-    border-radius:
-        30px;
-
-    background:
-        transparent;
-
-    color:
-        #00d9ff;
-
-    text-decoration:
-        none;
-
-    font-weight:
-        bold;
-
-    border:
-        2px solid #00d9ff;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    transition:
-        0.4s;
-
-    box-shadow:
-        0 0 10px
-        rgba(0, 217, 255, 0.4);
-}
-
-.btn::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    top:
-        0;
-
-    left:
-        -100%;
-
-    width:
-        100%;
-
-    height:
-        100%;
-
-    background:
-        #00d9ff;
-
-    transition:
-        0.4s;
-
-    z-index:
-        -1;
-}
-
-.btn:hover::before {
-    left: 0;
-}
-
-.btn:hover {
-
-    color:
-        #03101b;
-
-    transform:
-        translateY(-5px)
-        scale(1.05);
-
-    box-shadow:
-        0 0 15px #00d9ff,
-        0 0 40px #00d9ff;
-}
-
-
-/* =====================================================
-   3D GREEN PHOTOS BUTTON
-===================================================== */
-
-.photos-btn {
-
-    display:
-        inline-block;
-
-    margin-top:
-        18px;
-
-    padding:
-        14px 34px;
-
-    border-radius:
-        14px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #063d20,
-            #021b0d
-        );
-
-    color:
-        #00ff66;
-
-    text-decoration:
-        none;
-
-    font-weight:
-        bold;
-
-    letter-spacing:
-        1px;
-
-    border:
-        2px solid #00ff66;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    transform:
-        perspective(600px)
-        translateZ(0);
-
-    box-shadow:
-        0 5px 0 #006b2c,
-        0 0 12px #00ff66,
-        0 0 30px rgba(0,255,100,0.45);
-
-    transition:
-        0.3s;
-
-    animation:
-        photosGlow 2s
-        ease-in-out infinite;
-}
-
-.photos-btn::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    top:
-        -50%;
-
-    left:
-        -80%;
-
-    width:
-        50%;
-
-    height:
-        200%;
-
-    background:
-        rgba(255,255,255,0.35);
-
-    transform:
-        rotate(25deg);
-
-    animation:
-        photosShine 2.8s
-        linear infinite;
-
-    pointer-events:
-        none;
-}
-
-.photos-btn::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    border-radius:
-        12px;
-
-    box-shadow:
-        inset 0 0 15px
-        rgba(0,255,100,0.25);
-
-    pointer-events:
-        none;
-}
-
-.photos-btn:hover {
-
-    color:
-        #001b0b;
-
-    background:
-        #00ff66;
-
-    transform:
-        perspective(600px)
-        translateY(-6px)
-        rotateX(8deg)
-        scale(1.05);
-
-    box-shadow:
-        0 8px 0 #006b2c,
-        0 0 20px #00ff66,
-        0 0 50px #00ff66,
-        0 0 80px rgba(0,255,100,0.6);
-}
-
-.photos-btn:active {
-
-    transform:
-        perspective(600px)
-        translateY(2px)
-        scale(0.98);
-
-    box-shadow:
-        0 2px 0 #006b2c,
-        0 0 15px #00ff66;
-}
-
-@keyframes photosGlow {
-
-    0%, 100% {
-
-        box-shadow:
-            0 5px 0 #006b2c,
-            0 0 12px #00ff66,
-            0 0 30px rgba(0,255,100,0.45);
-
-    }
-
-    50% {
-
-        box-shadow:
-            0 5px 0 #006b2c,
-            0 0 20px #00ff66,
-            0 0 45px rgba(0,255,100,0.75);
-
-    }
-
-}
-
-@keyframes photosShine {
-
-    0% {
-        left: -80%;
-    }
-
-    45%,100% {
-        left: 150%;
-    }
-
-}
-
-
-/* =========================
-   SCROLL
-========================= */
-
-.scroll-down {
-
-    margin-top:
-        35px;
-
-    text-align:
-        center;
-
-    opacity:
-        0.8;
-
-    animation:
-        scrollFloat 2s infinite;
-}
-
-.scroll-down span {
-
-    display:
-        block;
-
-    font-size:
-        10px;
-
-    letter-spacing:
-        3px;
-
-    color:
-        #aaa;
-}
-
-.scroll-arrow {
-
-    font-size:
-        28px;
-
-    color:
-        #00ffff;
-
-    margin-top:
-        5px;
-
-    text-shadow:
-        0 0 15px #00ffff;
-}
-
-@keyframes scrollFloat {
-
-    0%, 100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(8px);
-    }
-
-}
-
-
-/* =========================
-   HERO BADGE
-========================= */
-
-.hero-badge {
-
-    display:
-        inline-block;
-
-    padding:
-        8px 18px;
-
-    margin-bottom:
-        18px;
-
-    border:
-        1px solid
-        rgba(0, 255, 255, 0.5);
-
-    border-radius:
-        30px;
-
-    color:
-        #00ffff;
-
-    font-size:
-        12px;
-
-    letter-spacing:
-        2px;
-
-    background:
-        rgba(0, 255, 255, 0.05);
-
-    box-shadow:
-        0 0 15px
-        rgba(0, 255, 255, 0.2);
-
-    animation:
-        badgeGlow 2s infinite alternate;
-}
-
-@keyframes badgeGlow {
-
-    from {
-        box-shadow:
-            0 0 10px
-            rgba(0, 255, 255, 0.2);
-    }
-
-    to {
-        box-shadow:
-            0 0 25px
-            rgba(0, 255, 255, 0.6);
-    }
-
-}
-
-
-/* =========================
-   TITLES
-========================= */
-
-.title {
-
-    text-align:
-        center;
-
-    font-size:
-        40px;
-
-    margin-bottom:
-        50px;
-}
-
-.title span {
-
-    color:
-        #00d9ff;
-}
-
-
-/* =========================
-   ABOUT
-========================= */
-
-.about-box {
-
-    max-width:
-        900px;
-
-    margin:
-        auto;
-
-    padding:
-        35px;
-
-    border-radius:
-        20px;
-
-    background:
-        rgba(255, 255, 255, 0.05);
-
-    border:
-        1px solid
-        rgba(0, 217, 255, 0.25);
-
-    box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.4);
-
-    transform:
-        perspective<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-<meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<title>Vinay | Biography</title>
-
-<style>
-
-/* =========================
-   BASIC RESET
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #050816;
-    color: white;
-    overflow-x: hidden;
-}
-
-
-/* =========================
-   NAVIGATION
-========================= */
-
-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-
-    padding: 15px 6%;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    gap: 20px;
-
-    background: rgba(5, 8, 22, 0.75);
-
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border-bottom:
-        1px solid rgba(0, 217, 255, 0.25);
-
-    box-shadow:
-        0 5px 30px rgba(0, 217, 255, 0.08);
-
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 25px;
-    font-weight: bold;
-
-    color: #00d9ff;
-
-    text-shadow:
-        0 0 15px #00d9ff;
-}
-
-nav a {
-    position: relative;
-
-    color: white;
-    text-decoration: none;
-
-    margin-left: 12px;
-
-    font-size: 14px;
-    font-weight: bold;
-
-    transition: 0.3s;
-}
-
-nav a::after {
-    content: "";
-
-    position: absolute;
+    bottom: 5px;
 
     left: 50%;
-    bottom: -6px;
-
-    width: 0;
-    height: 2px;
-
-    background: #00d9ff;
-
-    box-shadow:
-        0 0 10px #00d9ff;
-
-    transform:
-        translateX(-50%);
-
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #00d9ff;
-
-    text-shadow:
-        0 0 10px #00d9ff;
-}
-
-nav a:hover::after {
-    width: 80%;
 }
 
 
 /* =========================
-   SECTIONS
+   3D CUBE
 ========================= */
-
-section {
-    min-height: 100vh;
-    padding: 110px 8%;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    position: relative;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    background:
-        radial-gradient(
-            circle at 20% 30%,
-            #123c66,
-            transparent 30%
-        ),
-
-        radial-gradient(
-            circle at 80% 70%,
-            #30145e,
-            transparent 30%
-        ),
-
-        #050816;
-}
-
-.hero-content {
-    position: relative;
-
-    z-index: 3;
-
-    width: 100%;
-    max-width: 1100px;
-}
-
-.hero h1 {
-    font-size:
-        clamp(45px, 10vw, 90px);
-
-    margin-bottom: 15px;
-}
-
-.hero h1 span {
-    color: #00d9ff;
-
-    text-shadow:
-        0 0 30px #00d9ff;
-}
-
-
-/* =========================
-   FUTURISTIC GRID
-========================= */
-
-.hero::after {
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
-
-        linear-gradient(
-            rgba(0, 217, 255, 0.06) 1px,
-            transparent 1px
-        ),
-
-        linear-gradient(
-            90deg,
-            rgba(0, 217, 255, 0.06) 1px,
-            transparent 1px
-        );
-
-    background-size:
-        45px 45px;
-
-    animation:
-        gridMove 12s linear infinite;
-
-    pointer-events: none;
-
-    z-index: 0;
-}
-
-@keyframes gridMove {
-
-    from {
-        transform:
-            translate(0, 0);
-    }
-
-    to {
-        transform:
-            translate(45px, 45px);
-    }
-
-}
-
-
-/* =====================================================
-   3D GREEN CUBE
-===================================================== */
 
 .cube-container {
 
-    width: 170px;
-    height: 170px;
+    width: 100px;
 
-    margin:
-        0 auto 25px;
+    height: 100px;
 
-    position: relative;
+    margin-top: 30px;
+
+    perspective: 500px;
 
     display: flex;
 
-    justify-content:
-        center;
+    justify-content: center;
 
-    align-items:
-        center;
-
-    perspective:
-        900px;
+    align-items: center;
 }
 
-.cube-container::before {
-
-    content: "";
-
-    position: absolute;
-
-    width: 150px;
-    height: 150px;
-
-    border-radius: 50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(0,255,100,0.25),
-            transparent 70%
-        );
-
-    filter:
-        blur(10px);
-
-    animation:
-        greenPulse 2s
-        ease-in-out infinite;
-}
-
-@keyframes greenPulse {
-
-    0%,100% {
-        transform:
-            scale(0.8);
-
-        opacity:
-            0.5;
-    }
-
-    50% {
-        transform:
-            scale(1.25);
-
-        opacity:
-            1;
-    }
-
-}
-
-
-/* MAIN CUBE */
 
 .cube {
 
-    width: 90px;
-    height: 90px;
+    width: 65px;
+
+    height: 65px;
 
     position: relative;
 
@@ -1897,1224 +429,137 @@ section {
         preserve-3d;
 
     animation:
-        cubeRotate 7s
-        linear infinite;
-
-    z-index: 5;
-
-    filter:
-        drop-shadow(
-            0 0 12px #00ff66
-        )
-        drop-shadow(
-            0 0 30px rgba(0,255,100,0.6)
-        );
+        cubeRotate 6s linear infinite;
 }
 
-
-/* CUBE FACES */
 
 .face {
 
     position: absolute;
 
-    width: 90px;
-    height: 90px;
+    width: 65px;
 
-    border:
-        3px solid #00ff66;
+    height: 65px;
 
     background:
-        rgba(0,255,100,0.07);
+        rgba(0,255,102,0.12);
+
+    border:
+        2px solid #00ff66;
 
     box-shadow:
+        0 0 15px #00ff66;
 
-        inset 0 0 20px
-        rgba(0,255,100,0.25),
+    display: flex;
 
-        0 0 15px
-        rgba(0,255,100,0.7);
+    align-items: center;
 
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
+    justify-content: center;
 }
+
 
 .front {
     transform:
-        translateZ(45px);
+        translateZ(32.5px);
 }
 
 .back {
     transform:
         rotateY(180deg)
-        translateZ(45px);
+        translateZ(32.5px);
 }
 
 .right {
     transform:
         rotateY(90deg)
-        translateZ(45px);
+        translateZ(32.5px);
 }
 
 .left {
     transform:
         rotateY(-90deg)
-        translateZ(45px);
+        translateZ(32.5px);
 }
 
 .top {
     transform:
         rotateX(90deg)
-        translateZ(45px);
+        translateZ(32.5px);
 }
 
 .bottom {
     transform:
         rotateX(-90deg)
-        translateZ(45px);
+        translateZ(32.5px);
 }
 
-
-/* CUBE ROTATION */
 
 @keyframes cubeRotate {
 
-    0% {
+    from {
         transform:
             rotateX(0deg)
-            rotateY(0deg)
-            rotateZ(0deg);
-    }
-
-    50% {
-        transform:
-            rotateX(180deg)
-            rotateY(180deg)
-            rotateZ(20deg);
-    }
-
-    100% {
-        transform:
-            rotateX(360deg)
-            rotateY(360deg)
-            rotateZ(360deg);
-    }
-
-}
-
-
-/* =====================================================
-   ANIMATED STRINGS
-===================================================== */
-
-.cube-string {
-
-    position: absolute;
-
-    width: 150px;
-    height: 150px;
-
-    border-radius: 50%;
-
-    border:
-        2px solid transparent;
-
-    border-top:
-        2px solid #00ff66;
-
-    border-right:
-        2px solid #00ff66;
-
-    box-shadow:
-        0 0 12px #00ff66;
-
-    pointer-events:
-        none;
-}
-
-.string-1 {
-
-    animation:
-        stringRotate1 3s
-        linear infinite;
-}
-
-.string-2 {
-
-    width: 130px;
-    height: 130px;
-
-    border-top:
-        2px solid #39ff88;
-
-    border-left:
-        2px solid #39ff88;
-
-    animation:
-        stringRotate2 2.5s
-        linear infinite reverse;
-}
-
-.string-3 {
-
-    width: 180px;
-    height: 80px;
-
-    border:
-        2px solid transparent;
-
-    border-bottom:
-        2px solid #00ff66;
-
-    border-left:
-        2px solid #00ff66;
-
-    animation:
-        stringRotate3 4s
-        linear infinite;
-}
-
-@keyframes stringRotate1 {
-
-    from {
-        transform:
-            rotateX(65deg)
-            rotateZ(0deg);
-    }
-
-    to {
-        transform:
-            rotateX(65deg)
-            rotateZ(360deg);
-    }
-
-}
-
-@keyframes stringRotate2 {
-
-    from {
-        transform:
-            rotateY(65deg)
-            rotateZ(0deg);
-    }
-
-    to {
-        transform:
-            rotateY(65deg)
-            rotateZ(360deg);
-    }
-
-}
-
-@keyframes stringRotate3 {
-
-    from {
-        transform:
-            rotateX(70deg)
-            rotateY(15deg)
-            rotateZ(0deg);
-    }
-
-    to {
-        transform:
-            rotateX(70deg)
-            rotateY(15deg)
-            rotateZ(360deg);
-    }
-
-}
-
-
-/* =====================================================
-   GREEN CUBE PARTICLES
-===================================================== */
-
-.cube-particle {
-
-    position: absolute;
-
-    width: 6px;
-    height: 6px;
-
-    border-radius: 50%;
-
-    background:
-        #00ff66;
-
-    box-shadow:
-        0 0 12px #00ff66,
-        0 0 25px #00ff66;
-
-    pointer-events:
-        none;
-}
-
-.cp1 {
-
-    top: 5px;
-    left: 30px;
-
-    animation:
-        particleFloat1 2s infinite;
-}
-
-.cp2 {
-
-    top: 40px;
-    right: 5px;
-
-    animation:
-        particleFloat2 2.5s infinite;
-}
-
-.cp3 {
-
-    bottom: 10px;
-    left: 20px;
-
-    animation:
-        particleFloat3 3s infinite;
-}
-
-.cp4 {
-
-    bottom: 25px;
-    right: 20px;
-
-    animation:
-        particleFloat4 2.2s infinite;
-}
-
-@keyframes particleFloat1 {
-
-    0%,100% {
-        transform:
-            translate(0,0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translate(-20px,-25px)
-            scale(1.8);
-    }
-
-}
-
-@keyframes particleFloat2 {
-
-    0%,100% {
-        transform:
-            translate(0,0);
-    }
-
-    50% {
-        transform:
-            translate(25px,-20px);
-    }
-
-}
-
-@keyframes particleFloat3 {
-
-    0%,100% {
-        transform:
-            translate(0,0)
-            scale(1);
-    }
-
-    50% {
-        transform:
-            translate(-15px,20px)
-            scale(1.7);
-    }
-
-}
-
-@keyframes particleFloat4 {
-
-    0%,100% {
-        transform:
-            translate(0,0);
-    }
-
-    50% {
-        transform:
-            translate(20px,15px);
-    }
-
-}
-
-
-/* =========================
-   PROFILE PHOTO
-========================= */
-
-.profile-wrapper {
-
-    width: 270px;
-    height: 270px;
-
-    margin:
-        20px auto 40px;
-
-    position: relative;
-
-    display: flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    animation:
-        profileFloat 4s
-        ease-in-out infinite;
-
-    transform-style:
-        preserve-3d;
-}
-
-.profile-photo {
-
-    width: 175px;
-    height: 175px;
-
-    border-radius: 50%;
-
-    padding: 5px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #00d9ff,
-            #7c4dff
-        );
-
-    box-shadow:
-        0 0 20px #00d9ff,
-        0 0 50px
-        rgba(0, 217, 255, 0.5);
-
-    position: relative;
-
-    z-index: 5;
-}
-
-.profile-photo img {
-
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    border-radius: 50%;
-
-    display: block;
-}
-
-
-/* =========================
-   ORBITS
-========================= */
-
-.orbit {
-
-    position: absolute;
-
-    border-radius: 50%;
-
-    border:
-        2px solid #00d9ff;
-
-    pointer-events: none;
-}
-
-.orbit-1 {
-
-    width: 205px;
-    height: 205px;
-
-    border-color:
-        #00d9ff;
-
-    box-shadow:
-        0 0 15px #00d9ff;
-
-    animation:
-        rotate1 5s linear infinite;
-}
-
-.orbit-2 {
-
-    width: 235px;
-    height: 235px;
-
-    border-color:
-        #7c4dff;
-
-    border-style:
-        dashed;
-
-    box-shadow:
-        0 0 15px #7c4dff;
-
-    animation:
-        rotate2 8s linear infinite reverse;
-}
-
-.orbit-3 {
-
-    width: 265px;
-    height: 265px;
-
-    border-color:
-        #00d9ff;
-
-    border-left-color:
-        transparent;
-
-    border-right-color:
-        transparent;
-
-    box-shadow:
-        0 0 20px #00d9ff;
-
-    animation:
-        rotate3 10s linear infinite;
-}
-
-
-/* =========================
-   ORBIT DOTS
-========================= */
-
-.orbit-dot {
-
-    position: absolute;
-
-    width: 12px;
-    height: 12px;
-
-    border-radius: 50%;
-
-    background:
-        #00d9ff;
-
-    box-shadow:
-        0 0 15px #00d9ff;
-
-    z-index: 6;
-}
-
-.dot-1 {
-
-    top: 5px;
-    left: 130px;
-
-    animation:
-        pulse 1.5s infinite alternate;
-}
-
-.dot-2 {
-
-    right: 5px;
-    top: 130px;
-
-    background:
-        #7c4dff;
-
-    box-shadow:
-        0 0 15px #7c4dff;
-
-    animation:
-        pulse 2s infinite alternate;
-}
-
-.dot-3 {
-
-    bottom: 8px;
-    left: 70px;
-
-    animation:
-        pulse 1.8s infinite alternate;
-}
-
-@keyframes rotate1 {
-
-    from {
-        transform:
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
-}
-
-@keyframes rotate2 {
-
-    from {
-        transform:
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
-}
-
-@keyframes rotate3 {
-
-    from {
-        transform:
-            rotate(0deg);
-    }
-
-    to {
-        transform:
-            rotate(360deg);
-    }
-
-}
-
-@keyframes pulse {
-
-    from {
-        transform:
-            scale(0.7);
-
-        opacity:
-            0.5;
-    }
-
-    to {
-        transform:
-            scale(1.4);
-
-        opacity:
-            1;
-    }
-
-}
-
-@keyframes profileFloat {
-
-    0%, 100% {
-        transform:
-            translateY(0)
             rotateY(0deg);
     }
 
-    50% {
+    to {
         transform:
-            translateY(-10px)
-            rotateY(4deg);
+            rotateX(360deg)
+            rotateY(360deg);
     }
-
 }
 
 
 /* =========================
-   PARTICLES
+   BUTTONS
 ========================= */
 
-.particles {
+.hero-buttons {
 
-    position: absolute;
+    margin-top: 30px;
 
-    inset: 0;
+    display: flex;
 
-    pointer-events:
-        none;
+    gap: 15px;
 
-    z-index: 1;
+    flex-wrap: wrap;
+
+    justify-content: center;
 }
 
-.particles span {
-
-    position: absolute;
-
-    width: 5px;
-    height: 5px;
-
-    border-radius: 50%;
-
-    background:
-        #00d9ff;
-
-    box-shadow:
-        0 0 15px #00d9ff;
-
-    animation:
-        floatParticle
-        6s infinite ease-in-out;
-}
-
-.particles span:nth-child(1) {
-    left: 10%;
-    top: 20%;
-}
-
-.particles span:nth-child(2) {
-    left: 20%;
-    top: 70%;
-    animation-delay: 1s;
-}
-
-.particles span:nth-child(3) {
-    left: 35%;
-    top: 30%;
-    animation-delay: 2s;
-}
-
-.particles span:nth-child(4) {
-    left: 50%;
-    top: 80%;
-    animation-delay: 3s;
-}
-
-.particles span:nth-child(5) {
-    left: 65%;
-    top: 25%;
-    animation-delay: 1.5s;
-}
-
-.particles span:nth-child(6) {
-    left: 75%;
-    top: 65%;
-    animation-delay: 2.5s;
-}
-
-.particles span:nth-child(7) {
-    left: 85%;
-    top: 35%;
-    animation-delay: 4s;
-}
-
-.particles span:nth-child(8) {
-    left: 90%;
-    top: 80%;
-    animation-delay: 3.5s;
-}
-
-.particles span:nth-child(9) {
-    left: 5%;
-    top: 50%;
-    animation-delay: 2s;
-}
-
-.particles span:nth-child(10) {
-    left: 45%;
-    top: 15%;
-    animation-delay: 4.5s;
-}
-
-@keyframes floatParticle {
-
-    0%, 100% {
-
-        transform:
-            translateY(0)
-            scale(1);
-
-        opacity:
-            0.3;
-    }
-
-    50% {
-
-        transform:
-            translateY(-35px)
-            scale(1.8);
-
-        opacity:
-            1;
-    }
-
-}
-
-
-/* =========================
-   TYPING TEXT
-========================= */
-
-.typing-text {
-
-    font-size: 20px;
-
-    color:
-        #b8c7d9;
-
-    margin-bottom:
-        30px;
-
-    min-height:
-        30px;
-}
-
-.typing {
-
-    color:
-        #00d9ff;
-
-    font-weight:
-        bold;
-
-    border-right:
-        3px solid #00d9ff;
-
-    padding-right:
-        5px;
-
-    animation:
-        blink 0.7s infinite;
-}
-
-@keyframes blink {
-
-    50% {
-        border-color:
-            transparent;
-    }
-
-}
-
-
-/* =========================
-   BUTTON
-========================= */
 
 .btn {
 
-    display:
-        inline-block;
-
     padding:
-        15px 32px;
+        12px 24px;
 
-    border-radius:
-        30px;
+    border-radius: 30px;
 
-    background:
-        transparent;
+    text-decoration: none;
 
-    color:
-        #00d9ff;
-
-    text-decoration:
-        none;
-
-    font-weight:
-        bold;
+    color: white;
 
     border:
-        2px solid #00d9ff;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    transition:
-        0.4s;
-
-    box-shadow:
-        0 0 10px
-        rgba(0, 217, 255, 0.4);
-}
-
-.btn::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    top:
-        0;
-
-    left:
-        -100%;
-
-    width:
-        100%;
-
-    height:
-        100%;
+        1px solid #00d9ff;
 
     background:
-        #00d9ff;
+        rgba(0,217,255,0.08);
 
-    transition:
-        0.4s;
+    transition: 0.3s;
 
-    z-index:
-        -1;
+    box-shadow:
+        0 0 10px rgba(0,217,255,0.2);
 }
 
-.btn:hover::before {
-    left: 0;
-}
 
 .btn:hover {
 
-    color:
-        #03101b;
+    background: #00d9ff;
 
-    transform:
-        translateY(-5px)
-        scale(1.05);
+    color: #050816;
 
     box-shadow:
-        0 0 15px #00d9ff,
-        0 0 40px #00d9ff;
-}
-
-
-/* =====================================================
-   3D GREEN PHOTOS BUTTON
-===================================================== */
-
-.photos-btn {
-
-    display:
-        inline-block;
-
-    margin-top:
-        18px;
-
-    padding:
-        14px 34px;
-
-    border-radius:
-        14px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #063d20,
-            #021b0d
-        );
-
-    color:
-        #00ff66;
-
-    text-decoration:
-        none;
-
-    font-weight:
-        bold;
-
-    letter-spacing:
-        1px;
-
-    border:
-        2px solid #00ff66;
-
-    position:
-        relative;
-
-    overflow:
-        hidden;
-
-    transform:
-        perspective(600px)
-        translateZ(0);
-
-    box-shadow:
-        0 5px 0 #006b2c,
-        0 0 12px #00ff66,
-        0 0 30px rgba(0,255,100,0.45);
-
-    transition:
-        0.3s;
-
-    animation:
-        photosGlow 2s
-        ease-in-out infinite;
-}
-
-.photos-btn::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    top:
-        -50%;
-
-    left:
-        -80%;
-
-    width:
-        50%;
-
-    height:
-        200%;
-
-    background:
-        rgba(255,255,255,0.35);
-
-    transform:
-        rotate(25deg);
-
-    animation:
-        photosShine 2.8s
-        linear infinite;
-
-    pointer-events:
-        none;
-}
-
-.photos-btn::after {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    inset:
-        0;
-
-    border-radius:
-        12px;
-
-    box-shadow:
-        inset 0 0 15px
-        rgba(0,255,100,0.25);
-
-    pointer-events:
-        none;
-}
-
-.photos-btn:hover {
-
-    color:
-        #001b0b;
-
-    background:
-        #00ff66;
-
-    transform:
-        perspective(600px)
-        translateY(-6px)
-        rotateX(8deg)
-        scale(1.05);
-
-    box-shadow:
-        0 8px 0 #006b2c,
-        0 0 20px #00ff66,
-        0 0 50px #00ff66,
-        0 0 80px rgba(0,255,100,0.6);
-}
-
-.photos-btn:active {
-
-    transform:
-        perspective(600px)
-        translateY(2px)
-        scale(0.98);
-
-    box-shadow:
-        0 2px 0 #006b2c,
-        0 0 15px #00ff66;
-}
-
-@keyframes photosGlow {
-
-    0%, 100% {
-
-        box-shadow:
-            0 5px 0 #006b2c,
-            0 0 12px #00ff66,
-            0 0 30px rgba(0,255,100,0.45);
-
-    }
-
-    50% {
-
-        box-shadow:
-            0 5px 0 #006b2c,
-            0 0 20px #00ff66,
-            0 0 45px rgba(0,255,100,0.75);
-
-    }
-
-}
-
-@keyframes photosShine {
-
-    0% {
-        left: -80%;
-    }
-
-    45%,100% {
-        left: 150%;
-    }
-
-}
-
-
-/* =========================
-   SCROLL
-========================= */
-
-.scroll-down {
-
-    margin-top:
-        35px;
-
-    text-align:
-        center;
-
-    opacity:
-        0.8;
-
-    animation:
-        scrollFloat 2s infinite;
-}
-
-.scroll-down span {
-
-    display:
-        block;
-
-    font-size:
-        10px;
-
-    letter-spacing:
-        3px;
-
-    color:
-        #aaa;
-}
-
-.scroll-arrow {
-
-    font-size:
-        28px;
-
-    color:
-        #00ffff;
-
-    margin-top:
-        5px;
-
-    text-shadow:
-        0 0 15px #00ffff;
-}
-
-@keyframes scrollFloat {
-
-    0%, 100% {
-        transform:
-            translateY(0);
-    }
-
-    50% {
-        transform:
-            translateY(8px);
-    }
-
-}
-
-
-/* =========================
-   HERO BADGE
-========================= */
-
-.hero-badge {
-
-    display:
-        inline-block;
-
-    padding:
-        8px 18px;
-
-    margin-bottom:
-        18px;
-
-    border:
-        1px solid
-        rgba(0, 255, 255, 0.5);
-
-    border-radius:
-        30px;
-
-    color:
-        #00ffff;
-
-    font-size:
-        12px;
-
-    letter-spacing:
-        2px;
-
-    background:
-        rgba(0, 255, 255, 0.05);
-
-    box-shadow:
-        0 0 15px
-        rgba(0, 255, 255, 0.2);
-
-    animation:
-        badgeGlow 2s infinite alternate;
-}
-
-@keyframes badgeGlow {
-
-    from {
-        box-shadow:
-            0 0 10px
-            rgba(0, 255, 255, 0.2);
-    }
-
-    to {
-        box-shadow:
-            0 0 25px
-            rgba(0, 255, 255, 0.6);
-    }
-
-}
-
-
-/* =========================
-   TITLES
-========================= */
-
-.title {
-
-    text-align:
-        center;
-
-    font-size:
-        40px;
-
-    margin-bottom:
-        50px;
-}
-
-.title span {
-
-    color:
-        #00d9ff;
+        0 0 25px #00d9ff;
 }
 
 
@@ -3122,62 +567,77 @@ section {
    ABOUT
 ========================= */
 
-.about-box {
-
-    max-width:
-        900px;
-
-    margin:
-        auto;
+.about {
 
     padding:
-        35px;
+        100px 8%;
 
-    border-radius:
-        20px;
+    text-align: center;
+}
+
+
+.title {
+
+    font-size: 35px;
+
+    margin-bottom: 30px;
+}
+
+
+.title span {
+
+    color: #00d9ff;
+
+    text-shadow:
+        0 0 10px #00d9ff;
+}
+
+
+.about-box {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 30px;
 
     background:
-        rgba(255, 255, 255, 0.05);
+        rgba(255,255,255,0.03);
 
     border:
-        1px solid
-        rgba(0, 217, 255, 0.25);
+        1px solid rgba(0,217,255,0.25);
+
+    border-radius: 20px;
+
+    line-height: 1.8;
+
+    color: #cbd5e1;
 
     box-shadow:
-        0 20px 60px
-        rgba(0, 0, 0, 0.4);
-
-    transform:
-        perspective(1000px)
-        rotateX(2deg);
-}
-
-.about-box p {
-
-    color:
-        #c4d0df;
-
-    font-size:
-        18px;
-
-    line-height:
-        1.8;
+        0 0 30px rgba(0,217,255,0.08);
 }
 
 
-/* =====================================================
+/* =========================
    VIDEO SECTION
-===================================================== */
+========================= */
 
 .video-section {
+
     padding-top: 80px;
+
     padding-bottom: 70px;
+
     text-align: center;
 }
 
+
 .video-box {
+
     width: 100%;
+
     max-width: 850px;
+
     margin: 0 auto;
 
     padding: 5px;
@@ -3207,7 +667,9 @@ section {
     overflow: hidden;
 }
 
+
 .video-box::before {
+
     content: "";
 
     position: absolute;
@@ -3231,7 +693,9 @@ section {
     z-index: 0;
 }
 
+
 .video-inner {
+
     position: relative;
 
     z-index: 1;
@@ -3244,15 +708,12 @@ section {
 }
 
 
-/* =========================
-   VIDEO - AUTO PLAY / LOOP
-========================= */
-
 .video-inner video {
 
     display: block;
 
     width: 100%;
+
     height: auto;
 
     max-height: 75vh;
@@ -3260,20 +721,26 @@ section {
     object-fit: contain;
 
     background: #000;
-
-    /* Make video non-clickable */
-    pointer-events: none;
-
-    /* Remove selection */
-    user-select: none;
-
-    -webkit-user-select: none;
 }
 
 
-/* =========================
-   VIDEO ANIMATIONS
-========================= */
+.video-label {
+
+    padding: 12px 10px;
+
+    color: #00ffff;
+
+    font-size: 14px;
+
+    letter-spacing: 2px;
+
+    background:
+        rgba(0,0,0,0.75);
+
+    text-shadow:
+        0 0 10px #00ffff;
+}
+
 
 @keyframes videoBorder {
 
@@ -3288,8 +755,8 @@ section {
     100% {
         background-position: 0% 50%;
     }
-
 }
+
 
 @keyframes videoSpin {
 
@@ -3300,7 +767,6 @@ section {
     to {
         transform: rotate(360deg);
     }
-
 }
 
 
@@ -3309,142 +775,151 @@ section {
 ========================= */
 
 .back-container {
+
     text-align: center;
 
     padding:
-        20px 20px 45px;
-
-    background:
-        #02040c;
+        20px 20px 60px;
 }
+
 
 .back-btn {
 
-    display:
-        inline-block;
+    display: inline-block;
 
     padding:
-        14px 32px;
+        12px 25px;
 
     border:
-        2px solid #00d9ff;
+        1px solid #00d9ff;
 
-    border-radius:
-        30px;
+    border-radius: 30px;
 
-    color:
-        #00d9ff;
+    text-decoration: none;
 
-    background:
-        rgba(0,217,255,0.05);
+    color: #00d9ff;
 
-    text-decoration:
-        none;
-
-    font-weight:
-        bold;
-
-    font-size:
-        15px;
-
-    box-shadow:
-        0 0 12px rgba(0,217,255,0.35);
-
-    transition:
-        0.3s;
-
-    cursor:
-        pointer;
+    transition: 0.3s;
 }
+
 
 .back-btn:hover {
 
-    color:
-        #02040c;
+    background: #00d9ff;
 
-    background:
-        #00d9ff;
-
-    transform:
-        translateY(-4px);
+    color: #050816;
 
     box-shadow:
-        0 0 20px #00d9ff,
-        0 0 45px #00d9ff;
-}
-
-.back-btn:active {
-
-    transform:
-        scale(0.96);
+        0 0 20px #00d9ff;
 }
 
 
 /* =========================
-   BACKGROUND ANIMATION
+   PARTICLES
 ========================= */
 
-.hero::before {
+.particles {
 
-    content:
-        "";
+    position: absolute;
 
-    position:
-        absolute;
+    inset: 0;
 
-    width:
-        500px;
+    pointer-events: none;
 
-    height:
-        500px;
+    overflow: hidden;
 
-    border-radius:
-        50%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(
-                0,
-                255,
-                255,
-                0.12
-            ),
-            transparent 70%
-        );
-
-    top:
-        10%;
-
-    left:
-        -15%;
-
-    animation:
-        backgroundMove
-        8s ease-in-out
-        infinite alternate;
-
-    pointer-events:
-        none;
+    z-index: -1;
 }
 
-@keyframes backgroundMove {
+
+.particles span {
+
+    position: absolute;
+
+    width: 3px;
+
+    height: 3px;
+
+    background: #00d9ff;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 10px #00d9ff;
+
+    animation:
+        floatParticle 8s linear infinite;
+}
+
+
+.particles span:nth-child(1) {
+    left: 10%;
+    top: 20%;
+}
+
+.particles span:nth-child(2) {
+    left: 25%;
+    top: 70%;
+}
+
+.particles span:nth-child(3) {
+    left: 40%;
+    top: 30%;
+}
+
+.particles span:nth-child(4) {
+    left: 55%;
+    top: 80%;
+}
+
+.particles span:nth-child(5) {
+    left: 70%;
+    top: 25%;
+}
+
+.particles span:nth-child(6) {
+    left: 85%;
+    top: 60%;
+}
+
+.particles span:nth-child(7) {
+    left: 15%;
+    top: 90%;
+}
+
+.particles span:nth-child(8) {
+    left: 50%;
+    top: 10%;
+}
+
+.particles span:nth-child(9) {
+    left: 75%;
+    top: 75%;
+}
+
+.particles span:nth-child(10) {
+    left: 90%;
+    top: 15%;
+}
+
+
+@keyframes floatParticle {
 
     from {
-
         transform:
-            translate(0, 0);
+            translateY(0);
+        opacity: 0.3;
+    }
+
+    50% {
+        opacity: 1;
     }
 
     to {
-
         transform:
-            translate(
-                120px,
-                80px
-            );
+            translateY(-100px);
+        opacity: 0.3;
     }
-
 }
 
 
@@ -3452,260 +927,114 @@ section {
    MOBILE
 ========================= */
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
 
     nav {
 
-        padding:
-            12px 3%;
+        height: 60px;
 
-        gap:
-            8px;
+        padding:
+            0 5%;
     }
+
 
     .logo {
 
-        font-size:
-            19px;
+        font-size: 20px;
     }
 
-    nav > div:last-child {
 
-        display:
-            flex;
+    nav ul {
 
-        flex-wrap:
-            wrap;
-
-        justify-content:
-            center;
-
-        gap:
-            3px;
+        gap: 10px;
     }
 
-    nav a {
 
-        margin-left:
-            3px;
+    nav ul li a {
 
-        font-size:
-            10px;
+        font-size: 11px;
+    }
+
+
+    .hero {
+
+        padding-top: 80px;
+    }
+
+
+    .hero p {
+
+        font-size: 15px;
 
         padding:
-            5px;
+            0 20px;
     }
 
-    section {
-
-        padding:
-            100px 5% 70px;
-    }
-
-    .hero h1 {
-
-        font-size:
-            clamp(
-                38px,
-                12vw,
-                60px
-            );
-    }
-
-    .typing-text {
-
-        font-size:
-            17px;
-    }
-
-
-    /* MOBILE 3D CUBE */
-
-    .cube-container {
-
-        width:
-            145px;
-
-        height:
-            145px;
-
-        margin-bottom:
-            15px;
-    }
-
-    .cube {
-
-        width:
-            75px;
-
-        height:
-            75px;
-    }
-
-    .face {
-
-        width:
-            75px;
-
-        height:
-            75px;
-
-        border-width:
-            2px;
-    }
-
-    .front {
-
-        transform:
-            translateZ(37.5px);
-    }
-
-    .back {
-
-        transform:
-            rotateY(180deg)
-            translateZ(37.5px);
-    }
-
-    .right {
-
-        transform:
-            rotateY(90deg)
-            translateZ(37.5px);
-    }
-
-    .left {
-
-        transform:
-            rotateY(-90deg)
-            translateZ(37.5px);
-    }
-
-    .top {
-
-        transform:
-            rotateX(90deg)
-            translateZ(37.5px);
-    }
-
-    .bottom {
-
-        transform:
-            rotateX(-90deg)
-            translateZ(37.5px);
-    }
-
-    .cube-string {
-
-        width:
-            125px;
-
-        height:
-            125px;
-    }
-
-    .string-2 {
-
-        width:
-            110px;
-
-        height:
-            110px;
-    }
-
-    .string-3 {
-
-        width:
-            150px;
-
-        height:
-            70px;
-    }
-
-
-    /* PROFILE */
 
     .profile-wrapper {
 
-        width:
-            240px;
+        width: 210px;
 
-        height:
-            240px;
+        height: 210px;
     }
 
-    .profile-photo {
 
-        width:
-            155px;
+    .profile-wrapper img {
 
-        height:
-            155px;
+        width: 135px;
+
+        height: 135px;
     }
+
 
     .orbit-1 {
 
-        width:
-            185px;
+        width: 175px;
 
-        height:
-            185px;
+        height: 175px;
     }
+
 
     .orbit-2 {
 
-        width:
-            210px;
+        width: 195px;
 
-        height:
-            210px;
+        height: 195px;
     }
+
 
     .orbit-3 {
 
-        width:
-            235px;
+        width: 215px;
 
-        height:
-            235px;
+        height: 215px;
     }
 
-    .title {
 
-        font-size:
-            32px;
+    .about {
+
+        padding:
+            75px 5%;
     }
+
 
     .about-box {
 
-        padding:
-            25px;
+        padding: 22px;
+
+        font-size: 14px;
     }
 
-    .about-box p {
-
-        font-size:
-            16px;
-    }
-
-    .photos-btn {
-
-        padding:
-            13px 30px;
-
-        font-size:
-            14px;
-    }
-
-
-    /* MOBILE VIDEO */
 
     .video-section {
+
         padding:
             75px 5% 55px;
     }
 
+
     .video-box {
+
         width:
             100%;
 
@@ -3716,14 +1045,20 @@ section {
             18px;
     }
 
+
     .video-inner {
+
         border-radius:
             14px;
     }
 
+
+    /* ONLY MOBILE VIDEO SIZE CHANGED */
+
     .video-inner video {
+
         width:
-            100%;
+            88%;
 
         height:
             auto;
@@ -3734,30 +1069,40 @@ section {
         object-fit:
             contain;
 
-        /* Keep video non-clickable */
-        pointer-events:
-            none;
-
-        user-select:
-            none;
-
-        -webkit-user-select:
-            none;
+        margin:
+            0 auto;
     }
 
-    .back-container {
-        padding:
-            15px 20px 35px;
-    }
 
-    .back-btn {
-        width:
-            min(90%, 280px);
+    .video-label {
+
+        font-size:
+            11px;
 
         padding:
-            13px 20px;
+            10px 5px;
     }
 
+
+    .title {
+
+        font-size: 28px;
+    }
+
+
+    .hero-buttons {
+
+        gap: 10px;
+    }
+
+
+    .btn {
+
+        padding:
+            10px 18px;
+
+        font-size: 13px;
+    }
 }
 
 </style>
@@ -3769,7 +1114,7 @@ section {
 
 
 <!-- =========================
-     NAVIGATION
+     NAVBAR
 ========================= -->
 
 <nav>
@@ -3778,38 +1123,37 @@ section {
         VINAY
     </div>
 
-    <div>
+    <ul>
 
-        <a href="index.html">
-            Home
-        </a>
+        <li>
+            <a href="#home">
+                Home
+            </a>
+        </li>
 
-        <a href="about.html">
-            About
-        </a>
+        <li>
+            <a href="#about">
+                About
+            </a>
+        </li>
 
-        <a href="achievements.html">
-            Achievements
-        </a>
+        <li>
+            <a href="#video">
+                Video
+            </a>
+        </li>
 
-        <a href="resume.html">
-            Resume
-        </a>
-
-        <a href="contact.html">
-            Contact
-        </a>
-
-    </div>
+    </ul>
 
 </nav>
 
 
 <!-- =========================
-     HOME
+     HERO
 ========================= -->
 
 <section class="hero" id="home">
+
 
     <div class="particles">
 
@@ -3827,148 +1171,93 @@ section {
     </div>
 
 
-    <div class="hero-content">
+    <div class="hero-badge">
 
+        ✦ PERSONAL BIOGRAPHY ✦
 
-        <!-- GREEN 3D CUBE -->
+    </div>
 
-        <div class="cube-container">
 
-            <div class="cube-string string-1"></div>
+    <div class="cube-container">
 
-            <div class="cube-string string-2"></div>
+        <div class="cube">
 
-            <div class="cube-string string-3"></div>
-
-
-            <div class="cube-particle cp1"></div>
-
-            <div class="cube-particle cp2"></div>
-
-            <div class="cube-particle cp3"></div>
-
-            <div class="cube-particle cp4"></div>
-
-
-            <div class="cube">
-
-                <div class="face front"></div>
-
-                <div class="face back"></div>
-
-                <div class="face right"></div>
-
-                <div class="face left"></div>
-
-                <div class="face top"></div>
-
-                <div class="face bottom"></div>
-
-            </div>
-
-        </div>
-
-
-        <!-- PROFILE PHOTO -->
-
-        <div class="profile-wrapper">
-
-            <div class="orbit orbit-1"></div>
-
-            <div class="orbit orbit-2"></div>
-
-            <div class="orbit orbit-3"></div>
-
-
-            <div class="orbit-dot dot-1"></div>
-
-            <div class="orbit-dot dot-2"></div>
-
-            <div class="orbit-dot dot-3"></div>
-
-
-            <div class="profile-photo">
-
-                <img
-                    src="Gemini_Generated_Image_dm95lbdm95lbdm95.png"
-                    alt="Vinay">
-
-            </div>
-
-        </div>
-
-
-        <!-- BADGE -->
-
-        <div class="hero-badge">
-
-            ✦ WELCOME TO MY DIGITAL WORLD ✦
-
-        </div>
-
-
-        <!-- NAME -->
-
-        <h1>
-
-            Hello, I'm
-            <span>Vinay</span>
-
-        </h1>
-
-
-        <!-- TYPING -->
-
-        <div class="typing-text">
-
-            <span>
-                I am a
-            </span>
-
-            <span class="typing"></span>
-
-        </div>
-
-
-        <!-- EXPLORE -->
-
-        <a
-            href="about.html"
-            class="btn">
-
-            Explore My Story →
-
-        </a>
-
-
-        <!-- PHOTOS BUTTON -->
-
-        <br>
-
-        <a
-            href="photos.html"
-            class="photos-btn">
-
-            ✦ Photos ✦
-
-        </a>
-
-
-        <!-- SCROLL -->
-
-        <div class="scroll-down">
-
-            <span>
-                SCROLL TO EXPLORE
-            </span>
-
-            <div class="scroll-arrow">
-                ↓
-            </div>
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face right"></div>
+            <div class="face left"></div>
+            <div class="face top"></div>
+            <div class="face bottom"></div>
 
         </div>
 
     </div>
+
+
+    <div class="profile-wrapper">
+
+        <div class="orbit-1">
+            <div class="orbit-dot dot-1"></div>
+        </div>
+
+        <div class="orbit-2">
+            <div class="orbit-dot dot-2"></div>
+        </div>
+
+        <div class="orbit-3">
+            <div class="orbit-dot dot-3"></div>
+        </div>
+
+
+        <img
+            src="Gemini_Generated_Image_dm95lbdm95lbdm95.png"
+            alt="Vinay Profile Photo">
+
+    </div>
+
+
+    <h1>
+
+        Hi, I'm
+        <span>Vinay</span>
+
+    </h1>
+
+
+    <p>
+        B.Tech Data Science Student • Technology Enthusiast
+    </p>
+
+
+    <div class="typing">
+
+        <span id="typingText"></span>
+        <span class="cursor">|</span>
+
+    </div>
+
+
+    <div class="hero-buttons">
+
+        <a
+            href="#about"
+            class="btn">
+
+            Explore My Story
+
+        </a>
+
+
+        <a
+            href="photos.html"
+            class="btn">
+
+            📸 Photos
+
+        </a>
+
+    </div>
+
 
 </section>
 
@@ -3977,7 +1266,7 @@ section {
      ABOUT
 ========================= -->
 
-<section id="about">
+<section class="about" id="about">
 
     <h2 class="title">
 
@@ -3991,19 +1280,16 @@ section {
 
         <p>
 
-            Hello! I'm Vinay, a B.Tech Data Science student
-            passionate about technology, programming and
-            continuous learning.
+            I am Vinay, a B.Tech Computer Science
+            student specializing in Data Science.
+            I am passionate about technology,
+            programming, and learning new skills.
 
-        </p>
+            <br><br>
 
-        <br>
-
-        <p>
-
-            My journey is focused on developing my technical
-            skills, creating useful projects and exploring
-            the world of software and data science.
+            Currently, I am learning Java and Python
+            and exploring the world of Data Science
+            and software development.
 
         </p>
 
@@ -4016,7 +1302,7 @@ section {
      VIDEO
 ========================= -->
 
-<section class="video-section">
+<section class="video-section" id="video">
 
     <h2 class="title">
 
@@ -4031,13 +1317,9 @@ section {
         <div class="video-inner">
 
             <video
-                autoplay
-                muted
-                loop
+                controls
                 playsinline
-                preload="auto"
-                disablePictureInPicture
-                controlsList="nodownload noplaybackrate nofullscreen">
+                preload="metadata">
 
                 <source
                     src="84705-586995495.mp4"
@@ -4046,6 +1328,13 @@ section {
                 Your browser does not support HTML5 video.
 
             </video>
+
+
+            <div class="video-label">
+
+                ✦ VINAY • DIGITAL BIOGRAPHY ✦
+
+            </div>
 
         </div>
 
@@ -4061,10 +1350,10 @@ section {
 <div class="back-container">
 
     <a
-        href="#home"
+        href="javascript:history.back()"
         class="back-btn">
 
-        ↑ Back to Home
+        ← Back to Previous Page
 
     </a>
 
@@ -4072,7 +1361,7 @@ section {
 
 
 <!-- =========================
-     TYPING SCRIPT
+     JAVASCRIPT
 ========================= -->
 
 <script>
@@ -4080,12 +1369,17 @@ section {
 const words = [
 
     "Data Science Student",
+
     "Technology Enthusiast",
+
     "Java Learner",
+
     "Python Learner",
+
     "Future Developer"
 
 ];
+
 
 let wordIndex = 0;
 
@@ -4093,8 +1387,9 @@ let charIndex = 0;
 
 let deleting = false;
 
-const typingElement =
-    document.querySelector(".typing");
+
+const typingText =
+    document.getElementById("typingText");
 
 
 function typeEffect() {
@@ -4105,7 +1400,7 @@ function typeEffect() {
 
     if (!deleting) {
 
-        typingElement.textContent =
+        typingText.textContent =
             currentWord.substring(
                 0,
                 charIndex + 1
@@ -4131,7 +1426,7 @@ function typeEffect() {
 
     } else {
 
-        typingElement.textContent =
+        typingText.textContent =
             currentWord.substring(
                 0,
                 charIndex - 1
@@ -4144,58 +1439,24 @@ function typeEffect() {
 
             deleting = false;
 
-            wordIndex++;
-
-
-            if (
-                wordIndex ===
-                words.length
-            ) {
-
-                wordIndex = 0;
-
-            }
+            wordIndex =
+                (wordIndex + 1)
+                % words.length;
 
         }
 
     }
 
 
-    const speed =
-        deleting ? 50 : 100;
-
-
     setTimeout(
         typeEffect,
-        speed
+        deleting ? 50 : 100
     );
 
 }
 
 
 typeEffect();
-
-
-/* =========================
-   VIDEO AUTOPLAY
-========================= */
-
-const video =
-    document.querySelector(".video-inner video");
-
-if (video) {
-
-    video.muted = true;
-
-    video.loop = true;
-
-    video.autoplay = true;
-
-    video.play().catch(() => {
-        /* Browser may require autoplay permission */
-    });
-
-}
 
 </script>
 
