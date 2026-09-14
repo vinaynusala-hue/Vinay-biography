@@ -32,15 +32,6 @@ body {
 
 
 /* =========================
-   HIDDEN BACKGROUND AUDIO
-========================= */
-
-.background-audio {
-    display: none;
-}
-
-
-/* =========================
    NAVIGATION
 ========================= */
 
@@ -1566,7 +1557,15 @@ section {
 
     border:
         1px solid
-        rgba(<!DOCTYPE html>
+        rgba(0, 217, 255, 0.25);
+
+    box-shadow:
+        0 20px 60px
+        rgba(0, 0, 0, 0.4);
+
+    transform:
+        perspective(1000px)
+      <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -1596,15 +1595,6 @@ body {
     background: #050816;
     color: white;
     overflow-x: hidden;
-}
-
-
-/* =========================
-   HIDDEN BACKGROUND AUDIO
-========================= */
-
-.background-audio {
-    display: none;
 }
 
 
@@ -3159,7 +3149,7 @@ section {
 
 
 /* =====================================================
-   UNIQUE ANIMATED BACK BUTTON
+   ✨ NEW FUTURISTIC BACK BUTTON
 ===================================================== */
 
 .back-container {
@@ -3171,13 +3161,13 @@ section {
         center;
 
     padding:
-        60px 20px 70px;
+        75px 20px 85px;
 
     background:
         radial-gradient(
             circle at center,
-            rgba(0,217,255,0.10),
-            transparent 55%
+            rgba(0,217,255,0.12),
+            transparent 45%
         );
 
     overflow:
@@ -3188,7 +3178,7 @@ section {
 }
 
 
-/* ROTATING OUTER RING */
+/* LARGE ENERGY RING */
 
 .back-container::before {
 
@@ -3205,14 +3195,14 @@ section {
         50%;
 
     width:
-        270px;
+        300px;
 
     height:
-        270px;
+        300px;
 
     border:
         1px solid
-        rgba(0,217,255,0.16);
+        rgba(0,217,255,0.22);
 
     border-radius:
         50%;
@@ -3220,8 +3210,12 @@ section {
     transform:
         translate(-50%, -50%);
 
+    box-shadow:
+        0 0 35px
+        rgba(0,217,255,0.08);
+
     animation:
-        backOrbit 9s
+        backOrbit 10s
         linear infinite;
 
     pointer-events:
@@ -3229,7 +3223,7 @@ section {
 }
 
 
-/* SECOND ROTATING RING */
+/* SECOND ENERGY RING */
 
 .back-container::after {
 
@@ -3246,14 +3240,14 @@ section {
         50%;
 
     width:
-        210px;
+        225px;
 
     height:
-        210px;
+        225px;
 
     border:
         1px dashed
-        rgba(124,77,255,0.35);
+        rgba(124,77,255,0.45);
 
     border-radius:
         50%;
@@ -3262,7 +3256,7 @@ section {
         translate(-50%, -50%);
 
     animation:
-        backOrbitReverse 6s
+        backOrbitReverse 7s
         linear infinite;
 
     pointer-events:
@@ -3270,9 +3264,7 @@ section {
 }
 
 
-/* =====================================================
-   BACK BUTTON WRAPPER
-===================================================== */
+/* BUTTON WRAPPER */
 
 .back-button-wrap {
 
@@ -3284,10 +3276,13 @@ section {
 
     z-index:
         5;
+
+    padding:
+        12px;
 }
 
 
-/* SMALL ORBIT DOTS */
+/* ENERGY DOTS */
 
 .back-orbit-dot {
 
@@ -3295,10 +3290,10 @@ section {
         absolute;
 
     width:
-        7px;
+        8px;
 
     height:
-        7px;
+        8px;
 
     border-radius:
         50%;
@@ -3308,19 +3303,23 @@ section {
 
     box-shadow:
         0 0 10px #00ffff,
-        0 0 20px #00ffff;
+        0 0 25px #00ffff,
+        0 0 45px rgba(0,255,255,0.6);
 
     pointer-events:
         none;
+
+    z-index:
+        8;
 }
 
 .back-dot-1 {
 
     top:
-        -18px;
+        -12px;
 
     left:
-        30px;
+        25px;
 
     animation:
         backDotFloat1 2s
@@ -3330,17 +3329,18 @@ section {
 .back-dot-2 {
 
     right:
-        -20px;
+        -13px;
 
     top:
-        35px;
+        42px;
 
     background:
-        #7c4dff;
+        #9b6cff;
 
     box-shadow:
-        0 0 10px #7c4dff,
-        0 0 20px #7c4dff;
+        0 0 10px #9b6cff,
+        0 0 25px #9b6cff,
+        0 0 45px rgba(155,108,255,0.5);
 
     animation:
         backDotFloat2 2.5s
@@ -3350,10 +3350,10 @@ section {
 .back-dot-3 {
 
     bottom:
-        -18px;
+        -12px;
 
     left:
-        45px;
+        48px;
 
     animation:
         backDotFloat3 2.2s
@@ -3362,7 +3362,7 @@ section {
 
 
 /* =====================================================
-   MAIN BACK BUTTON
+   MAIN BUTTON
 ===================================================== */
 
 .back-btn {
@@ -3380,27 +3380,27 @@ section {
         center;
 
     gap:
-        13px;
+        14px;
 
     min-width:
-        235px;
+        260px;
 
     padding:
-        16px 30px;
+        18px 34px;
 
     border:
         2px solid transparent;
 
     border-radius:
-        18px;
+        50px;
 
     color:
-        #00eaff;
+        #00f6ff;
 
     background:
         linear-gradient(
-            #071323,
-            #071323
+            #06101d,
+            #06101d
         ) padding-box,
 
         linear-gradient(
@@ -3425,7 +3425,7 @@ section {
         15px;
 
     letter-spacing:
-        1.5px;
+        2px;
 
     overflow:
         hidden;
@@ -3436,28 +3436,24 @@ section {
     box-shadow:
 
         0 0 12px
-        rgba(0,217,255,0.35),
+        rgba(0,217,255,0.45),
 
-        0 0 35px
-        rgba(124,77,255,0.15),
+        0 0 30px
+        rgba(0,217,255,0.18),
 
-        inset 0 0 18px
+        inset 0 0 20px
         rgba(0,217,255,0.08);
 
     transition:
-        transform 0.35s ease,
-        box-shadow 0.35s ease,
-        color 0.35s ease;
+        0.4s ease;
 
     animation:
-        borderFlow 4s
-        linear infinite,
-        backButtonPulse 2.5s
-        ease-in-out infinite;
+        borderFlow 4s linear infinite,
+        backButtonPulse 2.5s ease-in-out infinite;
 }
 
 
-/* MOVING LIGHT */
+/* GLASS HIGHLIGHT */
 
 .back-btn::before {
 
@@ -3468,22 +3464,22 @@ section {
         absolute;
 
     top:
-        -120%;
+        -100%;
 
     left:
-        -70%;
+        -60%;
 
     width:
-        45%;
+        40%;
 
     height:
-        340%;
+        300%;
 
     background:
         linear-gradient(
             90deg,
             transparent,
-            rgba(255,255,255,0.75),
+            rgba(255,255,255,0.8),
             transparent
         );
 
@@ -3498,11 +3494,11 @@ section {
         none;
 
     z-index:
-        -1;
+        1;
 }
 
 
-/* INNER GLOW */
+/* INNER BORDER */
 
 .back-btn::after {
 
@@ -3517,24 +3513,24 @@ section {
 
     border:
         1px solid
-        rgba(255,255,255,0.08);
+        rgba(255,255,255,0.12);
 
     border-radius:
-        13px;
+        45px;
 
     box-shadow:
-        inset 0 0 20px
+        inset 0 0 18px
         rgba(0,217,255,0.12);
 
     pointer-events:
         none;
 
     z-index:
-        0;
+        1;
 }
 
 
-/* BUTTON CONTENT */
+/* CONTENT */
 
 .back-btn > span {
 
@@ -3542,12 +3538,12 @@ section {
         relative;
 
     z-index:
-        3;
+        4;
 }
 
 
 /* =====================================================
-   ARROW
+   ARROW DESIGN
 ===================================================== */
 
 .back-arrow {
@@ -3562,23 +3558,23 @@ section {
         center;
 
     width:
-        34px;
+        38px;
 
     height:
-        34px;
+        38px;
 
     border:
         1px solid
-        #00eaff;
+        #00f6ff;
 
     border-radius:
-        10px;
+        50%;
 
     color:
-        #00eaff;
+        #00f6ff;
 
     font-size:
-        19px;
+        20px;
 
     line-height:
         1;
@@ -3587,10 +3583,11 @@ section {
         rgba(0,217,255,0.08);
 
     box-shadow:
-        0 0 10px
-        rgba(0,217,255,0.5),
 
-        inset 0 0 8px
+        0 0 12px
+        rgba(0,217,255,0.6),
+
+        inset 0 0 10px
         rgba(0,217,255,0.15);
 
     transition:
@@ -3603,7 +3600,7 @@ section {
 
 
 /* =====================================================
-   HOVER
+   HOVER EFFECT
 ===================================================== */
 
 .back-btn:hover {
@@ -3623,23 +3620,22 @@ section {
         250% 250%;
 
     transform:
-        translateY(-8px)
-        scale(1.07)
-        rotateX(4deg);
+        translateY(-9px)
+        scale(1.08);
 
     box-shadow:
 
-        0 0 15px
+        0 0 18px
         #00ffff,
 
-        0 0 35px
+        0 0 40px
         #00d9ff,
 
-        0 0 70px
-        rgba(124,77,255,0.75),
+        0 0 80px
+        rgba(124,77,255,0.8),
 
         0 12px 0
-        rgba(0,90,120,0.7);
+        rgba(0,70,100,0.75);
 }
 
 .back-btn:hover .back-arrow {
@@ -3651,10 +3647,10 @@ section {
         #02040c;
 
     background:
-        rgba(255,255,255,0.35);
+        rgba(255,255,255,0.4);
 
     transform:
-        translateX(-7px)
+        translateX(-8px)
         rotate(-360deg);
 
     box-shadow:
@@ -3663,22 +3659,22 @@ section {
 
 
 /* =====================================================
-   ACTIVE / TAP
+   TAP EFFECT
 ===================================================== */
 
 .back-btn:active {
 
     transform:
         translateY(3px)
-        scale(0.96);
+        scale(0.95);
 
     box-shadow:
 
-        0 0 12px
+        0 0 15px
         #00ffff,
 
         0 3px 0
-        rgba(0,90,120,0.7);
+        rgba(0,70,100,0.7);
 }
 
 
@@ -3693,12 +3689,12 @@ section {
         #7c4dff;
 
     outline-offset:
-        6px;
+        7px;
 }
 
 
 /* =====================================================
-   BACK BUTTON ANIMATIONS
+   BUTTON ANIMATIONS
 ===================================================== */
 
 @keyframes borderFlow {
@@ -3741,9 +3737,9 @@ section {
         box-shadow:
 
             0 0 12px
-            rgba(0,217,255,0.35),
+            rgba(0,217,255,0.4),
 
-            0 0 35px
+            0 0 30px
             rgba(124,77,255,0.15),
 
             inset 0 0 18px
@@ -3754,14 +3750,14 @@ section {
 
         box-shadow:
 
-            0 0 22px
-            rgba(0,217,255,0.65),
+            0 0 25px
+            rgba(0,217,255,0.7),
 
-            0 0 50px
+            0 0 55px
             rgba(124,77,255,0.3),
 
-            inset 0 0 25px
-            rgba(0,217,255,0.14);
+            inset 0 0 28px
+            rgba(0,217,255,0.15);
     }
 
 }
@@ -3775,7 +3771,7 @@ section {
 
     50% {
         transform:
-            translateX(-4px);
+            translateX(-5px);
     }
 
 }
@@ -4176,58 +4172,67 @@ section {
     .back-container {
 
         padding:
-            50px 15px 55px;
+            55px 12px 65px;
     }
 
     .back-container::before {
 
         width:
-            230px;
+            235px;
 
         height:
-            230px;
+            235px;
     }
 
     .back-container::after {
 
         width:
-            175px;
+            180px;
 
         height:
-            175px;
+            180px;
     }
 
     .back-btn {
 
         width:
-            min(92vw, 310px);
+            min(90vw, 320px);
 
         min-width:
             0;
 
         padding:
-            15px 18px;
+            15px 20px;
 
         font-size:
-            13px;
+            12px;
 
         letter-spacing:
-            1px;
+            1.4px;
 
         border-radius:
-            16px;
+            50px;
+
+        gap:
+            10px;
     }
 
     .back-arrow {
 
         width:
-            32px;
+            34px;
 
         height:
-            32px;
+            34px;
 
         font-size:
             18px;
+    }
+
+    .back-button-wrap {
+
+        padding:
+            10px;
     }
 
 }
@@ -4261,20 +4266,6 @@ section {
 
 
 <body>
-
-
-<!-- =========================
-     HIDDEN BACKGROUND MUSIC
-========================= -->
-
-<audio
-    id="backgroundMusic"
-    class="background-audio"
-    src="Summer-Quest-escapiix.mp3"
-    autoplay
-    loop
-    preload="auto">
-</audio>
 
 
 <!-- =========================
@@ -4522,14 +4513,12 @@ section {
 
 
 <!-- =====================================================
-     UNIQUE ANIMATED BACK BUTTON
+     FUTURISTIC BACK BUTTON
 ===================================================== -->
 
 <div class="back-container">
 
     <div class="back-button-wrap">
-
-        <!-- ORBITING PARTICLES -->
 
         <span class="back-orbit-dot back-dot-1"></span>
 
@@ -4537,8 +4526,6 @@ section {
 
         <span class="back-orbit-dot back-dot-3"></span>
 
-
-        <!-- BUTTON -->
 
         <a
             href="#home"
@@ -4561,100 +4548,10 @@ section {
 
 
 <!-- =========================
-     TYPING + BACKGROUND MUSIC
+     TYPING SCRIPT
 ========================= -->
 
 <script>
-
-/* =========================
-   BACKGROUND MUSIC
-========================= */
-
-const backgroundMusic =
-    document.getElementById("backgroundMusic");
-
-/*
-   Try to start the music automatically.
-   Chrome/Android may block autoplay with sound.
-*/
-
-function startBackgroundMusic() {
-
-    backgroundMusic.volume = 1.0;
-
-    const playPromise =
-        backgroundMusic.play();
-
-    if (playPromise !== undefined) {
-
-        playPromise.catch(() => {
-
-            /*
-               Autoplay was blocked.
-               The first user interaction will
-               attempt to start the music again.
-            */
-
-        });
-
-    }
-
-}
-
-
-/* Try immediately */
-
-startBackgroundMusic();
-
-
-/*
-   Start music after the visitor interacts
-   with the website if autoplay was blocked.
-*/
-
-function startMusicAfterInteraction() {
-
-    startBackgroundMusic();
-
-    document.removeEventListener(
-        "click",
-        startMusicAfterInteraction
-    );
-
-    document.removeEventListener(
-        "touchstart",
-        startMusicAfterInteraction
-    );
-
-    document.removeEventListener(
-        "keydown",
-        startMusicAfterInteraction
-    );
-
-}
-
-document.addEventListener(
-    "click",
-    startMusicAfterInteraction,
-    { once: true }
-);
-
-document.addEventListener(
-    "touchstart",
-    startMusicAfterInteraction,
-    { once: true }
-);
-
-document.addEventListener(
-    "keydown",
-    startMusicAfterInteraction,
-    { once: true }
-);
-
-
-/* =========================
-   TYPING EFFECT
-========================= */
 
 const words = [
 
